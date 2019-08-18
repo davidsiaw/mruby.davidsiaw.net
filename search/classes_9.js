@@ -1,7 +1,26 @@
 var searchData=
 [
-  ['segindex',['segindex',['../structsegindex.html',1,'']]],
-  ['segkv',['segkv',['../structsegkv.html',1,'']]],
-  ['segment',['segment',['../structsegment.html',1,'']]],
-  ['symbol_5fname',['symbol_name',['../structsymbol__name.html',1,'']]]
+  ['rarray',['RArray',['../structRArray.html',1,'']]],
+  ['rbasic',['RBasic',['../structRBasic.html',1,'']]],
+  ['rbreak',['RBreak',['../structRBreak.html',1,'']]],
+  ['rclass',['RClass',['../structRClass.html',1,'']]],
+  ['rcptr',['RCptr',['../structRCptr.html',1,'']]],
+  ['rdata',['RData',['../structRData.html',1,'']]],
+  ['renv',['REnv',['../structREnv.html',1,'']]],
+  ['rexception',['RException',['../structRException.html',1,'']]],
+  ['rfiber',['RFiber',['../structRFiber.html',1,'']]],
+  ['rfloat',['RFloat',['../structRFloat.html',1,'']]],
+  ['rhash',['RHash',['../structRHash.html',1,'']]],
+  ['ristruct',['RIStruct',['../structRIStruct.html',1,'']]],
+  ['rite_5fbinary_5ffooter',['rite_binary_footer',['../structrite__binary__footer.html',1,'']]],
+  ['rite_5fbinary_5fheader',['rite_binary_header',['../structrite__binary__header.html',1,'']]],
+  ['rite_5fsection_5fdebug_5fheader',['rite_section_debug_header',['../structrite__section__debug__header.html',1,'']]],
+  ['rite_5fsection_5fheader',['rite_section_header',['../structrite__section__header.html',1,'']]],
+  ['rite_5fsection_5firep_5fheader',['rite_section_irep_header',['../structrite__section__irep__header.html',1,'']]],
+  ['rite_5fsection_5flv_5fheader',['rite_section_lv_header',['../structrite__section__lv__header.html',1,'']]],
+  ['robject',['RObject',['../structRObject.html',1,'']]],
+  ['rproc',['RProc',['../structRProc.html',1,'']]],
+  ['rrange',['RRange',['../structRRange.html',1,'']]],
+  ['rstring',['RString',['../structRString.html',1,'']]],
+  ['rvalue',['RVALUE',['../structRVALUE.html',1,'']]]
 ];

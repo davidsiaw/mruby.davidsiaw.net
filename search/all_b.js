@@ -14,7 +14,6 @@ var searchData=
   ['mrb_5fargs_5fpost',['MRB_ARGS_POST',['../mruby_8h.html#a2b3a9a1fbb54a095fbea70f6bd8cddde',1,'mruby.h']]],
   ['mrb_5fargs_5freq',['MRB_ARGS_REQ',['../mruby_8h.html#aa75e44c5418017c75d6c45598c18b2f2',1,'mruby.h']]],
   ['mrb_5fargs_5frest',['MRB_ARGS_REST',['../mruby_8h.html#aaf4ff9ef085adfa4bc261ac3eed2f436',1,'mruby.h']]],
-  ['mrb_5faspec',['mrb_aspec',['../mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a',1,'mruby.h']]],
   ['mrb_5fast_5fnode',['mrb_ast_node',['../structmrb__ast__node.html',1,'']]],
   ['mrb_5fbegin_5fdecl',['MRB_BEGIN_DECL',['../common_8h.html#a97677ac769c7bdd7f18d40d387f36553',1,'common.h']]],
   ['mrb_5fbool',['mrb_bool',['../classmrb__bool.html',1,'']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['csym_5farg',['csym_arg',['../structcsym__arg.html',1,'']]]
+  ['backtrace_5flocation',['backtrace_location',['../structbacktrace__location.html',1,'']]]
 ];

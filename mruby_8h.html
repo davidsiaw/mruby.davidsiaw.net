@@ -154,23 +154,23 @@ Macros</h2></td></tr>
 <tr class="memitem:a53ad656b89c52110eeb2e936313b21ec"><td class="memItemLeft" align="right" valign="top"><a id="a53ad656b89c52110eeb2e936313b21ec"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_METHOD_CACHE_SIZE</b>&#160;&#160;&#160;(1&lt;&lt;7)</td></tr>
 <tr class="separator:a53ad656b89c52110eeb2e936313b21ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa75e44c5418017c75d6c45598c18b2f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aa75e44c5418017c75d6c45598c18b2f2">MRB_ARGS_REQ</a>(n)&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 18)</td></tr>
+<tr class="memitem:aa75e44c5418017c75d6c45598c18b2f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aa75e44c5418017c75d6c45598c18b2f2">MRB_ARGS_REQ</a>(n)&#160;&#160;&#160;((mrb_aspec)((n)&amp;0x1f) &lt;&lt; 18)</td></tr>
 <tr class="separator:aa75e44c5418017c75d6c45598c18b2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b34033531a541423669b4155cea2d5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a6b34033531a541423669b4155cea2d5e">MRB_ARGS_OPT</a>(n)&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 13)</td></tr>
+<tr class="memitem:a6b34033531a541423669b4155cea2d5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a6b34033531a541423669b4155cea2d5e">MRB_ARGS_OPT</a>(n)&#160;&#160;&#160;((mrb_aspec)((n)&amp;0x1f) &lt;&lt; 13)</td></tr>
 <tr class="separator:a6b34033531a541423669b4155cea2d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a413956198963701021e122125ec5d09b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a413956198963701021e122125ec5d09b">MRB_ARGS_ARG</a>(n1,  n2)&#160;&#160;&#160;(<a class="el" href="mruby_8h.html#aa75e44c5418017c75d6c45598c18b2f2">MRB_ARGS_REQ</a>(n1)|<a class="el" href="mruby_8h.html#a6b34033531a541423669b4155cea2d5e">MRB_ARGS_OPT</a>(n2))</td></tr>
 <tr class="separator:a413956198963701021e122125ec5d09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf4ff9ef085adfa4bc261ac3eed2f436"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aaf4ff9ef085adfa4bc261ac3eed2f436">MRB_ARGS_REST</a>()&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)(1 &lt;&lt; 12))</td></tr>
+<tr class="memitem:aaf4ff9ef085adfa4bc261ac3eed2f436"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aaf4ff9ef085adfa4bc261ac3eed2f436">MRB_ARGS_REST</a>()&#160;&#160;&#160;((mrb_aspec)(1 &lt;&lt; 12))</td></tr>
 <tr class="separator:aaf4ff9ef085adfa4bc261ac3eed2f436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b3a9a1fbb54a095fbea70f6bd8cddde"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a2b3a9a1fbb54a095fbea70f6bd8cddde">MRB_ARGS_POST</a>(n)&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 7)</td></tr>
+<tr class="memitem:a2b3a9a1fbb54a095fbea70f6bd8cddde"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a2b3a9a1fbb54a095fbea70f6bd8cddde">MRB_ARGS_POST</a>(n)&#160;&#160;&#160;((mrb_aspec)((n)&amp;0x1f) &lt;&lt; 7)</td></tr>
 <tr class="separator:a2b3a9a1fbb54a095fbea70f6bd8cddde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7a02eef5a0eff46661f0f3057bfc854"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab7a02eef5a0eff46661f0f3057bfc854">MRB_ARGS_KEY</a>(n1,  n2)&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)((((n1)&amp;0x1f) &lt;&lt; 2) | ((n2)?(1&lt;&lt;1):0)))</td></tr>
+<tr class="memitem:ab7a02eef5a0eff46661f0f3057bfc854"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab7a02eef5a0eff46661f0f3057bfc854">MRB_ARGS_KEY</a>(n1,  n2)&#160;&#160;&#160;((mrb_aspec)((((n1)&amp;0x1f) &lt;&lt; 2) | ((n2)?(1&lt;&lt;1):0)))</td></tr>
 <tr class="separator:ab7a02eef5a0eff46661f0f3057bfc854"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f11e1dbfb15c5e196f7bf2dc34778b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab5f11e1dbfb15c5e196f7bf2dc34778b">MRB_ARGS_BLOCK</a>()&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)1)</td></tr>
+<tr class="memitem:ab5f11e1dbfb15c5e196f7bf2dc34778b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab5f11e1dbfb15c5e196f7bf2dc34778b">MRB_ARGS_BLOCK</a>()&#160;&#160;&#160;((mrb_aspec)1)</td></tr>
 <tr class="separator:ab5f11e1dbfb15c5e196f7bf2dc34778b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79cb00ecd1c4cb43d33da465ca090e39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a79cb00ecd1c4cb43d33da465ca090e39">MRB_ARGS_ANY</a>()&#160;&#160;&#160;<a class="el" href="mruby_8h.html#aaf4ff9ef085adfa4bc261ac3eed2f436">MRB_ARGS_REST</a>()</td></tr>
 <tr class="separator:a79cb00ecd1c4cb43d33da465ca090e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6e2ec577d218326a3546a7028b23c3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aa6e2ec577d218326a3546a7028b23c3c">MRB_ARGS_NONE</a>()&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)0)</td></tr>
+<tr class="memitem:aa6e2ec577d218326a3546a7028b23c3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aa6e2ec577d218326a3546a7028b23c3c">MRB_ARGS_NONE</a>()&#160;&#160;&#160;((mrb_aspec)0)</td></tr>
 <tr class="separator:aa6e2ec577d218326a3546a7028b23c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6e210b379c4a4caa21bcc2b570d3613"><td class="memItemLeft" align="right" valign="top"><a id="ae6e210b379c4a4caa21bcc2b570d3613"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_strlen_lit</b>(lit)&#160;&#160;&#160;(sizeof(lit &quot;&quot;) - 1)</td></tr>
@@ -301,7 +301,8 @@ Macros</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:a4b44aedddab10fb6616569ee56d77a32"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a4b44aedddab10fb6616569ee56d77a32">mrb_code</a></td></tr>
 <tr class="separator:a4b44aedddab10fb6616569ee56d77a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b40c4409d0efc1d2d5c6db346f1143a"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a></td></tr>
+<tr class="memitem:a6b40c4409d0efc1d2d5c6db346f1143a"><td class="memItemLeft" align="right" valign="top"><a id="a6b40c4409d0efc1d2d5c6db346f1143a"></a>
+typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_aspec</b></td></tr>
 <tr class="separator:a6b40c4409d0efc1d2d5c6db346f1143a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9502945004410f3bc399d0995d34717"><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab9502945004410f3bc399d0995d34717">mrb_allocf</a>) (struct <a class="el" href="structmrb__state.html">mrb_state</a> *mrb, void *, size_t, void *ud)</td></tr>
 <tr class="separator:ab9502945004410f3bc399d0995d34717"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -356,14 +357,14 @@ Functions</h2></td></tr>
 <tr class="separator:aae644477848a4f96e809393fb90b8bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee7e87afdc8bcc4e3ce679c3aef9d539"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aee7e87afdc8bcc4e3ce679c3aef9d539">mrb_prepend_module</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, struct <a class="el" href="structRClass.html">RClass</a> *)</td></tr>
 <tr class="separator:aee7e87afdc8bcc4e3ce679c3aef9d539"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e4a0255539c0d8baa8f7e48ac5fe7d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a9e4a0255539c0d8baa8f7e48ac5fe7d2">mrb_define_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cla, const char *name, mrb_func_t func, <a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a> aspec)</td></tr>
+<tr class="memitem:a9e4a0255539c0d8baa8f7e48ac5fe7d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a9e4a0255539c0d8baa8f7e48ac5fe7d2">mrb_define_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cla, const char *name, mrb_func_t func, mrb_aspec aspec)</td></tr>
 <tr class="separator:a9e4a0255539c0d8baa8f7e48ac5fe7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40d27f9e433742e4b3ad6a97a25c0693"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a40d27f9e433742e4b3ad6a97a25c0693">mrb_define_class_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, const char *, mrb_func_t, <a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)</td></tr>
+<tr class="memitem:a40d27f9e433742e4b3ad6a97a25c0693"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a40d27f9e433742e4b3ad6a97a25c0693">mrb_define_class_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, const char *, mrb_func_t, mrb_aspec)</td></tr>
 <tr class="separator:a40d27f9e433742e4b3ad6a97a25c0693"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a734263b0d0bb689c19d4bb4358ac1cf2"><td class="memItemLeft" align="right" valign="top"><a id="a734263b0d0bb689c19d4bb4358ac1cf2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_define_singleton_method</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRObject.html">RObject</a> *, const char *, mrb_func_t, <a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_define_singleton_method</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRObject.html">RObject</a> *, const char *, mrb_func_t, mrb_aspec)</td></tr>
 <tr class="separator:a734263b0d0bb689c19d4bb4358ac1cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed2399c14fda4c3e0cadc12e4aca3768"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aed2399c14fda4c3e0cadc12e4aca3768">mrb_define_module_function</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, const char *, mrb_func_t, <a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)</td></tr>
+<tr class="memitem:aed2399c14fda4c3e0cadc12e4aca3768"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aed2399c14fda4c3e0cadc12e4aca3768">mrb_define_module_function</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, const char *, mrb_func_t, mrb_aspec)</td></tr>
 <tr class="separator:aed2399c14fda4c3e0cadc12e4aca3768"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6552ee6e07f14c72e70b2c0b81291ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ae6552ee6e07f14c72e70b2c0b81291ac">mrb_define_const</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, const char *name, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
 <tr class="separator:ae6552ee6e07f14c72e70b2c0b81291ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -788,7 +789,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
           <td class="memname">#define MRB_ARGS_BLOCK</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)1)</td>
+          <td>&#160;&#160;&#160;((mrb_aspec)1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -817,7 +818,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)((((n1)&amp;0x1f) &lt;&lt; 2) | ((n2)?(1&lt;&lt;1):0)))</td>
+          <td></td><td>&#160;&#160;&#160;((mrb_aspec)((((n1)&amp;0x1f) &lt;&lt; 2) | ((n2)?(1&lt;&lt;1):0)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -835,7 +836,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
           <td class="memname">#define MRB_ARGS_NONE</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)0)</td>
+          <td>&#160;&#160;&#160;((mrb_aspec)0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -854,7 +855,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 13)</td>
+          <td>&#160;&#160;&#160;((mrb_aspec)((n)&amp;0x1f) &lt;&lt; 13)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -879,7 +880,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 7)</td>
+          <td>&#160;&#160;&#160;((mrb_aspec)((n)&amp;0x1f) &lt;&lt; 7)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -898,7 +899,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 18)</td>
+          <td>&#160;&#160;&#160;((mrb_aspec)((n)&amp;0x1f) &lt;&lt; 18)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -922,7 +923,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
           <td class="memname">#define MRB_ARGS_REST</td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>)(1 &lt;&lt; 12))</td>
+          <td>&#160;&#160;&#160;((mrb_aspec)(1 &lt;&lt; 12))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1067,21 +1068,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
 <td align="center"><code>?</code> </td><td>optional given </td><td>{<a class="el" href="classmrb__bool.html" title="mruby Boolean ">mrb_bool</a>} </td><td><code>TRUE</code> if preceding argument is given. Used to check optional argument is given. </td></tr>
 </table>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a75f83f0204a576c23f773d01c8d51690">mrb_get_args</a> </dd></dl>
-
-</div>
-</div>
-<a id="a6b40c4409d0efc1d2d5c6db346f1143a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b40c4409d0efc1d2d5c6db346f1143a">&#9670;&nbsp;</a></span>mrb_aspec</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef uint32_t <a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Required arguments signature type. </p>
 
 </div>
 </div>
@@ -1578,7 +1564,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>&#160;</td>
+          <td class="paramtype">mrb_aspec&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -1785,7 +1771,7 @@ void mrb_example_gem_init(mrb_state* mrb){
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>&#160;</td>
+          <td class="paramtype">mrb_aspec&#160;</td>
           <td class="paramname"><em>aspec</em>&#160;</td>
         </tr>
         <tr>
@@ -1891,7 +1877,7 @@ void mrb_example_gem_init(mrb_state* mrb)
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="mruby_8h.html#a6b40c4409d0efc1d2d5c6db346f1143a">mrb_aspec</a>&#160;</td>
+          <td class="paramtype">mrb_aspec&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
