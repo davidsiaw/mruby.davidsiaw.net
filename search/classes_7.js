@@ -1,6 +1,7 @@
 var searchData=
 [
   ['mrb_5fast_5fnode',['mrb_ast_node',['../structmrb__ast__node.html',1,'']]],
+  ['mrb_5fbool',['mrb_bool',['../classmrb__bool.html',1,'']]],
   ['mrb_5fcallinfo',['mrb_callinfo',['../structmrb__callinfo.html',1,'']]],
   ['mrb_5fcontext',['mrb_context',['../structmrb__context.html',1,'']]],
   ['mrb_5fdata_5ftype',['mrb_data_type',['../structmrb__data__type.html',1,'']]],
@@ -24,6 +25,7 @@ var searchData=
   ['mrb_5fshared_5farray',['mrb_shared_array',['../structmrb__shared__array.html',1,'']]],
   ['mrb_5fshared_5fstring',['mrb_shared_string',['../structmrb__shared__string.html',1,'']]],
   ['mrb_5fstate',['mrb_state',['../structmrb__state.html',1,'']]],
+  ['mrb_5fsym',['mrb_sym',['../classmrb__sym.html',1,'']]],
   ['mrb_5fvalue',['mrb_value',['../structmrb__value.html',1,'']]],
   ['mrbc_5fcontext',['mrbc_context',['../structmrbc__context.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['struct_5fname',['struct_name',['../structmrb__data__type.html#a53ba50686e2a28e8e36fb06c9620316f',1,'mrb_data_type']]]
+  ['mrb_5fdigitmap',['mrb_digitmap',['../string_8h.html#a016764125f88b4b2146bea3daf4789af',1,'string.c']]]
 ];
