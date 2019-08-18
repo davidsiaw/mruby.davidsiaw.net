@@ -80,7 +80,148 @@ $(function() {
 <p>First two byte operands may be extended to 16bit. When those byte operands are bigger than 256, the instruction will be prefixed by <code>OP_EXT1</code> (means 1st operand is 16bit) or <code>OP_EXT2</code> (means 2nd operand is 16bit) or <code>OP_EXT3</code> (means 1st and 2nd operands are 16bit).</p>
 <p>For instructions marked by <code>'</code>, <code>OP_EXT1</code> can be prefixed. For those with <code>"</code>, either <code>OP_EXT1</code> or <code>OP_EXT2</code> or <code>OP_EXT2</code> can be prefixed.</p>
 <h2>table.1 Instruction Table</h2>
-<div class="fragment"><div class="line">|Instruction Name |Operand type |Semantics        </div><div class="line">|-----------------|-------------|-----------------</div><div class="line">|OP_NOP           | -           |                 </div><div class="line">|OP_MOVE&quot;         |BB           |R(a) = R(b)      </div><div class="line">|OP_LOADL&quot;        |BB           |R(a) = Pool(b)   </div><div class="line">|OP_LOADI&quot;        |BsB          |R(a) = mrb_int(b)</div><div class="line">|OP_LOADI_0&#39;      |B            |R(a) = 0</div><div class="line">|OP_LOADI_1&#39;      |B            |R(a) = 1</div><div class="line">|OP_LOADI_2&#39;      |B            |R(a) = 2</div><div class="line">|OP_LOADI_3&#39;      |B            |R(a) = 3</div><div class="line">|OP_LOADSYM&quot;      |BB           |R(a) = Syms(b)</div><div class="line">|OP_LOADNIL&#39;      |B            |R(a) = nil</div><div class="line">|OP_LOADSELF&#39;     |B            |R(a) = self</div><div class="line">|OP_LOADT&#39;        |B            |R(a) = true</div><div class="line">|OP_LOADF&#39;        |B            |R(a) = false</div><div class="line">|OP_GETGV&quot;        |BB           |R(a) = getglobal(Syms(b))</div><div class="line">|OP_SETGV&quot;        |BB           |setglobal(Syms(b), R(a))</div><div class="line">|OP_GETSV&quot;        |BB           |R(a) = Special[b]</div><div class="line">|OP_SETSV&quot;        |BB           |Special[b] = R(a)</div><div class="line">|OP_GETIV&quot;        |BB           |R(a) = ivget(Syms(b))</div><div class="line">|OP_SETIV&quot;        |BB           |ivset(Syms(b),R(a))</div><div class="line">|OP_GETCV&quot;        |BB           |R(a) = cvget(Syms(b))</div><div class="line">|OP_SETCV&quot;        |BB           |cvset(Syms(b),R(a))</div><div class="line">|OP_GETCONST&quot;     |BB           |R(a) = constget(Syms(b))</div><div class="line">|OP_SETCONST&quot;     |BB           |constset(Syms(b),R(a))</div><div class="line">|OP_GETMCNST&quot;     |BB           |R(a) = R(a)::Syms(b)</div><div class="line">|OP_SETMCNST&quot;     |BB           |R(a+1)::Syms(b) = R(a)</div><div class="line">|OP_GETUPVAR&#39;     |BBB          |R(a) = uvget(b,c)</div><div class="line">|OP_SETUPVAR&#39;     |BBB          |uvset(b,c,R(a))</div><div class="line">|OP_JMP           |S            |pc+=a</div><div class="line">|OP_JMPIF&#39;        |SB           |if R(b) pc+=a</div><div class="line">|OP_JMPNOT&#39;       |SB           |if !R(b) pc+=a</div><div class="line">|OP_ONERR         |sS           |rescue_push(pc+a)</div><div class="line">|OP_EXCEPT&#39;       |B            |R(a) = exc</div><div class="line">|OP_RESCUE&quot;       |BB           |R(b) = R(a).isa?(R(b))</div><div class="line">|OP_POPERR        |B            |a.times{rescue_pop()}</div><div class="line">|OP_RAISE&#39;        |B            |raise(R(a))</div><div class="line">|OP_EPUSH&#39;        |B            |ensure_push(SEQ[a])</div><div class="line">|OP_EPOP          |B            |A.times{ensure_pop().call}</div><div class="line">|OP_SENDV&quot;        |BB           |R(a) = call(R(a),Syms(b),*R(a+1))</div><div class="line">|OP_SENDVB&quot;       |BB           |R(a) = call(R(a),Syms(b),*R(a+1),&amp;R(a+2))</div><div class="line">|OP_SEND&quot;         |BBB          |R(a) = call(R(a),Syms(b),R(a+1),...,R(a+c))</div><div class="line">|OP_SENDB&quot;        |BBB          |R(a) = call(R(a),Syms(Bx),R(a+1),...,R(a+c),&amp;R(a+c+1))</div><div class="line">|OP_CALL&#39;         |B            |R(a) = self.call(frame.argc, frame.argv)</div><div class="line">|OP_SUPER&#39;        |BB           |R(a) = super(R(a+1),... ,R(a+b+1))</div><div class="line">|OP_ARGARY&#39;       |BS           |R(a) = argument array (16=5:1:5:1:4)</div><div class="line">|OP_ENTER         |W            |arg setup according to flags (23=5:5:1:5:5:1:1)</div><div class="line">|OP_KARG&quot;         |BB           |R(a) = kdict[Syms(Bx)]                          # todo</div><div class="line">|OP_KARG2&quot;        |BB           |R(a) = kdict[Syms(Bx)]; kdict.rm(Syms(b))       # todo</div><div class="line">|OP_RETURN&#39;       |B            |return R(a) (normal)</div><div class="line">|OP_RETURN_BLK&#39;   |B            |return R(a) (in-block return)</div><div class="line">|OP_BREAK&#39;        |B            |break R(a)</div><div class="line">|OP_BLKPUSH&#39;      |BS           |R(a) = block (16=5:1:5:1:4)</div><div class="line">|OP_ADD&quot;          |BB           |R(a) = R(a)+R(a+1)</div><div class="line">|OP_ADDI&quot;         |BBB          |R(a) = R(a)+mrb_int(c)</div><div class="line">|OP_SUB&quot;          |BB           |R(a) = R(a)-R(a+1)</div><div class="line">|OP_SUBI&quot;         |BB           |R(a) = R(a)-C</div><div class="line">|OP_MUL&quot;          |BB           |R(a) = R(a)*R(a+1)</div><div class="line">|OP_DIV&quot;          |BB           |R(a) = R(a)/R(a+1)</div><div class="line">|OP_EQ&quot;           |BB           |R(a) = R(a)==R(a+1)</div><div class="line">|OP_LT&quot;           |BB           |R(a) = R(a)&lt;R(a+1)</div><div class="line">|OP_LE&quot;           |BB           |R(a) = R(a)&lt;=R(a+1)</div><div class="line">|OP_GT&quot;           |BB           |R(a) = R(a)&gt;R(a+1)</div><div class="line">|OP_GE&quot;           |BB           |R(a) = R(a)&gt;=R(a+1)</div><div class="line">|OP_ARRAY&#39;        |BB           |R(a) = ary_new(R(a),R(a+1)..R(a+b))</div><div class="line">|OP_ARRAY2&quot;       |BB           |R(a) = ary_new(R(b),R(b+1)..R(b+c))</div><div class="line">|OP_ARYCAT&#39;       |B            |ary_cat(R(a),R(a+1))</div><div class="line">|OP_ARYPUSH&#39;      |B            |ary_push(R(a),R(a+1))</div><div class="line">|OP_AREF&#39;         |BB           |R(a) = R(a)[b]</div><div class="line">|OP_ASET&#39;         |BB           |R(a)[b] = R(a+1)</div><div class="line">|OP_APOST&#39;        |BB           |*R(a),R(A+1)..R(A+C) = R(a)[B..]</div><div class="line">|OP_STRING&quot;       |BB           |R(a) = str_dup(Lit(b))</div><div class="line">|OP_STRCAT&#39;       |B            |str_cat(R(a),R(a+1))</div><div class="line">|OP_HASH&#39;         |BB           |R(a) = hash_new(R(a),R(a+1)..R(a+b))</div><div class="line">|OP_HASHADD&#39;      |BB           |R(a) = hash_push(R(a),R(a+1)..R(a+b))</div><div class="line">|OP_LAMBDA&quot;       |BB           |R(a) = lambda(SEQ[b],OP_L_LAMBDA)</div><div class="line">|OP_BLOCK&quot;        |BB           |R(a) = lambda(SEQ[b],OP_L_BLOCK)</div><div class="line">|OP_METHOD&quot;       |BB           |R(a) = lambda(SEQ[b],OP_L_METHOD)</div><div class="line">|OP_RANGE_INC&#39;    |B            |R(a) = range_new(R(a),R(a+1),FALSE)</div><div class="line">|OP_RANGE_EXC&#39;    |B            |R(a) = range_new(R(a),R(a+1),TRUE)</div><div class="line">|OP_OCLASS&#39;       |B            |R(a) = ::Object</div><div class="line">|OP_CLASS&quot;        |BB           |R(a) = newclass(R(a),Syms(b),R(a+1))</div><div class="line">|OP_MODULE&quot;       |BB           |R(a) = newmodule(R(a),Syms(b))</div><div class="line">|OP_EXEC&quot;         |BB           |R(a) = blockexec(R(a),SEQ[b])</div><div class="line">|OP_DEF&quot;          |BB           |R(a).newmethod(Syms(b),R(a+1))</div><div class="line">|OP_ALIAS&#39;        |B            |alias_method(R(a),R(a+1),R(a+2))</div><div class="line">|OP_UNDEF&quot;        |BB           |undef_method(R(a),Syms(b))</div><div class="line">|OP_SCLASS&#39;       |B            |R(a) = R(a).singleton_class</div><div class="line">|OP_TCLASS&#39;       |B            |R(a) = target_class</div><div class="line">|OP_ERR&#39;          |B            |raise(RuntimeError, Lit(Bx))</div><div class="line">|OP_EXT1          |-            |make 1st operand 16bit</div><div class="line">|OP_EXT2          |-            |make 2nd operand 16bit</div><div class="line">|OP_EXT3          |-            |make 1st and 2nd operands 16bit</div><div class="line">|OP_STOP          |-            |stop VM</div></div><!-- fragment --> </div></div><!-- contents -->
+<table class="doxtable">
+<tr>
+<th align="left">Instruction Name </th><th>Operand type </th><th>Semantics  </th></tr>
+<tr>
+<td align="left">OP_NOP </td><td>- </td><td></td></tr>
+<tr>
+<td align="left">OP_MOVE"         &lt;td&gt; BB           &lt;td&gt; R(a) = R(b)
+&lt;tr&gt;&lt;td align="left"&gt; OP_LOADL" </td><td>BB </td><td>R(a) = Pool(b) </td></tr>
+<tr>
+<td align="left">OP_LOADI"        &lt;td&gt; BsB          &lt;td&gt; R(a) = mrb_int(b)
+&lt;tr&gt;&lt;td align="left"&gt; OP_LOADI_0'      &lt;td&gt; B            &lt;td&gt; R(a) = 0
+&lt;tr&gt;&lt;td align="left"&gt; OP_LOADI_1'      &lt;td&gt; B            &lt;td&gt; R(a) = 1
+&lt;tr&gt;&lt;td align="left"&gt; OP_LOADI_2'      &lt;td&gt; B            &lt;td&gt; R(a) = 2
+&lt;tr&gt;&lt;td align="left"&gt; OP_LOADI_3'      &lt;td&gt; B            &lt;td&gt; R(a) = 3
+&lt;tr&gt;&lt;td align="left"&gt; OP_LOADSYM" </td><td>BB </td><td>R(a) = Syms(b) </td></tr>
+<tr>
+<td align="left">OP_LOADNIL' </td><td>B </td><td>R(a) = nil </td></tr>
+<tr>
+<td align="left">OP_LOADSELF' </td><td>B </td><td>R(a) = self </td></tr>
+<tr>
+<td align="left">OP_LOADT' </td><td>B </td><td>R(a) = true </td></tr>
+<tr>
+<td align="left">OP_LOADF' </td><td>B </td><td>R(a) = false </td></tr>
+<tr>
+<td align="left">OP_GETGV"        &lt;td&gt; BB           &lt;td&gt; R(a) = getglobal(Syms(b))
+&lt;tr&gt;&lt;td align="left"&gt; OP_SETGV" </td><td>BB </td><td>setglobal(Syms(b), R(a)) </td></tr>
+<tr>
+<td align="left">OP_GETSV"        &lt;td&gt; BB           &lt;td&gt; R(a) = Special[b]
+&lt;tr&gt;&lt;td align="left"&gt; OP_SETSV" </td><td>BB </td><td>Special[b] = R(a) </td></tr>
+<tr>
+<td align="left">OP_GETIV"        &lt;td&gt; BB           &lt;td&gt; R(a) = ivget(Syms(b))
+&lt;tr&gt;&lt;td align="left"&gt; OP_SETIV" </td><td>BB </td><td>ivset(Syms(b),R(a)) </td></tr>
+<tr>
+<td align="left">OP_GETCV"        &lt;td&gt; BB           &lt;td&gt; R(a) = cvget(Syms(b))
+&lt;tr&gt;&lt;td align="left"&gt; OP_SETCV" </td><td>BB </td><td>cvset(Syms(b),R(a)) </td></tr>
+<tr>
+<td align="left">OP_GETCONST"     &lt;td&gt; BB           &lt;td&gt; R(a) = constget(Syms(b))
+&lt;tr&gt;&lt;td align="left"&gt; OP_SETCONST" </td><td>BB </td><td>constset(Syms(b),R(a)) </td></tr>
+<tr>
+<td align="left">OP_GETMCNST"     &lt;td&gt; BB           &lt;td&gt; R(a) = R(a)::Syms(b)
+&lt;tr&gt;&lt;td align="left"&gt; OP_SETMCNST" </td><td>BB </td><td>R(a+1)::Syms(b) = R(a) </td></tr>
+<tr>
+<td align="left">OP_GETUPVAR' </td><td>BBB </td><td>R(a) = uvget(b,c) </td></tr>
+<tr>
+<td align="left">OP_SETUPVAR' </td><td>BBB </td><td>uvset(b,c,R(a)) </td></tr>
+<tr>
+<td align="left">OP_JMP </td><td>S </td><td>pc+=a </td></tr>
+<tr>
+<td align="left">OP_JMPIF' </td><td>SB </td><td>if R(b) pc+=a </td></tr>
+<tr>
+<td align="left">OP_JMPNOT' </td><td>SB </td><td>if !R(b) pc+=a </td></tr>
+<tr>
+<td align="left">OP_ONERR </td><td>sS </td><td>rescue_push(pc+a) </td></tr>
+<tr>
+<td align="left">OP_EXCEPT' </td><td>B </td><td>R(a) = exc </td></tr>
+<tr>
+<td align="left">OP_RESCUE"       &lt;td&gt; BB           &lt;td&gt; R(b) = R(a).isa?(R(b))
+&lt;tr&gt;&lt;td align="left"&gt; OP_POPERR        &lt;td&gt; B            &lt;td&gt; a.times{rescue_pop()}
+&lt;tr&gt;&lt;td align="left"&gt; OP_RAISE'        &lt;td&gt; B            &lt;td&gt; raise(R(a))
+&lt;tr&gt;&lt;td align="left"&gt; OP_EPUSH'        &lt;td&gt; B            &lt;td&gt; ensure_push(SEQ[a])
+&lt;tr&gt;&lt;td align="left"&gt; OP_EPOP          &lt;td&gt; B            &lt;td&gt; A.times{ensure_pop().call}
+&lt;tr&gt;&lt;td align="left"&gt; OP_SENDV" </td><td>BB </td><td>R(a) = call(R(a),Syms(b),*R(a+1)) </td></tr>
+<tr>
+<td align="left">OP_SENDVB"       &lt;td&gt; BB           &lt;td&gt; R(a) = call(R(a),Syms(b),*R(a+1),&amp;R(a+2))
+&lt;tr&gt;&lt;td align="left"&gt; OP_SEND" </td><td>BBB </td><td>R(a) = call(R(a),Syms(b),R(a+1),...,R(a+c)) </td></tr>
+<tr>
+<td align="left">OP_SENDB"        &lt;td&gt; BBB          &lt;td&gt; R(a) = call(R(a),Syms(Bx),R(a+1),...,R(a+c),&amp;R(a+c+1))
+&lt;tr&gt;&lt;td align="left"&gt; OP_CALL'         &lt;td&gt; B            &lt;td&gt; R(a) = self.call(frame.argc, frame.argv)
+&lt;tr&gt;&lt;td align="left"&gt; OP_SUPER'        &lt;td&gt; BB           &lt;td&gt; R(a) = super(R(a+1),... ,R(a+b+1))
+&lt;tr&gt;&lt;td align="left"&gt; OP_ARGARY'       &lt;td&gt; BS           &lt;td&gt; R(a) = argument array (16=5:1:5:1:4)
+&lt;tr&gt;&lt;td align="left"&gt; OP_ENTER         &lt;td&gt; W            &lt;td&gt; arg setup according to flags (23=5:5:1:5:5:1:1)
+&lt;tr&gt;&lt;td align="left"&gt; OP_KARG" </td><td>BB </td><td>R(a) = kdict[Syms(Bx)] # todo </td></tr>
+<tr>
+<td align="left">OP_KARG2"        &lt;td&gt; BB           &lt;td&gt; R(a) = kdict[Syms(Bx)]; kdict.rm(Syms(b))       # todo
+&lt;tr&gt;&lt;td align="left"&gt; OP_RETURN'       &lt;td&gt; B            &lt;td&gt; return R(a) (normal)
+&lt;tr&gt;&lt;td align="left"&gt; OP_RETURN_BLK'   &lt;td&gt; B            &lt;td&gt; return R(a) (in-block return)
+&lt;tr&gt;&lt;td align="left"&gt; OP_BREAK'        &lt;td&gt; B            &lt;td&gt; break R(a)
+&lt;tr&gt;&lt;td align="left"&gt; OP_BLKPUSH'      &lt;td&gt; BS           &lt;td&gt; R(a) = block (16=5:1:5:1:4)
+&lt;tr&gt;&lt;td align="left"&gt; OP_ADD" </td><td>BB </td><td>R(a) = R(a)+R(a+1) </td></tr>
+<tr>
+<td align="left">OP_ADDI"         &lt;td&gt; BBB          &lt;td&gt; R(a) = R(a)+mrb_int(c)
+&lt;tr&gt;&lt;td align="left"&gt; OP_SUB" </td><td>BB </td><td>R(a) = R(a)-R(a+1) </td></tr>
+<tr>
+<td align="left">OP_SUBI"         &lt;td&gt; BB           &lt;td&gt; R(a) = R(a)-C
+&lt;tr&gt;&lt;td align="left"&gt; OP_MUL" </td><td>BB </td><td>R(a) = R(a)*R(a+1) </td></tr>
+<tr>
+<td align="left">OP_DIV"          &lt;td&gt; BB           &lt;td&gt; R(a) = R(a)/R(a+1)
+&lt;tr&gt;&lt;td align="left"&gt; OP_EQ" </td><td>BB </td><td>R(a) = R(a)==R(a+1) </td></tr>
+<tr>
+<td align="left">OP_LT"           &lt;td&gt; BB           &lt;td&gt; R(a) = R(a)&lt;R(a+1)
+&lt;tr&gt;&lt;td align="left"&gt; OP_LE" </td><td>BB </td><td>R(a) = R(a)&lt;=R(a+1) </td></tr>
+<tr>
+<td align="left">OP_GT"           &lt;td&gt; BB           &lt;td&gt; R(a) = R(a)&gt;R(a+1)
+&lt;tr&gt;&lt;td align="left"&gt; OP_GE" </td><td>BB </td><td>R(a) = R(a)&gt;=R(a+1) </td></tr>
+<tr>
+<td align="left">OP_ARRAY' </td><td>BB </td><td>R(a) = ary_new(R(a),R(a+1)..R(a+b)) </td></tr>
+<tr>
+<td align="left">OP_ARRAY2"       &lt;td&gt; BB           &lt;td&gt; R(a) = ary_new(R(b),R(b+1)..R(b+c))
+&lt;tr&gt;&lt;td align="left"&gt; OP_ARYCAT'       &lt;td&gt; B            &lt;td&gt; ary_cat(R(a),R(a+1))
+&lt;tr&gt;&lt;td align="left"&gt; OP_ARYPUSH'      &lt;td&gt; B            &lt;td&gt; ary_push(R(a),R(a+1))
+&lt;tr&gt;&lt;td align="left"&gt; OP_AREF'         &lt;td&gt; BB           &lt;td&gt; R(a) = R(a)[b]
+&lt;tr&gt;&lt;td align="left"&gt; OP_ASET'         &lt;td&gt; BB           &lt;td&gt; R(a)[b] = R(a+1)
+&lt;tr&gt;&lt;td align="left"&gt; OP_APOST'        &lt;td&gt; BB           &lt;td&gt; *R(a),R(A+1)..R(A+C) = R(a)[B..]
+&lt;tr&gt;&lt;td align="left"&gt; OP_STRING" </td><td>BB </td><td>R(a) = str_dup(Lit(b)) </td></tr>
+<tr>
+<td align="left">OP_STRCAT' </td><td>B </td><td>str_cat(R(a),R(a+1)) </td></tr>
+<tr>
+<td align="left">OP_HASH' </td><td>BB </td><td>R(a) = hash_new(R(a),R(a+1)..R(a+b)) </td></tr>
+<tr>
+<td align="left">OP_HASHADD' </td><td>BB </td><td>R(a) = hash_push(R(a),R(a+1)..R(a+b)) </td></tr>
+<tr>
+<td align="left">OP_LAMBDA"       &lt;td&gt; BB           &lt;td&gt; R(a) = lambda(SEQ[b],OP_L_LAMBDA)
+&lt;tr&gt;&lt;td align="left"&gt; OP_BLOCK" </td><td>BB </td><td>R(a) = lambda(SEQ[b],OP_L_BLOCK) </td></tr>
+<tr>
+<td align="left">OP_METHOD"       &lt;td&gt; BB           &lt;td&gt; R(a) = lambda(SEQ[b],OP_L_METHOD)
+&lt;tr&gt;&lt;td align="left"&gt; OP_RANGE_INC'    &lt;td&gt; B            &lt;td&gt; R(a) = range_new(R(a),R(a+1),FALSE)
+&lt;tr&gt;&lt;td align="left"&gt; OP_RANGE_EXC'    &lt;td&gt; B            &lt;td&gt; R(a) = range_new(R(a),R(a+1),TRUE)
+&lt;tr&gt;&lt;td align="left"&gt; OP_OCLASS'       &lt;td&gt; B            &lt;td&gt; R(a) = ::Object
+&lt;tr&gt;&lt;td align="left"&gt; OP_CLASS" </td><td>BB </td><td>R(a) = newclass(R(a),Syms(b),R(a+1)) </td></tr>
+<tr>
+<td align="left">OP_MODULE"       &lt;td&gt; BB           &lt;td&gt; R(a) = newmodule(R(a),Syms(b))
+&lt;tr&gt;&lt;td align="left"&gt; OP_EXEC" </td><td>BB </td><td>R(a) = blockexec(R(a),SEQ[b]) </td></tr>
+<tr>
+<td align="left">OP_DEF"          &lt;td&gt; BB           &lt;td&gt; R(a).newmethod(Syms(b),R(a+1))
+&lt;tr&gt;&lt;td align="left"&gt; OP_ALIAS'        &lt;td&gt; B            &lt;td&gt; alias_method(R(a),R(a+1),R(a+2))
+&lt;tr&gt;&lt;td align="left"&gt; OP_UNDEF" </td><td>BB </td><td>undef_method(R(a),Syms(b)) </td></tr>
+<tr>
+<td align="left">OP_SCLASS' </td><td>B </td><td>R(a) = R(a).singleton_class </td></tr>
+<tr>
+<td align="left">OP_TCLASS' </td><td>B </td><td>R(a) = target_class </td></tr>
+<tr>
+<td align="left">OP_ERR' </td><td>B </td><td>raise(RuntimeError, Lit(Bx)) </td></tr>
+<tr>
+<td align="left">OP_EXT1 </td><td>- </td><td>make 1st operand 16bit </td></tr>
+<tr>
+<td align="left">OP_EXT2 </td><td>- </td><td>make 2nd operand 16bit </td></tr>
+<tr>
+<td align="left">OP_EXT3 </td><td>- </td><td>make 1st and 2nd operands 16bit </td></tr>
+<tr>
+<td align="left">OP_STOP </td><td>- </td><td>stop VM </td></tr>
+</table>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
