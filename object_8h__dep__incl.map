@@ -1,10 +1,10 @@
 <map id="include/mruby/object.h" name="include/mruby/object.h">
-<area shape="rect" id="node2" href="$value_8h.html" title="include/mruby/value.h" alt="" coords="149,80,299,107"/>
-<area shape="rect" id="node3" href="$mruby_8h.html" title="include/mruby.h" alt="" coords="167,155,281,181"/>
-<area shape="rect" id="node4" href="$value__array_8h_source.html" title="src/value_array.h" alt="" coords="5,229,128,256"/>
-<area shape="rect" id="node5" href="$compile_8h.html" title="include/mruby/compile.h" alt="" coords="203,229,365,256"/>
-<area shape="rect" id="node8" href="$dump_8h.html" title="include/mruby/dump.h" alt="" coords="143,379,294,405"/>
-<area shape="rect" id="node9" href="$khash_8h.html" title="include/mruby/khash.h" alt="" coords="366,304,519,331"/>
-<area shape="rect" id="node6" href="$irep_8h.html" title="include/mruby/irep.h" alt="" coords="203,304,341,331"/>
-<area shape="rect" id="node7" href="$proc_8h.html" title="include/mruby/proc.h" alt="" coords="345,379,487,405"/>
+<area shape="rect" id="node2" href="$value_8h.html" title="mruby value definitions " alt="" coords="130,80,279,107"/>
+<area shape="rect" id="node3" href="$mruby_8h.html" title="include/mruby.h" alt="" coords="147,155,262,181"/>
+<area shape="rect" id="node4" href="$compile_8h.html" title="mruby parser " alt="" coords="65,229,227,256"/>
+<area shape="rect" id="node7" href="$dump_8h.html" title="mruby binary dumper (mrbc binary format) " alt="" coords="5,379,156,405"/>
+<area shape="rect" id="node8" href="$khash_8h.html" title="Hash for mruby " alt="" coords="228,304,381,331"/>
+<area shape="rect" id="node9" href="$value__array_8h_source.html" title="src/value_array.h" alt="" coords="302,229,425,256"/>
+<area shape="rect" id="node5" href="$irep_8h.html" title="mrb_irep structure " alt="" coords="65,304,203,331"/>
+<area shape="rect" id="node6" href="$proc_8h.html" title="Proc class " alt="" coords="207,379,349,405"/>
 </map>

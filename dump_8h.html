@@ -73,6 +73,12 @@ $(function() {
 <div class="title">dump.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li>mruby binary dumper (mrbc binary format) </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="mruby_8h_source.html">mruby.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="irep_8h_source.html">mruby/irep.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
@@ -82,15 +88,15 @@ Include dependency graph for dump.h:</div>
 <div class="center"><img src="dump_8h__incl.png" border="0" usemap="#include_2mruby_2dump_8h" alt=""/></div>
 <map name="include_2mruby_2dump_8h" id="include_2mruby_2dump_8h">
 <area shape="rect" id="node2" href="mruby_8h.html" title="mruby.h" alt="" coords="401,229,471,256"/>
-<area shape="rect" id="node9" href="common_8h.html" title="mruby/common.h" alt="" coords="641,379,764,405"/>
-<area shape="rect" id="node16" href="irep_8h.html" title="mruby/irep.h" alt="" coords="677,80,771,107"/>
+<area shape="rect" id="node9" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="641,379,764,405"/>
+<area shape="rect" id="node16" href="irep_8h.html" title="mrb_irep structure " alt="" coords="677,80,771,107"/>
 <area shape="rect" id="node7" href="mrbconf_8h_source.html" title="mrbconf.h" alt="" coords="84,304,164,331"/>
-<area shape="rect" id="node10" href="value_8h.html" title="mruby/value.h" alt="" coords="879,304,983,331"/>
-<area shape="rect" id="node14" href="gc_8h.html" title="mruby/gc.h" alt="" coords="290,304,377,331"/>
-<area shape="rect" id="node15" href="version_8h.html" title="mruby/version.h" alt="" coords="495,304,609,331"/>
-<area shape="rect" id="node12" href="object_8h.html" title="mruby/object.h" alt="" coords="789,379,897,405"/>
-<area shape="rect" id="node13" href="boxing__no_8h.html" title="boxing_no.h" alt="" coords="921,379,1013,405"/>
-<area shape="rect" id="node17" href="compile_8h.html" title="mruby/compile.h" alt="" coords="634,155,753,181"/>
+<area shape="rect" id="node10" href="value_8h.html" title="mruby value definitions " alt="" coords="879,304,983,331"/>
+<area shape="rect" id="node14" href="gc_8h.html" title="garbage collector for mruby " alt="" coords="290,304,377,331"/>
+<area shape="rect" id="node15" href="version_8h.html" title="mruby version definition " alt="" coords="495,304,609,331"/>
+<area shape="rect" id="node12" href="object_8h.html" title="mruby object definition " alt="" coords="789,379,897,405"/>
+<area shape="rect" id="node13" href="boxing__no_8h.html" title="unboxed mrb_value definition " alt="" coords="921,379,1013,405"/>
+<area shape="rect" id="node17" href="compile_8h.html" title="mruby parser " alt="" coords="634,155,753,181"/>
 </map>
 </div>
 </div>
@@ -113,7 +119,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a2e1a518d6f2e82c3ca1820ee74640b66"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dump_8h.html#a2e1a518d6f2e82c3ca1820ee74640b66">DUMP_DEBUG_INFO</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a2e1a518d6f2e82c3ca1820ee74640b66"><td class="memItemLeft" align="right" valign="top"><a id="a2e1a518d6f2e82c3ca1820ee74640b66"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dump_8h.html#a2e1a518d6f2e82c3ca1820ee74640b66">DUMP_DEBUG_INFO</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a2e1a518d6f2e82c3ca1820ee74640b66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumping compiled mruby script. <br /></td></tr>
 <tr class="separator:a2e1a518d6f2e82c3ca1820ee74640b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6de8af4b3704d7f98ae033c06481a21a"><td class="memItemLeft" align="right" valign="top"><a id="a6de8af4b3704d7f98ae033c06481a21a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DUMP_ENDIAN_BIG</b>&#160;&#160;&#160;2</td></tr>
@@ -255,25 +263,10 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>calc_crc_16_ccitt
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li>mruby binary dumper (mrbc binary format)</li>
+<li>mruby binary dumper (mrbc binary format) </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a2e1a518d6f2e82c3ca1820ee74640b66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e1a518d6f2e82c3ca1820ee74640b66">&#9670;&nbsp;</a></span>DUMP_DEBUG_INFO</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DUMP_DEBUG_INFO&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Dumping compiled mruby script. </p>
-
-</div>
-</div>
 <a id="ab41271011ba4d1ac8117c2f11aae6b8c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab41271011ba4d1ac8117c2f11aae6b8c">&#9670;&nbsp;</a></span>RITE_SECTION_HEADER</h2>
 

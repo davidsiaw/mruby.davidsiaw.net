@@ -28,5 +28,6 @@ var searchData=
   ['mrb_5fstate',['mrb_state',['../structmrb__state.html',1,'']]],
   ['mrb_5fsym',['mrb_sym',['../classmrb__sym.html',1,'']]],
   ['mrb_5fvalue',['mrb_value',['../structmrb__value.html',1,'']]],
+  ['mrb_5fvalue_5fvalue',['mrb_value_value',['../unionmrb__value__value.html',1,'']]],
   ['mrbc_5fcontext',['mrbc_context',['../structmrbc__context.html',1,'']]]
 ];

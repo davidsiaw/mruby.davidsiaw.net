@@ -75,6 +75,12 @@ $(function() {
 <div class="title">irep.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li><a class="el" href="structmrb__irep.html">mrb_irep</a> structure </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="compile_8h_source.html">mruby/compile.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -82,15 +88,15 @@ Include dependency graph for irep.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="irep_8h__incl.png" border="0" usemap="#include_2mruby_2irep_8h" alt=""/></div>
 <map name="include_2mruby_2irep_8h" id="include_2mruby_2irep_8h">
-<area shape="rect" id="node2" href="common_8h.html" title="common.h" alt="" coords="124,304,207,331"/>
-<area shape="rect" id="node3" href="compile_8h.html" title="mruby/compile.h" alt="" coords="65,80,183,107"/>
+<area shape="rect" id="node2" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="124,304,207,331"/>
+<area shape="rect" id="node3" href="compile_8h.html" title="mruby parser " alt="" coords="65,80,183,107"/>
 <area shape="rect" id="node4" href="mruby_8h.html" title="mruby.h" alt="" coords="488,155,557,181"/>
 <area shape="rect" id="node9" href="mrbconf_8h_source.html" title="mrbconf.h" alt="" coords="688,229,768,256"/>
-<area shape="rect" id="node11" href="value_8h.html" title="mruby/value.h" alt="" coords="416,229,520,256"/>
-<area shape="rect" id="node15" href="gc_8h.html" title="mruby/gc.h" alt="" coords="166,229,253,256"/>
-<area shape="rect" id="node16" href="version_8h.html" title="mruby/version.h" alt="" coords="277,229,392,256"/>
-<area shape="rect" id="node13" href="object_8h.html" title="mruby/object.h" alt="" coords="365,304,473,331"/>
-<area shape="rect" id="node14" href="boxing__no_8h.html" title="boxing_no.h" alt="" coords="497,304,589,331"/>
+<area shape="rect" id="node11" href="value_8h.html" title="mruby value definitions " alt="" coords="416,229,520,256"/>
+<area shape="rect" id="node15" href="gc_8h.html" title="garbage collector for mruby " alt="" coords="166,229,253,256"/>
+<area shape="rect" id="node16" href="version_8h.html" title="mruby version definition " alt="" coords="277,229,392,256"/>
+<area shape="rect" id="node13" href="object_8h.html" title="mruby object definition " alt="" coords="365,304,473,331"/>
+<area shape="rect" id="node14" href="boxing__no_8h.html" title="unboxed mrb_value definition " alt="" coords="497,304,589,331"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -98,8 +104,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="irep_8h__dep__incl.png" border="0" usemap="#include_2mruby_2irep_8hdep" alt=""/></div>
 <map name="include_2mruby_2irep_8hdep" id="include_2mruby_2irep_8hdep">
-<area shape="rect" id="node2" href="proc_8h.html" title="include/mruby/proc.h" alt="" coords="5,80,148,107"/>
-<area shape="rect" id="node3" href="dump_8h.html" title="include/mruby/dump.h" alt="" coords="172,80,323,107"/>
+<area shape="rect" id="node2" href="proc_8h.html" title="Proc class " alt="" coords="5,80,148,107"/>
+<area shape="rect" id="node3" href="dump_8h.html" title="mruby binary dumper (mrbc binary format) " alt="" coords="172,80,323,107"/>
 </map>
 </div>
 </div>
@@ -128,10 +134,11 @@ typedef struct <a class="el" href="structmrb__irep.html">mrb_irep</a>&#160;</td>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ad3d57b021c4c2292cb2f5f7f2c4241d8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irep_8h.html#ad3d57b021c4c2292cb2f5f7f2c4241d8">irep_pool_type</a> { <b>IREP_TT_STRING</b>, 
+<tr class="memitem:ad3d57b021c4c2292cb2f5f7f2c4241d8"><td class="memItemLeft" align="right" valign="top"><a id="ad3d57b021c4c2292cb2f5f7f2c4241d8"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="irep_8h.html#ad3d57b021c4c2292cb2f5f7f2c4241d8">irep_pool_type</a> { <b>IREP_TT_STRING</b>, 
 <b>IREP_TT_FIXNUM</b>, 
 <b>IREP_TT_FLOAT</b>
- }</td></tr>
+ }<tr class="memdesc:ad3d57b021c4c2292cb2f5f7f2c4241d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compiled mruby scripts. <br /></td></tr>
+</td></tr>
 <tr class="separator:ad3d57b021c4c2292cb2f5f7f2c4241d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -166,32 +173,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_irep_cutref</b> (
 <tr class="memitem:a30880d1b1b5899f467ac267ed15f8e90"><td class="memItemLeft" align="right" valign="top"><a id="a30880d1b1b5899f467ac267ed15f8e90"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_irep_remove_lv</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__irep.html">mrb_irep</a> *irep)</td></tr>
 <tr class="separator:a30880d1b1b5899f467ac267ed15f8e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbd7117dbcac7bd4252c8c95ae2a70e3"><td class="memItemLeft" align="right" valign="top"><a id="afbd7117dbcac7bd4252c8c95ae2a70e3"></a>
-struct <a class="el" href="structmrb__insn__data.html">mrb_insn_data</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_decode_insn</b> (<a class="el" href="mruby_8h.html#a4b44aedddab10fb6616569ee56d77a32">mrb_code</a> *pc)</td></tr>
-<tr class="separator:afbd7117dbcac7bd4252c8c95ae2a70e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37db32ce8532b89168490a90354fefff"><td class="memItemLeft" align="right" valign="top"><a id="a37db32ce8532b89168490a90354fefff"></a>
+struct <a class="el" href="structmrb__insn__data.html">mrb_insn_data</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_decode_insn</b> (const <a class="el" href="mruby_8h.html#a4b44aedddab10fb6616569ee56d77a32">mrb_code</a> *pc)</td></tr>
+<tr class="separator:a37db32ce8532b89168490a90354fefff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li><a class="el" href="structmrb__irep.html">mrb_irep</a> structure</li>
+<li><a class="el" href="structmrb__irep.html">mrb_irep</a> structure </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ad3d57b021c4c2292cb2f5f7f2c4241d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3d57b021c4c2292cb2f5f7f2c4241d8">&#9670;&nbsp;</a></span>irep_pool_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="irep_8h.html#ad3d57b021c4c2292cb2f5f7f2c4241d8">irep_pool_type</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Compiled mruby scripts. </p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,5 +1,5 @@
 <map id="include/mruby/string.h" name="include/mruby/string.h">
-<area shape="rect" id="node2" href="$khash_8h.html" title="include/mruby/khash.h" alt="" coords="5,80,159,107"/>
-<area shape="rect" id="node4" href="$istruct_8h.html" title="include/mruby/istruct.h" alt="" coords="183,80,338,107"/>
-<area shape="rect" id="node3" href="$proc_8h.html" title="include/mruby/proc.h" alt="" coords="11,155,153,181"/>
+<area shape="rect" id="node2" href="$khash_8h.html" title="Hash for mruby " alt="" coords="5,80,159,107"/>
+<area shape="rect" id="node4" href="$istruct_8h.html" title="Inline structures " alt="" coords="183,80,338,107"/>
+<area shape="rect" id="node3" href="$proc_8h.html" title="Proc class " alt="" coords="11,155,153,181"/>
 </map>

@@ -1,22 +1,23 @@
 <map id="RBasic" name="RBasic">
-<area shape="rect" id="node5" href="$structRProc.html" title="RProc" alt="" coords="481,377,539,404"/>
-<area shape="rect" id="node6" href="$structmrb__value.html" title="mrb_value" alt="" coords="791,184,874,211"/>
-<area shape="rect" id="node9" href="$structREnv.html" title="REnv" alt="" coords="672,951,727,978"/>
-<area shape="rect" id="node12" href="$structRFiber.html" title="RFiber" alt="" coords="737,764,798,791"/>
-<area shape="rect" id="node2" href="$structRClass.html" title="RClass" alt="" coords="541,675,607,701"/>
-<area shape="rect" id="node11" href="$structmrb__callinfo.html" title="mrb_callinfo" alt="" coords="653,1049,745,1076"/>
-<area shape="rect" id="node3" href="$structkh__mt.html" title="kh_mt" alt="" coords="545,585,603,612"/>
-<area shape="rect" id="node4" href="$structmrb__method__t.html" title="mrb_method_t" alt="" coords="507,467,612,493"/>
-<area shape="rect" id="node10" href="$structmrb__context.html" title="mrb_context" alt="" coords="744,853,839,880"/>
-<area shape="rect" id="node13" href="$structmrb__irep.html" title="mrb_irep" alt="" coords="347,288,419,315"/>
-<area shape="rect" id="node20" href="$structsegment.html" title="segment" alt="" coords="737,377,809,404"/>
-<area shape="rect" id="node21" href="$structsegkv.html" title="segkv" alt="" coords="739,288,796,315"/>
-<area shape="rect" id="node7" href="$structRCptr.html" title="RCptr" alt="" coords="804,95,861,121"/>
-<area shape="rect" id="node8" href="$structRFloat.html" title="RFloat" alt="" coords="1111,95,1173,121"/>
-<area shape="rect" id="node14" href="$structmrb__locals.html" title="mrb_locals" alt="" coords="445,184,530,211"/>
-<area shape="rect" id="node15" href="$structmrb__irep__debug__info.html" title="mrb_irep_debug_info" alt="" coords="277,184,420,211"/>
-<area shape="rect" id="node16" href="$structmrb__irep__debug__info__file.html" title="mrb_irep_debug_info_file" alt="" coords="7,95,173,121"/>
-<area shape="rect" id="node17" href="$structmrb__irep__debug__info__line.html" title="mrb_irep_debug_info_line" alt="" coords="5,5,175,32"/>
-<area shape="rect" id="node18" href="$classmrb__sym.html" title="mruby Symbol " alt="" coords="177,184,253,211"/>
-<area shape="rect" id="node19" href="$structiv__tbl.html" title="iv_tbl" alt="" coords="746,526,799,553"/>
+<area shape="rect" id="node5" href="$structRProc.html" title="RProc" alt="" coords="563,377,621,404"/>
+<area shape="rect" id="node6" href="$structmrb__value.html" title="mrb_value" alt="" coords="359,184,441,211"/>
+<area shape="rect" id="node10" href="$structREnv.html" title="Proc class. " alt="" coords="315,951,370,978"/>
+<area shape="rect" id="node13" href="$structRFiber.html" title="RFiber" alt="" coords="43,764,104,791"/>
+<area shape="rect" id="node2" href="$structRClass.html" title="Class class. " alt="" coords="352,675,419,701"/>
+<area shape="rect" id="node12" href="$structmrb__callinfo.html" title="mrb_callinfo" alt="" coords="522,1049,614,1076"/>
+<area shape="rect" id="node3" href="$structkh__mt.html" title="kh_mt" alt="" coords="424,585,483,612"/>
+<area shape="rect" id="node4" href="$structmrb__method__t.html" title="mrb_method_t" alt="" coords="437,467,542,493"/>
+<area shape="rect" id="node11" href="$structmrb__context.html" title="mrb_context" alt="" coords="101,853,195,880"/>
+<area shape="rect" id="node14" href="$structmrb__irep.html" title="mrb_irep" alt="" coords="740,288,812,315"/>
+<area shape="rect" id="node21" href="$structsegment.html" title="segment" alt="" coords="271,377,343,404"/>
+<area shape="rect" id="node22" href="$structsegkv.html" title="segkv" alt="" coords="338,288,395,315"/>
+<area shape="rect" id="node7" href="$structRCptr.html" title="RCptr" alt="" coords="335,95,393,121"/>
+<area shape="rect" id="node8" href="$structRFloat.html" title="RFloat" alt="" coords="417,95,479,121"/>
+<area shape="rect" id="node9" href="$unionmrb__value__value.html" title="mrb_value_value" alt="" coords="665,95,785,121"/>
+<area shape="rect" id="node15" href="$structmrb__locals.html" title="mrb_locals" alt="" coords="987,184,1072,211"/>
+<area shape="rect" id="node16" href="$structmrb__irep__debug__info.html" title="mrb_irep_debug_info" alt="" coords="819,184,962,211"/>
+<area shape="rect" id="node17" href="$structmrb__irep__debug__info__file.html" title="mrb_irep_debug_info_file" alt="" coords="810,95,977,121"/>
+<area shape="rect" id="node18" href="$structmrb__irep__debug__info__line.html" title="mrb_irep_debug_info_line" alt="" coords="809,5,978,32"/>
+<area shape="rect" id="node19" href="$classmrb__sym.html" title="mruby Symbol. " alt="" coords="719,184,795,211"/>
+<area shape="rect" id="node20" href="$structiv__tbl.html" title="iv_tbl" alt="" coords="327,526,380,553"/>
 </map>

@@ -74,6 +74,12 @@ $(function() {
 <div class="title">khash.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li>Hash for mruby </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="string_8h_source.html">string.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="mruby_8h_source.html">mruby.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
@@ -82,15 +88,15 @@ Include dependency graph for khash.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="khash_8h__incl.png" border="0" usemap="#include_2mruby_2khash_8h" alt=""/></div>
 <map name="include_2mruby_2khash_8h" id="include_2mruby_2khash_8h">
-<area shape="rect" id="node2" href="string_8h.html" title="string.h" alt="" coords="49,80,115,107"/>
-<area shape="rect" id="node3" href="common_8h.html" title="common.h" alt="" coords="109,229,191,256"/>
+<area shape="rect" id="node2" href="string_8h.html" title="String class " alt="" coords="49,80,115,107"/>
+<area shape="rect" id="node3" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="109,229,191,256"/>
 <area shape="rect" id="node4" href="mruby_8h.html" title="mruby.h" alt="" coords="473,80,542,107"/>
 <area shape="rect" id="node9" href="mrbconf_8h_source.html" title="mrbconf.h" alt="" coords="673,155,753,181"/>
-<area shape="rect" id="node11" href="value_8h.html" title="mruby/value.h" alt="" coords="401,155,505,181"/>
-<area shape="rect" id="node15" href="gc_8h.html" title="mruby/gc.h" alt="" coords="151,155,237,181"/>
-<area shape="rect" id="node16" href="version_8h.html" title="mruby/version.h" alt="" coords="262,155,377,181"/>
-<area shape="rect" id="node13" href="object_8h.html" title="mruby/object.h" alt="" coords="349,229,457,256"/>
-<area shape="rect" id="node14" href="boxing__no_8h.html" title="boxing_no.h" alt="" coords="481,229,573,256"/>
+<area shape="rect" id="node11" href="value_8h.html" title="mruby value definitions " alt="" coords="401,155,505,181"/>
+<area shape="rect" id="node15" href="gc_8h.html" title="garbage collector for mruby " alt="" coords="151,155,237,181"/>
+<area shape="rect" id="node16" href="version_8h.html" title="mruby version definition " alt="" coords="262,155,377,181"/>
+<area shape="rect" id="node13" href="object_8h.html" title="mruby object definition " alt="" coords="349,229,457,256"/>
+<area shape="rect" id="node14" href="boxing__no_8h.html" title="unboxed mrb_value definition " alt="" coords="481,229,573,256"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -98,7 +104,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="khash_8h__dep__incl.png" border="0" usemap="#include_2mruby_2khash_8hdep" alt=""/></div>
 <map name="include_2mruby_2khash_8hdep" id="include_2mruby_2khash_8hdep">
-<area shape="rect" id="node2" href="proc_8h.html" title="include/mruby/proc.h" alt="" coords="11,80,153,107"/>
+<area shape="rect" id="node2" href="proc_8h.html" title="Proc class " alt="" coords="11,80,153,107"/>
 </map>
 </div>
 </div>
@@ -215,7 +221,9 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a16631ac6535cfad33ad40ad038d05911"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a></td></tr>
+<tr class="memitem:a16631ac6535cfad33ad40ad038d05911"><td class="memItemLeft" align="right" valign="top"><a id="a16631ac6535cfad33ad40ad038d05911"></a>
+typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a></td></tr>
+<tr class="memdesc:a16631ac6535cfad33ad40ad038d05911"><td class="mdescLeft">&#160;</td><td class="mdescRight">khash definitions used in mruby's hash table. <br /></td></tr>
 <tr class="separator:a16631ac6535cfad33ad40ad038d05911"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3583e51109969a55bff12293f468da5e"><td class="memItemLeft" align="right" valign="top"><a id="a3583e51109969a55bff12293f468da5e"></a>
 typedef <a class="el" href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>khiter_t</b></td></tr>
@@ -247,7 +255,7 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>__m_e
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li>Hash for mruby</li>
+<li>Hash for mruby </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -288,8 +296,8 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>__m_e
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>kh_##name {                                            \</div><div class="line">    khint_t n_buckets;                                                  \</div><div class="line">    khint_t size;                                                       \</div><div class="line">    khint_t n_occupied;                                                 \</div><div class="line">    uint8_t *ed_flags;                                                  \</div><div class="line">    khkey_t *keys;                                                      \</div><div class="line">    khval_t *vals;                                                      \</div><div class="line">  } kh_##name##_t;                                                      \</div><div class="line">  void kh_alloc_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h);               \</div><div class="line">  kh_##name##_t *kh_init_##name##_size(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, <a class="code" href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a> size);   \</div><div class="line">  kh_##name##_t *kh_init_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb);                        \</div><div class="line">  void kh_destroy_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h);             \</div><div class="line">  void kh_clear_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h);               \</div><div class="line">  khint_t kh_get_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h, khkey_t key);           \</div><div class="line">  khint_t kh_put_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h, khkey_t key, <span class="keywordtype">int</span> *ret); \</div><div class="line">  void kh_resize_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h, <a class="code" href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a> new_n_buckets); \</div><div class="line">  void kh_del_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h, <a class="code" href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a> x);                \</div><div class="line">  kh_##name##_t *kh_copy_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h);</div><div class="ttc" id="khash_8h_html_a16631ac6535cfad33ad40ad038d05911"><div class="ttname"><a href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a></div><div class="ttdeci">uint32_t khint_t</div><div class="ttdef"><b>Definition:</b> khash.h:20</div></div>
-<div class="ttc" id="structmrb__state_html"><div class="ttname"><a href="structmrb__state.html">mrb_state</a></div><div class="ttdef"><b>Definition:</b> mruby.h:206</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>kh_##name {                                            \</div><div class="line">    khint_t n_buckets;                                                  \</div><div class="line">    khint_t size;                                                       \</div><div class="line">    khint_t n_occupied;                                                 \</div><div class="line">    uint8_t *ed_flags;                                                  \</div><div class="line">    khkey_t *keys;                                                      \</div><div class="line">    khval_t *vals;                                                      \</div><div class="line">  } kh_##name##_t;                                                      \</div><div class="line">  void kh_alloc_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h);               \</div><div class="line">  kh_##name##_t *kh_init_##name##_size(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, <a class="code" href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a> size);   \</div><div class="line">  kh_##name##_t *kh_init_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb);                        \</div><div class="line">  void kh_destroy_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h);             \</div><div class="line">  void kh_clear_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h);               \</div><div class="line">  khint_t kh_get_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h, khkey_t key);           \</div><div class="line">  khint_t kh_put_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h, khkey_t key, <span class="keywordtype">int</span> *ret); \</div><div class="line">  void kh_resize_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h, <a class="code" href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a> new_n_buckets); \</div><div class="line">  void kh_del_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h, <a class="code" href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a> x);                \</div><div class="line">  kh_##name##_t *kh_copy_##name(<a class="code" href="structmrb__state.html">mrb_state</a> *mrb, kh_##name##_t *h);</div><div class="ttc" id="khash_8h_html_a16631ac6535cfad33ad40ad038d05911"><div class="ttname"><a href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a></div><div class="ttdeci">uint32_t khint_t</div><div class="ttdoc">khash definitions used in mruby&amp;#39;s hash table. </div><div class="ttdef"><b>Definition:</b> khash.h:20</div></div>
+<div class="ttc" id="structmrb__state_html"><div class="ttname"><a href="structmrb__state.html">mrb_state</a></div><div class="ttdef"><b>Definition:</b> mruby.h:215</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -309,22 +317,6 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>__m_e
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { \</div><div class="line">  v--;\</div><div class="line">  v |= v &gt;&gt; 1;\</div><div class="line">  v |= v &gt;&gt; 2;\</div><div class="line">  v |= v &gt;&gt; 4;\</div><div class="line">  v |= v &gt;&gt; 8;\</div><div class="line">  v |= v &gt;&gt; 16;\</div><div class="line">  v++;\</div><div class="line">} <span class="keywordflow">while</span> (0)</div></div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a16631ac6535cfad33ad40ad038d05911"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16631ac6535cfad33ad40ad038d05911">&#9670;&nbsp;</a></span>khint_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef uint32_t <a class="el" href="khash_8h.html#a16631ac6535cfad33ad40ad038d05911">khint_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>khash definitions used in mruby's hash table. </p>
-
 </div>
 </div>
 </div><!-- contents -->

@@ -1,11 +1,11 @@
 <map id="include/mruby/khash.h" name="include/mruby/khash.h">
-<area shape="rect" id="node2" href="$string_8h.html" title="string.h" alt="" coords="49,80,115,107"/>
-<area shape="rect" id="node3" href="$common_8h.html" title="common.h" alt="" coords="109,229,191,256"/>
+<area shape="rect" id="node2" href="$string_8h.html" title="String class " alt="" coords="49,80,115,107"/>
+<area shape="rect" id="node3" href="$common_8h.html" title="mruby common platform definition&quot; " alt="" coords="109,229,191,256"/>
 <area shape="rect" id="node4" href="$mruby_8h.html" title="mruby.h" alt="" coords="473,80,542,107"/>
 <area shape="rect" id="node9" href="$mrbconf_8h_source.html" title="mrbconf.h" alt="" coords="673,155,753,181"/>
-<area shape="rect" id="node11" href="$value_8h.html" title="mruby/value.h" alt="" coords="401,155,505,181"/>
-<area shape="rect" id="node15" href="$gc_8h.html" title="mruby/gc.h" alt="" coords="151,155,237,181"/>
-<area shape="rect" id="node16" href="$version_8h.html" title="mruby/version.h" alt="" coords="262,155,377,181"/>
-<area shape="rect" id="node13" href="$object_8h.html" title="mruby/object.h" alt="" coords="349,229,457,256"/>
-<area shape="rect" id="node14" href="$boxing__no_8h.html" title="boxing_no.h" alt="" coords="481,229,573,256"/>
+<area shape="rect" id="node11" href="$value_8h.html" title="mruby value definitions " alt="" coords="401,155,505,181"/>
+<area shape="rect" id="node15" href="$gc_8h.html" title="garbage collector for mruby " alt="" coords="151,155,237,181"/>
+<area shape="rect" id="node16" href="$version_8h.html" title="mruby version definition " alt="" coords="262,155,377,181"/>
+<area shape="rect" id="node13" href="$object_8h.html" title="mruby object definition " alt="" coords="349,229,457,256"/>
+<area shape="rect" id="node14" href="$boxing__no_8h.html" title="unboxed mrb_value definition " alt="" coords="481,229,573,256"/>
 </map>

@@ -1,24 +1,24 @@
 <map id="include/mruby/common.h" name="include/mruby/common.h">
-<area shape="rect" id="node2" href="$mruby_8h.html" title="include/mruby.h" alt="" coords="347,155,461,181"/>
-<area shape="rect" id="node4" href="$compile_8h.html" title="include/mruby/compile.h" alt="" coords="445,229,608,256"/>
-<area shape="rect" id="node5" href="$irep_8h.html" title="include/mruby/irep.h" alt="" coords="379,304,517,331"/>
-<area shape="rect" id="node6" href="$proc_8h.html" title="include/mruby/proc.h" alt="" coords="638,379,781,405"/>
-<area shape="rect" id="node7" href="$dump_8h.html" title="include/mruby/dump.h" alt="" coords="186,379,337,405"/>
-<area shape="rect" id="node8" href="$khash_8h.html" title="include/mruby/khash.h" alt="" coords="633,229,786,256"/>
-<area shape="rect" id="node9" href="$value_8h.html" title="include/mruby/value.h" alt="" coords="485,80,635,107"/>
-<area shape="rect" id="node10" href="$gc_8h.html" title="include/mruby/gc.h" alt="" coords="94,80,226,107"/>
-<area shape="rect" id="node11" href="$version_8h.html" title="include/mruby/version.h" alt="" coords="251,80,411,107"/>
-<area shape="rect" id="node12" href="$array_8h.html" title="include/mruby/array.h" alt="" coords="811,80,957,107"/>
-<area shape="rect" id="node13" href="$class_8h.html" title="include/mruby/class.h" alt="" coords="981,80,1131,107"/>
-<area shape="rect" id="node14" href="$string_8h.html" title="include/mruby/string.h" alt="" coords="1155,80,1306,107"/>
-<area shape="rect" id="node15" href="$istruct_8h.html" title="include/mruby/istruct.h" alt="" coords="1209,155,1364,181"/>
-<area shape="rect" id="node16" href="$range_8h.html" title="include/mruby/range.h" alt="" coords="1382,80,1533,107"/>
-<area shape="rect" id="node17" href="$variable_8h.html" title="include/mruby/variable.h" alt="" coords="1557,80,1720,107"/>
-<area shape="rect" id="node18" href="$debug_8h.html" title="include/mruby/debug.h" alt="" coords="1745,80,1898,107"/>
-<area shape="rect" id="node19" href="$include_2mruby_2error_8h.html" title="include/mruby/error.h" alt="" coords="1923,80,2067,107"/>
-<area shape="rect" id="node21" href="$numeric_8h.html" title="include/mruby/numeric.h" alt="" coords="2091,80,2255,107"/>
-<area shape="rect" id="node22" href="$data_8h.html" title="include/mruby/data.h" alt="" coords="2279,80,2422,107"/>
-<area shape="rect" id="node23" href="$hash_8h.html" title="include/mruby/hash.h" alt="" coords="2447,80,2593,107"/>
-<area shape="rect" id="node3" href="$value__array_8h_source.html" title="src/value_array.h" alt="" coords="299,229,421,256"/>
+<area shape="rect" id="node2" href="$mruby_8h.html" title="include/mruby.h" alt="" coords="365,155,480,181"/>
+<area shape="rect" id="node3" href="$compile_8h.html" title="mruby parser " alt="" coords="137,229,300,256"/>
+<area shape="rect" id="node4" href="$irep_8h.html" title="mrb_irep structure " alt="" coords="149,304,288,331"/>
+<area shape="rect" id="node5" href="$proc_8h.html" title="Proc class " alt="" coords="147,379,290,405"/>
+<area shape="rect" id="node6" href="$dump_8h.html" title="mruby binary dumper (mrbc binary format) " alt="" coords="337,379,487,405"/>
+<area shape="rect" id="node7" href="$khash_8h.html" title="Hash for mruby " alt="" coords="621,229,774,256"/>
+<area shape="rect" id="node9" href="$value_8h.html" title="mruby value definitions " alt="" coords="195,80,344,107"/>
+<area shape="rect" id="node10" href="$gc_8h.html" title="garbage collector for mruby " alt="" coords="369,80,501,107"/>
+<area shape="rect" id="node11" href="$version_8h.html" title="mruby version definition " alt="" coords="525,80,685,107"/>
+<area shape="rect" id="node12" href="$array_8h.html" title="Array class " alt="" coords="1037,80,1184,107"/>
+<area shape="rect" id="node13" href="$class_8h.html" title="Class class " alt="" coords="1208,80,1357,107"/>
+<area shape="rect" id="node14" href="$string_8h.html" title="String class " alt="" coords="761,80,911,107"/>
+<area shape="rect" id="node15" href="$istruct_8h.html" title="Inline structures " alt="" coords="808,155,963,181"/>
+<area shape="rect" id="node16" href="$range_8h.html" title="Range class " alt="" coords="1382,80,1533,107"/>
+<area shape="rect" id="node17" href="$variable_8h.html" title="mruby variables " alt="" coords="1557,80,1720,107"/>
+<area shape="rect" id="node18" href="$debug_8h.html" title="mruby debug info " alt="" coords="1745,80,1898,107"/>
+<area shape="rect" id="node19" href="$include_2mruby_2error_8h.html" title="Exception class " alt="" coords="1923,80,2067,107"/>
+<area shape="rect" id="node21" href="$numeric_8h.html" title="Numeric, Integer, Float, Fixnum class " alt="" coords="2091,80,2255,107"/>
+<area shape="rect" id="node22" href="$data_8h.html" title="Data class " alt="" coords="2279,80,2422,107"/>
+<area shape="rect" id="node23" href="$hash_8h.html" title="Hash class " alt="" coords="2447,80,2593,107"/>
+<area shape="rect" id="node8" href="$value__array_8h_source.html" title="src/value_array.h" alt="" coords="449,229,572,256"/>
 <area shape="rect" id="node20" href="$src_2error_8h_source.html" title="src/error.h" alt="" coords="1954,155,2035,181"/>
 </map>

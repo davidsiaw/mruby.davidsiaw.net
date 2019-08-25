@@ -73,13 +73,19 @@ $(function() {
 <div class="title">variable.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li>mruby variables </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for variable.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="variable_8h__incl.png" border="0" usemap="#include_2mruby_2variable_8h" alt=""/></div>
 <map name="include_2mruby_2variable_8h" id="include_2mruby_2variable_8h">
-<area shape="rect" id="node2" href="common_8h.html" title="common.h" alt="" coords="45,80,128,107"/>
+<area shape="rect" id="node2" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="45,80,128,107"/>
 </map>
 </div>
 </div>
@@ -88,13 +94,16 @@ Include dependency graph for variable.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal__variable.html">global_variable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to access mruby variables.  <a href="structglobal__variable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal__entry.html">global_entry</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a8f9b178e0a3400f4fadb7e87f4f387d0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structglobal__variable.html">global_variable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="variable_8h.html#a8f9b178e0a3400f4fadb7e87f4f387d0">global_variable</a></td></tr>
+<tr class="memitem:a8f9b178e0a3400f4fadb7e87f4f387d0"><td class="memItemLeft" align="right" valign="top"><a id="a8f9b178e0a3400f4fadb7e87f4f387d0"></a>
+typedef struct <a class="el" href="structglobal__variable.html">global_variable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="variable_8h.html#a8f9b178e0a3400f4fadb7e87f4f387d0">global_variable</a></td></tr>
+<tr class="memdesc:a8f9b178e0a3400f4fadb7e87f4f387d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to access mruby variables. <br /></td></tr>
 <tr class="separator:a8f9b178e0a3400f4fadb7e87f4f387d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab20946f4b87aac842b8e42e227fc787a"><td class="memItemLeft" align="right" valign="top"><a id="ab20946f4b87aac842b8e42e227fc787a"></a>
 typedef int()&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_iv_foreach_func</b>(<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="classmrb__sym.html">mrb_sym</a>, <a class="el" href="structmrb__value.html">mrb_value</a>, void *)</td></tr>
@@ -166,10 +175,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_iv_copy</b> (<a c
 <a class="el" href="classmrb__bool.html">mrb_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_const_defined_at</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> mod, <a class="el" href="classmrb__sym.html">mrb_sym</a> id)</td></tr>
 <tr class="separator:a05f8a87072272f1071691d9bc90a8371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac22ce8c1be944162ad6bac9a3116461c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="variable_8h.html#ac22ce8c1be944162ad6bac9a3116461c">mrb_gv_get</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="classmrb__sym.html">mrb_sym</a> sym)</td></tr>
+<tr class="memdesc:ac22ce8c1be944162ad6bac9a3116461c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a global variable.  <a href="#ac22ce8c1be944162ad6bac9a3116461c">More...</a><br /></td></tr>
 <tr class="separator:ac22ce8c1be944162ad6bac9a3116461c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72305db9aed7135a348542cfbfac24ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="variable_8h.html#a72305db9aed7135a348542cfbfac24ee">mrb_gv_set</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="classmrb__sym.html">mrb_sym</a> sym, <a class="el" href="structmrb__value.html">mrb_value</a> val)</td></tr>
+<tr class="memdesc:a72305db9aed7135a348542cfbfac24ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a global variable.  <a href="#a72305db9aed7135a348542cfbfac24ee">More...</a><br /></td></tr>
 <tr class="separator:a72305db9aed7135a348542cfbfac24ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c85c0f3ba2f2c85f2fe62c392a5057b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="variable_8h.html#a5c85c0f3ba2f2c85f2fe62c392a5057b">mrb_gv_remove</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="classmrb__sym.html">mrb_sym</a> sym)</td></tr>
+<tr class="memdesc:a5c85c0f3ba2f2c85f2fe62c392a5057b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a global variable.  <a href="#a5c85c0f3ba2f2c85f2fe62c392a5057b">More...</a><br /></td></tr>
 <tr class="separator:a5c85c0f3ba2f2c85f2fe62c392a5057b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad962fb983db01a1811ddf0a4180e9fef"><td class="memItemLeft" align="right" valign="top"><a id="ad962fb983db01a1811ddf0a4180e9fef"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_cv_get</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> mod, <a class="el" href="classmrb__sym.html">mrb_sym</a> sym)</td></tr>
@@ -231,26 +243,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_iv_foreach</b> (<
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li>mruby variables</li>
+<li>mruby variables </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a8f9b178e0a3400f4fadb7e87f4f387d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f9b178e0a3400f4fadb7e87f4f387d0">&#9670;&nbsp;</a></span>global_variable</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structglobal__variable.html">global_variable</a>  <a class="el" href="structglobal__variable.html">global_variable</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Functions to access mruby variables. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ac22ce8c1be944162ad6bac9a3116461c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac22ce8c1be944162ad6bac9a3116461c">&#9670;&nbsp;</a></span>mrb_gv_get()</h2>
 
@@ -276,7 +272,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_iv_foreach</b> (<
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get a global variable. Will return nil if the var does not exist</p>
+
+<p>Get a global variable. </p>
+<p>Will return nil if the var does not exist</p>
 <p>Example: </p><pre class="fragment">!!!ruby
 # Ruby style
 var = $value
@@ -321,12 +319,11 @@ mrb_value var = mrb_gv_get(mrb, sym);
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Remove a global variable.</p>
-<p>Example: </p><pre class="fragment">!!!ruby
-# Ruby style
+
+<p>Remove a global variable. </p>
+<p>Example: </p><pre class="fragment"># Ruby style
 $value = nil
 
-!!!c
 // C style
 mrb_sym sym = mrb_intern_lit(mrb, "$value");
 mrb_gv_remove(mrb, sym);
@@ -334,7 +331,6 @@ mrb_gv_remove(mrb, sym);
   <table class="params">
     <tr><td class="paramname">mrb</td><td>The mruby state reference </td></tr>
     <tr><td class="paramname">sym</td><td>The name of the global variable </td></tr>
-    <tr><td class="paramname">val</td><td>The value of the global variable </td></tr>
   </table>
   </dd>
 </dl>
@@ -372,7 +368,8 @@ mrb_gv_remove(mrb, sym);
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set a global variable</p>
+
+<p>Set a global variable. </p>
 <p>Example: </p><pre class="fragment">!!!ruby
 # Ruby style
 $value = "foo"

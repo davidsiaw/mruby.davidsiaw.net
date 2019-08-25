@@ -74,6 +74,12 @@ $(function() {
 <div class="title">proc.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li>Proc class </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="irep_8h_source.html">mruby/irep.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="khash_8h_source.html">mruby/khash.h</a>&gt;</code><br />
@@ -82,18 +88,18 @@ Include dependency graph for proc.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="proc_8h__incl.png" border="0" usemap="#include_2mruby_2proc_8h" alt=""/></div>
 <map name="include_2mruby_2proc_8h" id="include_2mruby_2proc_8h">
-<area shape="rect" id="node2" href="common_8h.html" title="common.h" alt="" coords="167,379,249,405"/>
-<area shape="rect" id="node3" href="irep_8h.html" title="mruby/irep.h" alt="" coords="74,80,169,107"/>
-<area shape="rect" id="node18" href="khash_8h.html" title="mruby/khash.h" alt="" coords="237,155,345,181"/>
-<area shape="rect" id="node4" href="compile_8h.html" title="mruby/compile.h" alt="" coords="94,155,213,181"/>
+<area shape="rect" id="node2" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="167,379,249,405"/>
+<area shape="rect" id="node3" href="irep_8h.html" title="mrb_irep structure " alt="" coords="74,80,169,107"/>
+<area shape="rect" id="node18" href="khash_8h.html" title="Hash for mruby " alt="" coords="237,155,345,181"/>
+<area shape="rect" id="node4" href="compile_8h.html" title="mruby parser " alt="" coords="94,155,213,181"/>
 <area shape="rect" id="node5" href="mruby_8h.html" title="mruby.h" alt="" coords="564,229,633,256"/>
 <area shape="rect" id="node10" href="mrbconf_8h_source.html" title="mrbconf.h" alt="" coords="819,304,899,331"/>
-<area shape="rect" id="node12" href="value_8h.html" title="mruby/value.h" alt="" coords="547,304,651,331"/>
-<area shape="rect" id="node16" href="gc_8h.html" title="mruby/gc.h" alt="" coords="297,304,383,331"/>
-<area shape="rect" id="node17" href="version_8h.html" title="mruby/version.h" alt="" coords="408,304,523,331"/>
-<area shape="rect" id="node14" href="object_8h.html" title="mruby/object.h" alt="" coords="495,379,603,405"/>
-<area shape="rect" id="node15" href="boxing__no_8h.html" title="boxing_no.h" alt="" coords="627,379,719,405"/>
-<area shape="rect" id="node19" href="string_8h.html" title="string.h" alt="" coords="227,229,293,256"/>
+<area shape="rect" id="node12" href="value_8h.html" title="mruby value definitions " alt="" coords="547,304,651,331"/>
+<area shape="rect" id="node16" href="gc_8h.html" title="garbage collector for mruby " alt="" coords="297,304,383,331"/>
+<area shape="rect" id="node17" href="version_8h.html" title="mruby version definition " alt="" coords="408,304,523,331"/>
+<area shape="rect" id="node14" href="object_8h.html" title="mruby object definition " alt="" coords="495,379,603,405"/>
+<area shape="rect" id="node15" href="boxing__no_8h.html" title="unboxed mrb_value definition " alt="" coords="627,379,719,405"/>
+<area shape="rect" id="node19" href="string_8h.html" title="String class " alt="" coords="227,229,293,256"/>
 </map>
 </div>
 </div>
@@ -102,6 +108,7 @@ Include dependency graph for proc.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structREnv.html">REnv</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proc class.  <a href="structREnv.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRProc.html">RProc</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -245,10 +252,10 @@ struct <a class="el" href="structRProc.html">RProc</a> *&#160;</td><td class="me
 struct <a class="el" href="structRProc.html">RProc</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_closure_new</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__irep.html">mrb_irep</a> *)</td></tr>
 <tr class="separator:a5217c03c26b6a5b0e8905963ebd3eb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19b8d6205166508ade7d4b2a4af8ded6"><td class="memItemLeft" align="right" valign="top"><a id="a19b8d6205166508ade7d4b2a4af8ded6"></a>
-struct <a class="el" href="structRProc.html">RProc</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_proc_new_cfunc</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, mrb_func_t)</td></tr>
+struct <a class="el" href="structRProc.html">RProc</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_proc_new_cfunc</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>)</td></tr>
 <tr class="separator:a19b8d6205166508ade7d4b2a4af8ded6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e9f88493175888aa836dd4fc63096ce"><td class="memItemLeft" align="right" valign="top"><a id="a9e9f88493175888aa836dd4fc63096ce"></a>
-struct <a class="el" href="structRProc.html">RProc</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_closure_new_cfunc</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, mrb_func_t func, int nlocals)</td></tr>
+struct <a class="el" href="structRProc.html">RProc</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_closure_new_cfunc</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> func, int nlocals)</td></tr>
 <tr class="separator:a9e9f88493175888aa836dd4fc63096ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa4a15df5cd76748284a939badce1271"><td class="memItemLeft" align="right" valign="top"><a id="afa4a15df5cd76748284a939badce1271"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_proc_copy</b> (struct <a class="el" href="structRProc.html">RProc</a> *a, struct <a class="el" href="structRProc.html">RProc</a> *b)</td></tr>
@@ -260,7 +267,7 @@ mrb_int&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_proc_arity</b>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_f_send</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> self)</td></tr>
 <tr class="separator:a1d33344066221cc8876cebe4ae16192f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39c8ab9da03aa5e32c21352c2ac5fd6c"><td class="memItemLeft" align="right" valign="top"><a id="a39c8ab9da03aa5e32c21352c2ac5fd6c"></a>
-struct <a class="el" href="structRProc.html">RProc</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_proc_new_cfunc_with_env</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, mrb_func_t, mrb_int, const <a class="el" href="structmrb__value.html">mrb_value</a> *)</td></tr>
+struct <a class="el" href="structRProc.html">RProc</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_proc_new_cfunc_with_env</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>, mrb_int, const <a class="el" href="structmrb__value.html">mrb_value</a> *)</td></tr>
 <tr class="separator:a39c8ab9da03aa5e32c21352c2ac5fd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2644a8a08c9abea0724c59b0f3642ee8"><td class="memItemLeft" align="right" valign="top"><a id="a2644a8a08c9abea0724c59b0f3642ee8"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_proc_cfunc_env_get</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, mrb_int)</td></tr>
@@ -298,7 +305,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>kh_del_mt</b> (<a cla
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li>Proc class</li>
+<li>Proc class </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>

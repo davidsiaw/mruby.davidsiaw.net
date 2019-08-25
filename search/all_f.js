@@ -24,5 +24,6 @@ var searchData=
   ['rproc',['RProc',['../structRProc.html',1,'']]],
   ['rrange',['RRange',['../structRRange.html',1,'']]],
   ['rstring',['RString',['../structRString.html',1,'']]],
+  ['rstringembed',['RStringEmbed',['../structRStringEmbed.html',1,'']]],
   ['rvalue',['RVALUE',['../structRVALUE.html',1,'']]]
 ];

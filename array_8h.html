@@ -74,13 +74,19 @@ $(function() {
 <div class="title">array.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li>Array class </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for array.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="array_8h__incl.png" border="0" usemap="#include_2mruby_2array_8h" alt=""/></div>
 <map name="include_2mruby_2array_8h" id="include_2mruby_2array_8h">
-<area shape="rect" id="node2" href="common_8h.html" title="common.h" alt="" coords="37,80,120,107"/>
+<area shape="rect" id="node2" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="37,80,120,107"/>
 </map>
 </div>
 </div>
@@ -123,7 +129,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARY_SET_EMBED_LEN</b>(a,  len)&#160;&#160;&#160;((a)-&gt;flags = ((a)-&gt;flags&amp;~MRB_ARY_EMBED_MASK) | ((uint32_t)(len) + 1))</td></tr>
 <tr class="separator:a663e00c1944140510f27ec14934dde5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a443c5848dbb2e6a0ed9e1dbcd681b5e7"><td class="memItemLeft" align="right" valign="top"><a id="a443c5848dbb2e6a0ed9e1dbcd681b5e7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ARY_EMBED_PTR</b>(a)&#160;&#160;&#160;(a)-&gt;as.ary</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ARY_EMBED_PTR</b>(a)&#160;&#160;&#160;((<a class="el" href="structmrb__value.html">mrb_value</a>*)(&amp;(a)-&gt;as.ary))</td></tr>
 <tr class="separator:a443c5848dbb2e6a0ed9e1dbcd681b5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0593af9c9b3705522f9454b5d10d90f8"><td class="memItemLeft" align="right" valign="top"><a id="a0593af9c9b3705522f9454b5d10d90f8"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARY_LEN</b>(a)&#160;&#160;&#160;(ARY_EMBED_P(a)?ARY_EMBED_LEN(a):(a)-&gt;as.heap.len)</td></tr>
@@ -232,7 +238,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_ary_replace</b> (
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li>Array class</li>
+<li>Array class </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>

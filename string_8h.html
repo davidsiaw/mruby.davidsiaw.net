@@ -74,13 +74,19 @@ $(function() {
 <div class="title">string.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li>String class </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for string.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="string_8h__incl.png" border="0" usemap="#include_2mruby_2string_8h" alt=""/></div>
 <map name="include_2mruby_2string_8h" id="include_2mruby_2string_8h">
-<area shape="rect" id="node2" href="common_8h.html" title="common.h" alt="" coords="39,80,122,107"/>
+<area shape="rect" id="node2" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="39,80,122,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -88,9 +94,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="string_8h__dep__incl.png" border="0" usemap="#include_2mruby_2string_8hdep" alt=""/></div>
 <map name="include_2mruby_2string_8hdep" id="include_2mruby_2string_8hdep">
-<area shape="rect" id="node2" href="khash_8h.html" title="include/mruby/khash.h" alt="" coords="5,80,159,107"/>
-<area shape="rect" id="node4" href="istruct_8h.html" title="include/mruby/istruct.h" alt="" coords="183,80,338,107"/>
-<area shape="rect" id="node3" href="proc_8h.html" title="include/mruby/proc.h" alt="" coords="11,155,153,181"/>
+<area shape="rect" id="node2" href="khash_8h.html" title="Hash for mruby " alt="" coords="5,80,159,107"/>
+<area shape="rect" id="node4" href="istruct_8h.html" title="Inline structures " alt="" coords="183,80,338,107"/>
+<area shape="rect" id="node3" href="proc_8h.html" title="Proc class " alt="" coords="11,155,153,181"/>
 </map>
 </div>
 </div>
@@ -100,12 +106,20 @@ This graph shows which files directly or indirectly include this file:</div>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRString.html">RString</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRStringEmbed.html">RStringEmbed</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a92657ad1be8a8a323df19648e33b47b5"><td class="memItemLeft" align="right" valign="top"><a id="a92657ad1be8a8a323df19648e33b47b5"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTRING_EMBED_LEN_MAX</b>&#160;&#160;&#160;((mrb_int)(sizeof(void*) * 3 - 1))</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTRING_EMBED_LEN_MAX</b>&#160;&#160;&#160;((mrb_int)(sizeof(void*) * 3 + sizeof(void*) - 32 / CHAR_BIT - 1))</td></tr>
 <tr class="separator:a92657ad1be8a8a323df19648e33b47b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa18fe7d46491d6439675330a763bf667"><td class="memItemLeft" align="right" valign="top"><a id="aa18fe7d46491d6439675330a763bf667"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_SET_TYPE_FLAG</b>(s,  type)&#160;&#160;&#160;(RSTR_UNSET_TYPE_FLAG(s), (s)-&gt;flags |= MRB_STR_##type)</td></tr>
+<tr class="separator:aa18fe7d46491d6439675330a763bf667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2252f287e1f9a93e6d393869eb7d0ad"><td class="memItemLeft" align="right" valign="top"><a id="ab2252f287e1f9a93e6d393869eb7d0ad"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_UNSET_TYPE_FLAG</b>(s)&#160;&#160;&#160;((s)-&gt;flags &amp;= ~(MRB_STR_TYPE_MASK|MRB_STR_EMBED_LEN_MASK))</td></tr>
+<tr class="separator:ab2252f287e1f9a93e6d393869eb7d0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac129bff42a067874493b2673bbe520ea"><td class="memItemLeft" align="right" valign="top"><a id="ac129bff42a067874493b2673bbe520ea"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_EMBED_P</b>(s)&#160;&#160;&#160;((s)-&gt;flags &amp; MRB_STR_EMBED)</td></tr>
 <tr class="separator:ac129bff42a067874493b2673bbe520ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,6 +133,9 @@ Macros</h2></td></tr>
 <tr class="separator:aa8247e62aa5136b7004ca9d93a273eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13d7de65c4401e8b523d6644e4d81254"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_SET_LEN</b>(s,  n)</td></tr>
 <tr class="separator:a13d7de65c4401e8b523d6644e4d81254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad86376529e4225d2efa755c42e48694d"><td class="memItemLeft" align="right" valign="top"><a id="ad86376529e4225d2efa755c42e48694d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_EMBED_PTR</b>(s)&#160;&#160;&#160;(((struct <a class="el" href="structRStringEmbed.html">RStringEmbed</a>*)(s))-&gt;ary)</td></tr>
+<tr class="separator:ad86376529e4225d2efa755c42e48694d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af51eaef67f6ff95c959e93425e654d73"><td class="memItemLeft" align="right" valign="top"><a id="af51eaef67f6ff95c959e93425e654d73"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_EMBED_LEN</b>(s)&#160;&#160;&#160;(mrb_int)(((s)-&gt;flags &amp; MRB_STR_EMBED_LEN_MASK) &gt;&gt; MRB_STR_EMBED_LEN_SHIFT)</td></tr>
 <tr class="separator:af51eaef67f6ff95c959e93425e654d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,7 +143,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_EMBEDDABLE_P</b>(len)&#160;&#160;&#160;((len) &lt;= RSTRING_EMBED_LEN_MAX)</td></tr>
 <tr class="separator:aa1c9312108137804fea2b7116725dda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7e8ada6c6c5e936295277e2254f445d"><td class="memItemLeft" align="right" valign="top"><a id="af7e8ada6c6c5e936295277e2254f445d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_PTR</b>(s)&#160;&#160;&#160;((RSTR_EMBED_P(s)) ? (s)-&gt;as.ary : (s)-&gt;as.heap.ptr)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_PTR</b>(s)&#160;&#160;&#160;((RSTR_EMBED_P(s)) ? RSTR_EMBED_PTR(s) : (s)-&gt;as.heap.ptr)</td></tr>
 <tr class="separator:af7e8ada6c6c5e936295277e2254f445d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68623881c586bed5c7c3a7a898514326"><td class="memItemLeft" align="right" valign="top"><a id="a68623881c586bed5c7c3a7a898514326"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_LEN</b>(s)&#160;&#160;&#160;((RSTR_EMBED_P(s)) ? RSTR_EMBED_LEN(s) : (s)-&gt;as.heap.len)</td></tr>
@@ -182,7 +199,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a307d86583dcf8e4e95b28e04edcb571a"><td class="memItemLeft" align="right" valign="top"><a id="a307d86583dcf8e4e95b28e04edcb571a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTR_SET_POOL_FLAG</b>(s)&#160;&#160;&#160;((s)-&gt;flags |= MRB_STR_POOL)</td></tr>
 <tr class="separator:a307d86583dcf8e4e95b28e04edcb571a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a040d92bad91a781bf104a8758656f6aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a040d92bad91a781bf104a8758656f6aa">mrb_str_ptr</a>(s)&#160;&#160;&#160;((struct <a class="el" href="structRString.html">RString</a>*)(mrb_ptr(s)))</td></tr>
+<tr class="memitem:a040d92bad91a781bf104a8758656f6aa"><td class="memItemLeft" align="right" valign="top"><a id="a040d92bad91a781bf104a8758656f6aa"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a040d92bad91a781bf104a8758656f6aa">mrb_str_ptr</a>(s)&#160;&#160;&#160;((struct <a class="el" href="structRString.html">RString</a>*)(mrb_ptr(s)))</td></tr>
+<tr class="memdesc:a040d92bad91a781bf104a8758656f6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer from a Ruby string. <br /></td></tr>
 <tr class="separator:a040d92bad91a781bf104a8758656f6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa521f4ca462fb9f1e20d8d2e44727f0"><td class="memItemLeft" align="right" valign="top"><a id="aaa521f4ca462fb9f1e20d8d2e44727f0"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RSTRING</b>(s)&#160;&#160;&#160;<a class="el" href="string_8h.html#a040d92bad91a781bf104a8758656f6aa">mrb_str_ptr</a>(s)</td></tr>
@@ -214,21 +233,27 @@ Macros</h2></td></tr>
 <tr class="memitem:af9230ee87f239c91567ced5e71ef4485"><td class="memItemLeft" align="right" valign="top"><a id="af9230ee87f239c91567ced5e71ef4485"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_NOFREE</b>&#160;&#160;&#160;4</td></tr>
 <tr class="separator:af9230ee87f239c91567ced5e71ef4485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae79d631c1760a822adecdc57f1ad91c9"><td class="memItemLeft" align="right" valign="top"><a id="ae79d631c1760a822adecdc57f1ad91c9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_EMBED</b>&#160;&#160;&#160;8  /* type flags up to here */</td></tr>
+<tr class="separator:ae79d631c1760a822adecdc57f1ad91c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab08e6b09f38687263efa3df617cf41c8"><td class="memItemLeft" align="right" valign="top"><a id="ab08e6b09f38687263efa3df617cf41c8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_POOL</b>&#160;&#160;&#160;8</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_POOL</b>&#160;&#160;&#160;16  /* status flags from here */</td></tr>
 <tr class="separator:ab08e6b09f38687263efa3df617cf41c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc4bfeb10196e2934410657efc467c6d"><td class="memItemLeft" align="right" valign="top"><a id="afc4bfeb10196e2934410657efc467c6d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_ASCII</b>&#160;&#160;&#160;16</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_ASCII</b>&#160;&#160;&#160;32</td></tr>
 <tr class="separator:afc4bfeb10196e2934410657efc467c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae79d631c1760a822adecdc57f1ad91c9"><td class="memItemLeft" align="right" valign="top"><a id="ae79d631c1760a822adecdc57f1ad91c9"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_EMBED</b>&#160;&#160;&#160;32</td></tr>
-<tr class="separator:ae79d631c1760a822adecdc57f1ad91c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11775225d1f87d1048c10ec586201c54"><td class="memItemLeft" align="right" valign="top"><a id="a11775225d1f87d1048c10ec586201c54"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_EMBED_LEN_MASK</b>&#160;&#160;&#160;0x7c0</td></tr>
-<tr class="separator:a11775225d1f87d1048c10ec586201c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa03a0b9b45535247f5e5cc1bbaf2de9a"><td class="memItemLeft" align="right" valign="top"><a id="aa03a0b9b45535247f5e5cc1bbaf2de9a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_EMBED_LEN_SHIFT</b>&#160;&#160;&#160;6</td></tr>
 <tr class="separator:aa03a0b9b45535247f5e5cc1bbaf2de9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7219c2526b7e7b09429157ca08df0d35"><td class="memItemLeft" align="right" valign="top"><a id="a7219c2526b7e7b09429157ca08df0d35"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_EMBED_LEN_BITSIZE</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a7219c2526b7e7b09429157ca08df0d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11775225d1f87d1048c10ec586201c54"><td class="memItemLeft" align="right" valign="top"><a id="a11775225d1f87d1048c10ec586201c54"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_EMBED_LEN_MASK</b>&#160;&#160;&#160;(((1 &lt;&lt; MRB_STR_EMBED_LEN_BITSIZE) - 1) &lt;&lt; MRB_STR_EMBED_LEN_SHIFT)</td></tr>
+<tr class="separator:a11775225d1f87d1048c10ec586201c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6d66cf0f6a2192aae3dea52c1146687"><td class="memItemLeft" align="right" valign="top"><a id="ae6d66cf0f6a2192aae3dea52c1146687"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STR_TYPE_MASK</b>&#160;&#160;&#160;(MRB_STR_POOL - 1)</td></tr>
+<tr class="separator:ae6d66cf0f6a2192aae3dea52c1146687"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a440d70f8e463192afffdd18c4d83b9e0"><td class="memItemLeft" align="right" valign="top"><a id="a440d70f8e463192afffdd18c4d83b9e0"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_index_lit</b>(mrb,  str,  lit,  off)&#160;&#160;&#160;<a class="el" href="string_8h.html#a461a6d482969859b41ed607c4c2efec3">mrb_str_index</a>(mrb, str, lit, mrb_strlen_lit(lit), off);</td></tr>
 <tr class="separator:a440d70f8e463192afffdd18c4d83b9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,21 +284,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_modify</b> (<
 <tr class="memitem:a833a99573a64b607c4eb3cce0d3b60fd"><td class="memItemLeft" align="right" valign="top"><a id="a833a99573a64b607c4eb3cce0d3b60fd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_modify_keep_ascii</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRString.html">RString</a> *s)</td></tr>
 <tr class="separator:a833a99573a64b607c4eb3cce0d3b60fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a461a6d482969859b41ed607c4c2efec3"><td class="memItemLeft" align="right" valign="top">mrb_int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a461a6d482969859b41ed607c4c2efec3">mrb_str_index</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>, const char *, mrb_int, mrb_int)</td></tr>
+<tr class="memitem:a461a6d482969859b41ed607c4c2efec3"><td class="memItemLeft" align="right" valign="top"><a id="a461a6d482969859b41ed607c4c2efec3"></a>
+mrb_int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a461a6d482969859b41ed607c4c2efec3">mrb_str_index</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>, const char *, mrb_int, mrb_int)</td></tr>
+<tr class="memdesc:a461a6d482969859b41ed607c4c2efec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the index of a substring in a string. <br /></td></tr>
 <tr class="separator:a461a6d482969859b41ed607c4c2efec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2d4bd0750d234b643bab3ca918cb6e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#ad2d4bd0750d234b643bab3ca918cb6e6">mrb_str_concat</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
-<tr class="separator:ad2d4bd0750d234b643bab3ca918cb6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9959251f3ec003fb967a22adb36d4e4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a9959251f3ec003fb967a22adb36d4e4e">mrb_str_plus</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
-<tr class="separator:a9959251f3ec003fb967a22adb36d4e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7660303f7b9f6843e7884ad3c1f1ae06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a7660303f7b9f6843e7884ad3c1f1ae06">mrb_ptr_to_str</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, void *)</td></tr>
-<tr class="separator:a7660303f7b9f6843e7884ad3c1f1ae06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8b62beef103b174f5e262d60b1f1597"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#aa8b62beef103b174f5e262d60b1f1597">mrb_str_concat</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> self, <a class="el" href="structmrb__value.html">mrb_value</a> other)</td></tr>
+<tr class="memdesc:aa8b62beef103b174f5e262d60b1f1597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends self to other.  <a href="#aa8b62beef103b174f5e262d60b1f1597">More...</a><br /></td></tr>
+<tr class="separator:aa8b62beef103b174f5e262d60b1f1597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aac18dae44c1faaf2bbe78de56c6286"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a1aac18dae44c1faaf2bbe78de56c6286">mrb_str_plus</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> a, <a class="el" href="structmrb__value.html">mrb_value</a> b)</td></tr>
+<tr class="memdesc:a1aac18dae44c1faaf2bbe78de56c6286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two strings together.  <a href="#a1aac18dae44c1faaf2bbe78de56c6286">More...</a><br /></td></tr>
+<tr class="separator:a1aac18dae44c1faaf2bbe78de56c6286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6f6ae91411cc84b0342d6ef5b7f30e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#aa6f6ae91411cc84b0342d6ef5b7f30e9">mrb_ptr_to_str</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, void *p)</td></tr>
+<tr class="memdesc:aa6f6ae91411cc84b0342d6ef5b7f30e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts pointer into a Ruby string.  <a href="#aa6f6ae91411cc84b0342d6ef5b7f30e9">More...</a><br /></td></tr>
+<tr class="separator:aa6f6ae91411cc84b0342d6ef5b7f30e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a385d252452ce5592313106b71f964983"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a385d252452ce5592313106b71f964983">mrb_obj_as_string</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> obj)</td></tr>
+<tr class="memdesc:a385d252452ce5592313106b71f964983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an object as a Ruby string.  <a href="#a385d252452ce5592313106b71f964983">More...</a><br /></td></tr>
 <tr class="separator:a385d252452ce5592313106b71f964983"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27d217e944f4a350dd7bd87f64530262"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a27d217e944f4a350dd7bd87f64530262">mrb_str_resize</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str, mrb_int len)</td></tr>
+<tr class="memdesc:a27d217e944f4a350dd7bd87f64530262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the string's length.  <a href="#a27d217e944f4a350dd7bd87f64530262">More...</a><br /></td></tr>
 <tr class="separator:a27d217e944f4a350dd7bd87f64530262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e9dafb0ec47de38f1ba4b1de8f4a294"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a3e9dafb0ec47de38f1ba4b1de8f4a294">mrb_str_substr</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str, mrb_int beg, mrb_int len)</td></tr>
+<tr class="memdesc:a3e9dafb0ec47de38f1ba4b1de8f4a294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a sub string.  <a href="#a3e9dafb0ec47de38f1ba4b1de8f4a294">More...</a><br /></td></tr>
 <tr class="separator:a3e9dafb0ec47de38f1ba4b1de8f4a294"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91a449dbec8df1679445242e678b832c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a91a449dbec8df1679445242e678b832c">mrb_ensure_string_type</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str)</td></tr>
+<tr class="memdesc:a91a449dbec8df1679445242e678b832c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a Ruby string type.  <a href="#a91a449dbec8df1679445242e678b832c">More...</a><br /></td></tr>
 <tr class="separator:a91a449dbec8df1679445242e678b832c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e5b325571ba44d4f27f6b3564fbc3df"><td class="memItemLeft" align="right" valign="top"><a id="a6e5b325571ba44d4f27f6b3564fbc3df"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_check_string_type</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str)</td></tr>
@@ -300,8 +334,10 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_string_va
 mrb_int&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_string_value_len</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str)</td></tr>
 <tr class="separator:a86c2b4e9c0e6685e736aef1a742510ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1b34e7e11b664d6c061dadfc3ba5692"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#aa1b34e7e11b664d6c061dadfc3ba5692">mrb_str_dup</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str)</td></tr>
+<tr class="memdesc:aa1b34e7e11b664d6c061dadfc3ba5692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates a string object.  <a href="#aa1b34e7e11b664d6c061dadfc3ba5692">More...</a><br /></td></tr>
 <tr class="separator:aa1b34e7e11b664d6c061dadfc3ba5692"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b2b2b98a3bdab341ab83f1fb609f45c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a4b2b2b98a3bdab341ab83f1fb609f45c">mrb_str_intern</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> self)</td></tr>
+<tr class="memdesc:a4b2b2b98a3bdab341ab83f1fb609f45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a symbol from a passed in Ruby string.  <a href="#a4b2b2b98a3bdab341ab83f1fb609f45c">More...</a><br /></td></tr>
 <tr class="separator:a4b2b2b98a3bdab341ab83f1fb609f45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d53687daa703a062caa999c53ea9fb"><td class="memItemLeft" align="right" valign="top"><a id="a16d53687daa703a062caa999c53ea9fb"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_to_inum</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str, mrb_int base, <a class="el" href="classmrb__bool.html">mrb_bool</a> badcheck)</td></tr>
@@ -316,21 +352,29 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_to_dbl</b> 
 double&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_cstr_to_dbl</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, const char *s, <a class="el" href="classmrb__bool.html">mrb_bool</a> badcheck)</td></tr>
 <tr class="separator:a156983f7bff1ac92e2d1341d0dd50ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7175578f60a432e425013f63c64c3e6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a7175578f60a432e425013f63c64c3e6f">mrb_str_to_str</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str)</td></tr>
+<tr class="memdesc:a7175578f60a432e425013f63c64c3e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a converted string type.  <a href="#a7175578f60a432e425013f63c64c3e6f">More...</a><br /></td></tr>
 <tr class="separator:a7175578f60a432e425013f63c64c3e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e334b59ab15f8b666d9ef60e0793c9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmrb__bool.html">mrb_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a2e334b59ab15f8b666d9ef60e0793c9b">mrb_str_equal</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str1, <a class="el" href="structmrb__value.html">mrb_value</a> str2)</td></tr>
+<tr class="memdesc:a2e334b59ab15f8b666d9ef60e0793c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the strings match and false if the strings don't match.  <a href="#a2e334b59ab15f8b666d9ef60e0793c9b">More...</a><br /></td></tr>
 <tr class="separator:a2e334b59ab15f8b666d9ef60e0793c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0712c0499e953690b29d5336b455d258"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a0712c0499e953690b29d5336b455d258">mrb_str_cat</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str, const char *ptr, size_t len)</td></tr>
+<tr class="memdesc:a0712c0499e953690b29d5336b455d258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a concatenated string comprised of a Ruby string and a C string.  <a href="#a0712c0499e953690b29d5336b455d258">More...</a><br /></td></tr>
 <tr class="separator:a0712c0499e953690b29d5336b455d258"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34c16709fe1dbbfe2e6d0c4ff4691f8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a34c16709fe1dbbfe2e6d0c4ff4691f8c">mrb_str_cat_cstr</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str, const char *ptr)</td></tr>
+<tr class="memdesc:a34c16709fe1dbbfe2e6d0c4ff4691f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a concatenated string comprised of a Ruby string and a C string.  <a href="#a34c16709fe1dbbfe2e6d0c4ff4691f8c">More...</a><br /></td></tr>
 <tr class="separator:a34c16709fe1dbbfe2e6d0c4ff4691f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1aa4c79065fa63ffd36f054e71bbd45"><td class="memItemLeft" align="right" valign="top"><a id="ab1aa4c79065fa63ffd36f054e71bbd45"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_cat_str</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str, <a class="el" href="structmrb__value.html">mrb_value</a> str2)</td></tr>
 <tr class="separator:ab1aa4c79065fa63ffd36f054e71bbd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a185a4c3da68d20a8894babc23732da9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a185a4c3da68d20a8894babc23732da9a">mrb_str_append</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str, <a class="el" href="structmrb__value.html">mrb_value</a> str2)</td></tr>
+<tr class="memitem:a185a4c3da68d20a8894babc23732da9a"><td class="memItemLeft" align="right" valign="top"><a id="a185a4c3da68d20a8894babc23732da9a"></a>
+<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a185a4c3da68d20a8894babc23732da9a">mrb_str_append</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str, <a class="el" href="structmrb__value.html">mrb_value</a> str2)</td></tr>
+<tr class="memdesc:a185a4c3da68d20a8894babc23732da9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds str2 to the end of str1. <br /></td></tr>
 <tr class="separator:a185a4c3da68d20a8894babc23732da9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa73b449c5f0101c47fe909e6b48f031"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#afa73b449c5f0101c47fe909e6b48f031">mrb_str_cmp</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str1, <a class="el" href="structmrb__value.html">mrb_value</a> str2)</td></tr>
+<tr class="memdesc:afa73b449c5f0101c47fe909e6b48f031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 0 if both Ruby strings are equal.  <a href="#afa73b449c5f0101c47fe909e6b48f031">More...</a><br /></td></tr>
 <tr class="separator:afa73b449c5f0101c47fe909e6b48f031"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c16940f1dca2a82d376b42f15df6239"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a6c16940f1dca2a82d376b42f15df6239">mrb_str_to_cstr</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str)</td></tr>
+<tr class="memdesc:a6c16940f1dca2a82d376b42f15df6239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a newly allocated C string from a Ruby string.  <a href="#a6c16940f1dca2a82d376b42f15df6239">More...</a><br /></td></tr>
 <tr class="separator:a6c16940f1dca2a82d376b42f15df6239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac88c09214abdcd9443c276d54bdbefe6"><td class="memItemLeft" align="right" valign="top"><a id="ac88c09214abdcd9443c276d54bdbefe6"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_pool</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str)</td></tr>
@@ -341,7 +385,9 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_hash</b> 
 <tr class="memitem:aa8f8c913970187406af73b06392f50ab"><td class="memItemLeft" align="right" valign="top"><a id="aa8f8c913970187406af73b06392f50ab"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_dump</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str)</td></tr>
 <tr class="separator:aa8f8c913970187406af73b06392f50ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe53c0479b081ba8d940191e0031948d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#abe53c0479b081ba8d940191e0031948d">mrb_str_inspect</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str)</td></tr>
+<tr class="memitem:abe53c0479b081ba8d940191e0031948d"><td class="memItemLeft" align="right" valign="top"><a id="abe53c0479b081ba8d940191e0031948d"></a>
+<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#abe53c0479b081ba8d940191e0031948d">mrb_str_inspect</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> str)</td></tr>
+<tr class="memdesc:abe53c0479b081ba8d940191e0031948d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a printable version of str, surrounded by quote marks, with special characters escaped. <br /></td></tr>
 <tr class="separator:abe53c0479b081ba8d940191e0031948d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a060f2ddb550a7d5c63ba7d9292e46f9a"><td class="memItemLeft" align="right" valign="top"><a id="a060f2ddb550a7d5c63ba7d9292e46f9a"></a>
 <a class="el" href="classmrb__bool.html">mrb_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_beg_len</b> (mrb_int str_len, mrb_int *begp, mrb_int *lenp)</td></tr>
@@ -352,34 +398,17 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_hash</b> 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a016764125f88b4b2146bea3daf4789af"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a016764125f88b4b2146bea3daf4789af">mrb_digitmap</a> []</td></tr>
+<tr class="memitem:a016764125f88b4b2146bea3daf4789af"><td class="memItemLeft" align="right" valign="top"><a id="a016764125f88b4b2146bea3daf4789af"></a>
+const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8h.html#a016764125f88b4b2146bea3daf4789af">mrb_digitmap</a> []</td></tr>
+<tr class="memdesc:a016764125f88b4b2146bea3daf4789af"><td class="mdescLeft">&#160;</td><td class="mdescRight">String class. <br /></td></tr>
 <tr class="separator:a016764125f88b4b2146bea3daf4789af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li>String class</li>
+<li>String class </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a040d92bad91a781bf104a8758656f6aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a040d92bad91a781bf104a8758656f6aa">&#9670;&nbsp;</a></span>mrb_str_ptr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define mrb_str_ptr</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">s</td><td>)</td>
-          <td>&#160;&#160;&#160;((struct <a class="el" href="structRString.html">RString</a>*)(mrb_ptr(s)))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a pointer from a Ruby string </p>
-
-</div>
-</div>
 <a id="aa8247e62aa5136b7004ca9d93a273eee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8247e62aa5136b7004ca9d93a273eee">&#9670;&nbsp;</a></span>RSTR_SET_EMBED_LEN</h2>
 
@@ -462,11 +491,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns a Ruby string type.</p>
+
+<p>Returns a Ruby string type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>str Ruby string. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">str</td><td>Ruby string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -499,11 +529,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns an object as a Ruby string.</p>
+
+<p>Returns an object as a Ruby string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>obj An object to return as a Ruby string. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">obj</td><td>An object to return as a Ruby string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -511,8 +542,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a7660303f7b9f6843e7884ad3c1f1ae06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7660303f7b9f6843e7884ad3c1f1ae06">&#9670;&nbsp;</a></span>mrb_ptr_to_str()</h2>
+<a id="aa6f6ae91411cc84b0342d6ef5b7f30e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6f6ae91411cc84b0342d6ef5b7f30e9">&#9670;&nbsp;</a></span>mrb_ptr_to_str()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -521,56 +552,13 @@ Variables</h2></td></tr>
           <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_ptr_to_str </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Converts pointer into a Ruby string.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[void*]</td><td>p The pointer to convert to Ruby string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="structmrb__value.html">mrb_value</a>] Returns a new Ruby String. </dd></dl>
-
-</div>
-</div>
-<a id="a185a4c3da68d20a8894babc23732da9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a185a4c3da68d20a8894babc23732da9a">&#9670;&nbsp;</a></span>mrb_str_append()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_str_append </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
           <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname"><em>str2</em>&#160;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -579,7 +567,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds str2 to the end of str1. </p>
+
+<p>Converts pointer into a Ruby string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">p</td><td>The pointer to convert to Ruby string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="structmrb__value.html">mrb_value</a>] Returns a new Ruby String. </dd></dl>
 
 </div>
 </div>
@@ -620,18 +617,19 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns a concatenated string comprised of a Ruby string and a C string.</p>
+
+<p>Returns a concatenated string comprised of a Ruby string and a C string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>str Ruby string. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] ptr A C string. </td></tr>
-    <tr><td class="paramname">[size_t]</td><td>len length of C string. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">str</td><td>Ruby string. </td></tr>
+    <tr><td class="paramname">ptr</td><td>A C string. </td></tr>
+    <tr><td class="paramname">len</td><td>length of C string. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="structmrb__value.html">mrb_value</a>] A Ruby string. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="string_8h.html#a34c16709fe1dbbfe2e6d0c4ff4691f8c">mrb_str_cat_cstr</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="string_8h.html#a34c16709fe1dbbfe2e6d0c4ff4691f8c" title="Returns a concatenated string comprised of a Ruby string and a C string. ">mrb_str_cat_cstr</a> </dd></dl>
 
 </div>
 </div>
@@ -666,17 +664,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns a concatenated string comprised of a Ruby string and a C string.</p>
+
+<p>Returns a concatenated string comprised of a Ruby string and a C string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>str Ruby string. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] ptr A C string. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">str</td><td>Ruby string. </td></tr>
+    <tr><td class="paramname">ptr</td><td>A C string. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="structmrb__value.html">mrb_value</a>] A Ruby string. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="string_8h.html#a0712c0499e953690b29d5336b455d258">mrb_str_cat</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="string_8h.html#a0712c0499e953690b29d5336b455d258" title="Returns a concatenated string comprised of a Ruby string and a C string. ">mrb_str_cat</a> </dd></dl>
 
 </div>
 </div>
@@ -711,12 +710,14 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns 0 if both Ruby strings are equal. Returns a value &lt; 0 if Ruby str1 is less than Ruby str2. Returns a value &gt; 0 if Ruby str2 is greater than Ruby str1. </p>
+
+<p>Returns 0 if both Ruby strings are equal. </p>
+<p>Returns a value &lt; 0 if Ruby str1 is less than Ruby str2. Returns a value &gt; 0 if Ruby str2 is greater than Ruby str1. </p>
 
 </div>
 </div>
-<a id="ad2d4bd0750d234b643bab3ca918cb6e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2d4bd0750d234b643bab3ca918cb6e6">&#9670;&nbsp;</a></span>mrb_str_concat()</h2>
+<a id="aa8b62beef103b174f5e262d60b1f1597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8b62beef103b174f5e262d60b1f1597">&#9670;&nbsp;</a></span>mrb_str_concat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -725,19 +726,19 @@ Variables</h2></td></tr>
           <td class="memname">void mrb_str_concat </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>self</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>other</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -746,21 +747,42 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Appends self to other. Returns self as a concatenated string.</p>
-<p>Example:</p>
-<p>!!!c int main(int argc, char **argv) { // Variable declarations. <a class="el" href="structmrb__value.html">mrb_value</a> str1; <a class="el" href="structmrb__value.html">mrb_value</a> str2;</p>
-<p><a class="el" href="structmrb__state.html">mrb_state</a> *mrb = <a class="el" href="mruby_8h.html#a135d95ed0aded4fc1e131a23a7418f3b">mrb_open()</a>; if (!mrb) { // handle error }</p>
-<p>// Creates new Ruby strings. str1 = mrb_str_new_lit(mrb, "abc"); str2 = mrb_str_new_lit(mrb, "def");</p>
-<p>// Concatenates str2 to str1. mrb_str_concat(mrb, str1, str2);</p>
-<p>// Prints new Concatenated Ruby string. mrb_p(mrb, str1);</p>
-<p>mrb_close(mrb); return 0; }</p>
-<p>Result:</p>
-<p>=&gt; "abcdef"</p>
-<dl class="params"><dt>Parameters</dt><dd>
+
+<p>Appends self to other. </p>
+<p>Returns self as a concatenated string.</p>
+<p>Example: </p><pre class="fragment">int
+main(int argc,
+     char **argv)
+{
+  // Variable declarations.
+  mrb_value str1;
+  mrb_value str2;
+
+  mrb_state *mrb = mrb_open();
+  if (!mrb)
+  {
+     // handle error
+  }
+
+  // Creates new Ruby strings.
+  str1 = mrb_str_new_lit(mrb, "abc");
+  str2 = mrb_str_new_lit(mrb, "def");
+
+  // Concatenates str2 to str1.
+  mrb_str_concat(mrb, str1, str2);
+
+  // Prints new Concatenated Ruby string.
+  mrb_p(mrb, str1);
+
+  mrb_close(mrb);
+  return 0;
+} 
+</pre><p>Result: </p><pre class="fragment">=&gt; "abcdef"
+</pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>self String to concatenate. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>other String to append to self. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">self</td><td>String to concatenate. </td></tr>
+    <tr><td class="paramname">other</td><td>String to append to self. </td></tr>
   </table>
   </dd>
 </dl>
@@ -793,11 +815,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Duplicates a string object.</p>
+
+<p>Duplicates a string object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>str Ruby string. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">str</td><td>Ruby string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -836,92 +859,17 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns true if the strings match and false if the strings don't match.</p>
+
+<p>Returns true if the strings match and false if the strings don't match. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>str1 Ruby string to compare. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>str2 Ruby string to compare. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">str1</td><td>Ruby string to compare. </td></tr>
+    <tr><td class="paramname">str2</td><td>Ruby string to compare. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="structmrb__value.html">mrb_value</a>] boolean value. </dd></dl>
-
-</div>
-</div>
-<a id="a461a6d482969859b41ed607c4c2efec3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a461a6d482969859b41ed607c4c2efec3">&#9670;&nbsp;</a></span>mrb_str_index()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mrb_int mrb_str_index </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mrb_int&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mrb_int&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Finds the index of a substring in a string </p>
-
-</div>
-</div>
-<a id="abe53c0479b081ba8d940191e0031948d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe53c0479b081ba8d940191e0031948d">&#9670;&nbsp;</a></span>mrb_str_inspect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_str_inspect </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname"><em>mrb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname"><em>str</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a printable version of str, surrounded by quote marks, with special characters escaped. </p>
 
 </div>
 </div>
@@ -950,11 +898,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns a symbol from a passed in Ruby string.</p>
+
+<p>Returns a symbol from a passed in Ruby string. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>self Ruby string. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">self</td><td>Ruby string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -962,8 +911,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a9959251f3ec003fb967a22adb36d4e4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9959251f3ec003fb967a22adb36d4e4e">&#9670;&nbsp;</a></span>mrb_str_plus()</h2>
+<a id="a1aac18dae44c1faaf2bbe78de56c6286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aac18dae44c1faaf2bbe78de56c6286">&#9670;&nbsp;</a></span>mrb_str_plus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -972,19 +921,19 @@ Variables</h2></td></tr>
           <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_str_plus </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -993,22 +942,48 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds two strings together.</p>
-<p>Example:</p>
-<p>!!!c int main(int argc, char **argv) { // Variable declarations. <a class="el" href="structmrb__value.html">mrb_value</a> a; <a class="el" href="structmrb__value.html">mrb_value</a> b; <a class="el" href="structmrb__value.html">mrb_value</a> c;</p>
-<p><a class="el" href="structmrb__state.html">mrb_state</a> *mrb = <a class="el" href="mruby_8h.html#a135d95ed0aded4fc1e131a23a7418f3b">mrb_open()</a>; if (!mrb) { // handle error }</p>
-<p>// Creates two Ruby strings from the passed in C strings. a = mrb_str_new_lit(mrb, "abc"); b = mrb_str_new_lit(mrb, "def");</p>
-<p>// Prints both C strings. mrb_p(mrb, a); mrb_p(mrb, b);</p>
-<p>// Concatenates both Ruby strings. c = mrb_str_plus(mrb, a, b);</p>
-<p>// Prints new Concatenated Ruby string. mrb_p(mrb, c);</p>
-<p>mrb_close(mrb); return 0; }</p>
-<p>Result:</p>
-<p>=&gt; "abc" # First string =&gt; "def" # Second string =&gt; "abcdef" # First &amp; Second concatenated.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+
+<p>Adds two strings together. </p>
+<p>Example: </p><pre class="fragment">int
+main(int argc,
+     char **argv)
+{
+  // Variable declarations.
+  mrb_value a;
+  mrb_value b;
+  mrb_value c;
+
+  mrb_state *mrb = mrb_open();
+  if (!mrb)
+  {
+     // handle error
+  }
+
+  // Creates two Ruby strings from the passed in C strings.
+  a = mrb_str_new_lit(mrb, "abc");
+  b = mrb_str_new_lit(mrb, "def");
+
+  // Prints both C strings.
+  mrb_p(mrb, a);
+  mrb_p(mrb, b);
+
+  // Concatenates both Ruby strings.
+  c = mrb_str_plus(mrb, a, b);
+
+  // Prints new Concatenated Ruby string.
+  mrb_p(mrb, c);
+
+  mrb_close(mrb);
+  return 0;
+}
+</pre><p>Result: </p><pre class="fragment">=&gt; "abc"  # First string
+=&gt; "def"  # Second string
+=&gt; "abcdef" # First &amp; Second concatenated.
+</pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>a First string to concatenate. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>b Second string to concatenate. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">a</td><td>First string to concatenate. </td></tr>
+    <tr><td class="paramname">b</td><td>Second string to concatenate. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1047,9 +1022,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Resizes the string's length. Returns the amount of characters in the specified by len.</p>
-<p>Example: </p><pre class="fragment">!!!c
-int
+
+<p>Resizes the string's length. </p>
+<p>Returns the amount of characters in the specified by len.</p>
+<p>Example: </p><pre class="fragment">int
 main(int argc,
      char **argv)
 {
@@ -1070,12 +1046,12 @@ main(int argc,
     mrb_close(mrb);
     return 0;
  }
-</pre><p>Result: </p><pre class="fragment">=&gt; "Hello"
+</pre><p>Result: </p><pre class="fragment"> =&gt; "Hello"
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>str The Ruby string to resize. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>len The length. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">str</td><td>The Ruby string to resize. </td></tr>
+    <tr><td class="paramname">len</td><td>The length. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1120,20 +1096,39 @@ main(int argc,
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns a sub string.</p>
-<p>Example:</p>
-<p>!!!c int main(int argc, char const **argv) { // Variable declarations. <a class="el" href="structmrb__value.html">mrb_value</a> str1; <a class="el" href="structmrb__value.html">mrb_value</a> str2;</p>
-<p><a class="el" href="structmrb__state.html">mrb_state</a> *mrb = <a class="el" href="mruby_8h.html#a135d95ed0aded4fc1e131a23a7418f3b">mrb_open()</a>; if (!mrb) { // handle error } // Creates new string. str1 = mrb_str_new_lit(mrb, "Hello, world!"); // Returns a sub-string within the range of 0..2 str2 = mrb_str_substr(mrb, str1, 0, 2);</p>
-<p>// Prints sub-string. mrb_p(mrb, str2);</p>
-<p>mrb_close(mrb); return 0; }</p>
-<p>Result:</p>
-<p>=&gt; "He"</p>
-<dl class="params"><dt>Parameters</dt><dd>
+
+<p>Returns a sub string. </p>
+<p>Example: </p><pre class="fragment">int
+main(int argc,
+char const **argv)
+{
+  // Variable declarations.
+  mrb_value str1;
+  mrb_value str2;
+
+  mrb_state *mrb = mrb_open();
+  if (!mrb)
+  {
+    // handle error
+  }
+  // Creates new string.
+  str1 = mrb_str_new_lit(mrb, "Hello, world!");
+  // Returns a sub-string within the range of 0..2
+  str2 = mrb_str_substr(mrb, str1, 0, 2);
+
+  // Prints sub-string.
+  mrb_p(mrb, str2);
+
+  mrb_close(mrb);
+  return 0;
+}
+</pre><p>Result: </p><pre class="fragment">=&gt; "He"
+</pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>str Ruby string. </td></tr>
-    <tr><td class="paramname">[mrb_int]</td><td>beg The beginning point of the sub-string. </td></tr>
-    <tr><td class="paramname">[mrb_int]</td><td>len The end point of the sub-string. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">str</td><td>Ruby string. </td></tr>
+    <tr><td class="paramname">beg</td><td>The beginning point of the sub-string. </td></tr>
+    <tr><td class="paramname">len</td><td>The end point of the sub-string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1166,7 +1161,9 @@ main(int argc,
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns a newly allocated C string from a Ruby string. This is an utility function to pass a Ruby string to C library functions.</p>
+
+<p>Returns a newly allocated C string from a Ruby string. </p>
+<p>This is an utility function to pass a Ruby string to C library functions.</p>
 <ul>
 <li>Returned string does not contain any NUL characters (but terminator).</li>
 <li>It raises an ArgumentError exception if Ruby string contains NUL characters.</li>
@@ -1175,8 +1172,8 @@ main(int argc,
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state</td><td>*] mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>str Ruby string. Must be an instance of String. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">str</td><td>Ruby string. Must be an instance of String. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1209,23 +1206,9 @@ main(int argc,
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns a converted string type. For type checking, non converting <code>mrb_to_str</code> is recommended. </p>
 
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a016764125f88b4b2146bea3daf4789af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a016764125f88b4b2146bea3daf4789af">&#9670;&nbsp;</a></span>mrb_digitmap</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char mrb_digitmap[]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>String class </p>
+<p>Returns a converted string type. </p>
+<p>For type checking, non converting <code>mrb_to_str</code> is recommended. </p>
 
 </div>
 </div>

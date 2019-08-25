@@ -1,8 +1,8 @@
 <map id="include/mruby.h" name="include/mruby.h">
-<area shape="rect" id="node2" href="$value__array_8h_source.html" title="src/value_array.h" alt="" coords="5,80,128,107"/>
-<area shape="rect" id="node3" href="$compile_8h.html" title="include/mruby/compile.h" alt="" coords="203,80,365,107"/>
-<area shape="rect" id="node6" href="$dump_8h.html" title="include/mruby/dump.h" alt="" coords="143,229,294,256"/>
-<area shape="rect" id="node7" href="$khash_8h.html" title="include/mruby/khash.h" alt="" coords="366,155,519,181"/>
-<area shape="rect" id="node4" href="$irep_8h.html" title="include/mruby/irep.h" alt="" coords="203,155,341,181"/>
-<area shape="rect" id="node5" href="$proc_8h.html" title="include/mruby/proc.h" alt="" coords="345,229,487,256"/>
+<area shape="rect" id="node2" href="$compile_8h.html" title="mruby parser " alt="" coords="65,80,227,107"/>
+<area shape="rect" id="node5" href="$dump_8h.html" title="mruby binary dumper (mrbc binary format) " alt="" coords="5,229,156,256"/>
+<area shape="rect" id="node6" href="$khash_8h.html" title="Hash for mruby " alt="" coords="228,155,381,181"/>
+<area shape="rect" id="node7" href="$value__array_8h_source.html" title="src/value_array.h" alt="" coords="302,80,425,107"/>
+<area shape="rect" id="node3" href="$irep_8h.html" title="mrb_irep structure " alt="" coords="65,155,203,181"/>
+<area shape="rect" id="node4" href="$proc_8h.html" title="Proc class " alt="" coords="207,229,349,256"/>
 </map>

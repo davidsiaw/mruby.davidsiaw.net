@@ -74,13 +74,19 @@ $(function() {
 <div class="title">debug.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li>mruby debug info </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for debug.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="debug_8h__incl.png" border="0" usemap="#include_2mruby_2debug_8h" alt=""/></div>
 <map name="include_2mruby_2debug_8h" id="include_2mruby_2debug_8h">
-<area shape="rect" id="node2" href="common_8h.html" title="common.h" alt="" coords="41,80,123,107"/>
+<area shape="rect" id="node2" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="41,80,123,107"/>
 </map>
 </div>
 </div>
@@ -97,7 +103,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a6adf829cd27dae01d695711f9ff645a7"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="debug_8h.html#a3069b45fa4af300e63ab72d9c518e544">mrb_debug_line_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8h.html#a6adf829cd27dae01d695711f9ff645a7">mrb_debug_line_type</a></td></tr>
+<tr class="memitem:a6adf829cd27dae01d695711f9ff645a7"><td class="memItemLeft" align="right" valign="top"><a id="a6adf829cd27dae01d695711f9ff645a7"></a>
+typedef enum <a class="el" href="debug_8h.html#a3069b45fa4af300e63ab72d9c518e544">mrb_debug_line_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8h.html#a6adf829cd27dae01d695711f9ff645a7">mrb_debug_line_type</a></td></tr>
+<tr class="memdesc:a6adf829cd27dae01d695711f9ff645a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">MRuby Debugging. <br /></td></tr>
 <tr class="separator:a6adf829cd27dae01d695711f9ff645a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab079d9e1132adee9efaf40bf3190d38f"><td class="memItemLeft" align="right" valign="top"><a id="ab079d9e1132adee9efaf40bf3190d38f"></a>
 typedef struct <a class="el" href="structmrb__irep__debug__info__line.html">mrb_irep_debug_info_line</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_irep_debug_info_line</b></td></tr>
@@ -111,9 +119,10 @@ typedef struct <a class="el" href="structmrb__irep__debug__info.html">mrb_irep_d
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a3069b45fa4af300e63ab72d9c518e544"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8h.html#a3069b45fa4af300e63ab72d9c518e544">mrb_debug_line_type</a> { <b>mrb_debug_line_ary</b> = 0, 
+<tr class="memitem:a3069b45fa4af300e63ab72d9c518e544"><td class="memItemLeft" align="right" valign="top"><a id="a3069b45fa4af300e63ab72d9c518e544"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8h.html#a3069b45fa4af300e63ab72d9c518e544">mrb_debug_line_type</a> { <b>mrb_debug_line_ary</b> = 0, 
 <b>mrb_debug_line_flat_map</b> = 1
- }</td></tr>
+ }<tr class="memdesc:a3069b45fa4af300e63ab72d9c518e544"><td class="mdescLeft">&#160;</td><td class="mdescRight">MRuby Debugging. <br /></td></tr>
+</td></tr>
 <tr class="separator:a3069b45fa4af300e63ab72d9c518e544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -136,42 +145,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_debug_info_free</
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li>mruby debug info</li>
+<li>mruby debug info </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a6adf829cd27dae01d695711f9ff645a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6adf829cd27dae01d695711f9ff645a7">&#9670;&nbsp;</a></span>mrb_debug_line_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="debug_8h.html#a3069b45fa4af300e63ab72d9c518e544">mrb_debug_line_type</a>  <a class="el" href="debug_8h.html#a3069b45fa4af300e63ab72d9c518e544">mrb_debug_line_type</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>MRuby Debugging. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a3069b45fa4af300e63ab72d9c518e544"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3069b45fa4af300e63ab72d9c518e544">&#9670;&nbsp;</a></span>mrb_debug_line_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="debug_8h.html#a3069b45fa4af300e63ab72d9c518e544">mrb_debug_line_type</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>MRuby Debugging. </p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

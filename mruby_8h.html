@@ -90,12 +90,12 @@ Include dependency graph for mruby.h:</div>
 <div class="center"><img src="mruby_8h__incl.png" border="0" usemap="#include_2mruby_8h" alt=""/></div>
 <map name="include_2mruby_8h" id="include_2mruby_8h">
 <area shape="rect" id="node6" href="mrbconf_8h_source.html" title="mrbconf.h" alt="" coords="243,80,323,107"/>
-<area shape="rect" id="node8" href="common_8h.html" title="mruby/common.h" alt="" coords="431,155,553,181"/>
-<area shape="rect" id="node9" href="value_8h.html" title="mruby/value.h" alt="" coords="699,80,803,107"/>
-<area shape="rect" id="node13" href="gc_8h.html" title="mruby/gc.h" alt="" coords="449,80,535,107"/>
-<area shape="rect" id="node14" href="version_8h.html" title="mruby/version.h" alt="" coords="560,80,675,107"/>
-<area shape="rect" id="node11" href="object_8h.html" title="mruby/object.h" alt="" coords="578,155,686,181"/>
-<area shape="rect" id="node12" href="boxing__no_8h.html" title="boxing_no.h" alt="" coords="710,155,802,181"/>
+<area shape="rect" id="node8" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="431,155,553,181"/>
+<area shape="rect" id="node9" href="value_8h.html" title="mruby value definitions " alt="" coords="699,80,803,107"/>
+<area shape="rect" id="node13" href="gc_8h.html" title="garbage collector for mruby " alt="" coords="449,80,535,107"/>
+<area shape="rect" id="node14" href="version_8h.html" title="mruby version definition " alt="" coords="560,80,675,107"/>
+<area shape="rect" id="node11" href="object_8h.html" title="mruby object definition " alt="" coords="578,155,686,181"/>
+<area shape="rect" id="node12" href="boxing__no_8h.html" title="unboxed mrb_value definition " alt="" coords="710,155,802,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -103,12 +103,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="mruby_8h__dep__incl.png" border="0" usemap="#include_2mruby_8hdep" alt=""/></div>
 <map name="include_2mruby_8hdep" id="include_2mruby_8hdep">
-<area shape="rect" id="node2" href="value__array_8h_source.html" title="src/value_array.h" alt="" coords="5,80,128,107"/>
-<area shape="rect" id="node3" href="compile_8h.html" title="include/mruby/compile.h" alt="" coords="203,80,365,107"/>
-<area shape="rect" id="node6" href="dump_8h.html" title="include/mruby/dump.h" alt="" coords="143,229,294,256"/>
-<area shape="rect" id="node7" href="khash_8h.html" title="include/mruby/khash.h" alt="" coords="366,155,519,181"/>
-<area shape="rect" id="node4" href="irep_8h.html" title="include/mruby/irep.h" alt="" coords="203,155,341,181"/>
-<area shape="rect" id="node5" href="proc_8h.html" title="include/mruby/proc.h" alt="" coords="345,229,487,256"/>
+<area shape="rect" id="node2" href="compile_8h.html" title="mruby parser " alt="" coords="65,80,227,107"/>
+<area shape="rect" id="node5" href="dump_8h.html" title="mruby binary dumper (mrbc binary format) " alt="" coords="5,229,156,256"/>
+<area shape="rect" id="node6" href="khash_8h.html" title="Hash for mruby " alt="" coords="228,155,381,181"/>
+<area shape="rect" id="node7" href="value__array_8h_source.html" title="src/value_array.h" alt="" coords="302,80,425,107"/>
+<area shape="rect" id="node3" href="irep_8h.html" title="mrb_irep structure " alt="" coords="65,155,203,181"/>
+<area shape="rect" id="node4" href="proc_8h.html" title="Proc class " alt="" coords="207,229,349,256"/>
 </map>
 </div>
 </div>
@@ -155,22 +155,37 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_METHOD_CACHE_SIZE</b>&#160;&#160;&#160;(1&lt;&lt;7)</td></tr>
 <tr class="separator:a53ad656b89c52110eeb2e936313b21ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa75e44c5418017c75d6c45598c18b2f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aa75e44c5418017c75d6c45598c18b2f2">MRB_ARGS_REQ</a>(n)&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 18)</td></tr>
+<tr class="memdesc:aa75e44c5418017c75d6c45598c18b2f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function requires n arguments.  <a href="#aa75e44c5418017c75d6c45598c18b2f2">More...</a><br /></td></tr>
 <tr class="separator:aa75e44c5418017c75d6c45598c18b2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b34033531a541423669b4155cea2d5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a6b34033531a541423669b4155cea2d5e">MRB_ARGS_OPT</a>(n)&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 13)</td></tr>
+<tr class="memdesc:a6b34033531a541423669b4155cea2d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function takes n optional arguments.  <a href="#a6b34033531a541423669b4155cea2d5e">More...</a><br /></td></tr>
 <tr class="separator:a6b34033531a541423669b4155cea2d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a413956198963701021e122125ec5d09b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a413956198963701021e122125ec5d09b">MRB_ARGS_ARG</a>(n1,  n2)&#160;&#160;&#160;(<a class="el" href="mruby_8h.html#aa75e44c5418017c75d6c45598c18b2f2">MRB_ARGS_REQ</a>(n1)|<a class="el" href="mruby_8h.html#a6b34033531a541423669b4155cea2d5e">MRB_ARGS_OPT</a>(n2))</td></tr>
+<tr class="memdesc:a413956198963701021e122125ec5d09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function takes n1 mandatory arguments and n2 optional arguments.  <a href="#a413956198963701021e122125ec5d09b">More...</a><br /></td></tr>
 <tr class="separator:a413956198963701021e122125ec5d09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf4ff9ef085adfa4bc261ac3eed2f436"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aaf4ff9ef085adfa4bc261ac3eed2f436">MRB_ARGS_REST</a>()&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)(1 &lt;&lt; 12))</td></tr>
+<tr class="memitem:aaf4ff9ef085adfa4bc261ac3eed2f436"><td class="memItemLeft" align="right" valign="top"><a id="aaf4ff9ef085adfa4bc261ac3eed2f436"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aaf4ff9ef085adfa4bc261ac3eed2f436">MRB_ARGS_REST</a>()&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)(1 &lt;&lt; 12))</td></tr>
+<tr class="memdesc:aaf4ff9ef085adfa4bc261ac3eed2f436"><td class="mdescLeft">&#160;</td><td class="mdescRight">rest argument <br /></td></tr>
 <tr class="separator:aaf4ff9ef085adfa4bc261ac3eed2f436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b3a9a1fbb54a095fbea70f6bd8cddde"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a2b3a9a1fbb54a095fbea70f6bd8cddde">MRB_ARGS_POST</a>(n)&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 7)</td></tr>
+<tr class="memitem:a2b3a9a1fbb54a095fbea70f6bd8cddde"><td class="memItemLeft" align="right" valign="top"><a id="a2b3a9a1fbb54a095fbea70f6bd8cddde"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a2b3a9a1fbb54a095fbea70f6bd8cddde">MRB_ARGS_POST</a>(n)&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 7)</td></tr>
+<tr class="memdesc:a2b3a9a1fbb54a095fbea70f6bd8cddde"><td class="mdescLeft">&#160;</td><td class="mdescRight">required arguments after rest <br /></td></tr>
 <tr class="separator:a2b3a9a1fbb54a095fbea70f6bd8cddde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7a02eef5a0eff46661f0f3057bfc854"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab7a02eef5a0eff46661f0f3057bfc854">MRB_ARGS_KEY</a>(n1,  n2)&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)((((n1)&amp;0x1f) &lt;&lt; 2) | ((n2)?(1&lt;&lt;1):0)))</td></tr>
+<tr class="memitem:ab7a02eef5a0eff46661f0f3057bfc854"><td class="memItemLeft" align="right" valign="top"><a id="ab7a02eef5a0eff46661f0f3057bfc854"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab7a02eef5a0eff46661f0f3057bfc854">MRB_ARGS_KEY</a>(n1,  n2)&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)((((n1)&amp;0x1f) &lt;&lt; 2) | ((n2)?(1&lt;&lt;1):0)))</td></tr>
+<tr class="memdesc:ab7a02eef5a0eff46661f0f3057bfc854"><td class="mdescLeft">&#160;</td><td class="mdescRight">keyword arguments (n of keys, kdict) <br /></td></tr>
 <tr class="separator:ab7a02eef5a0eff46661f0f3057bfc854"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f11e1dbfb15c5e196f7bf2dc34778b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab5f11e1dbfb15c5e196f7bf2dc34778b">MRB_ARGS_BLOCK</a>()&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)1)</td></tr>
+<tr class="memitem:ab5f11e1dbfb15c5e196f7bf2dc34778b"><td class="memItemLeft" align="right" valign="top"><a id="ab5f11e1dbfb15c5e196f7bf2dc34778b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab5f11e1dbfb15c5e196f7bf2dc34778b">MRB_ARGS_BLOCK</a>()&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)1)</td></tr>
+<tr class="memdesc:ab5f11e1dbfb15c5e196f7bf2dc34778b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function takes a block argument. <br /></td></tr>
 <tr class="separator:ab5f11e1dbfb15c5e196f7bf2dc34778b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79cb00ecd1c4cb43d33da465ca090e39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a79cb00ecd1c4cb43d33da465ca090e39">MRB_ARGS_ANY</a>()&#160;&#160;&#160;<a class="el" href="mruby_8h.html#aaf4ff9ef085adfa4bc261ac3eed2f436">MRB_ARGS_REST</a>()</td></tr>
+<tr class="memitem:a79cb00ecd1c4cb43d33da465ca090e39"><td class="memItemLeft" align="right" valign="top"><a id="a79cb00ecd1c4cb43d33da465ca090e39"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a79cb00ecd1c4cb43d33da465ca090e39">MRB_ARGS_ANY</a>()&#160;&#160;&#160;<a class="el" href="mruby_8h.html#aaf4ff9ef085adfa4bc261ac3eed2f436">MRB_ARGS_REST</a>()</td></tr>
+<tr class="memdesc:a79cb00ecd1c4cb43d33da465ca090e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function accepts any number of arguments. <br /></td></tr>
 <tr class="separator:a79cb00ecd1c4cb43d33da465ca090e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6e2ec577d218326a3546a7028b23c3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aa6e2ec577d218326a3546a7028b23c3c">MRB_ARGS_NONE</a>()&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)0)</td></tr>
+<tr class="memitem:aa6e2ec577d218326a3546a7028b23c3c"><td class="memItemLeft" align="right" valign="top"><a id="aa6e2ec577d218326a3546a7028b23c3c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aa6e2ec577d218326a3546a7028b23c3c">MRB_ARGS_NONE</a>()&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)0)</td></tr>
+<tr class="memdesc:aa6e2ec577d218326a3546a7028b23c3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function accepts no arguments. <br /></td></tr>
 <tr class="separator:aa6e2ec577d218326a3546a7028b23c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6e210b379c4a4caa21bcc2b570d3613"><td class="memItemLeft" align="right" valign="top"><a id="ae6e210b379c4a4caa21bcc2b570d3613"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_strlen_lit</b>(lit)&#160;&#160;&#160;(sizeof(lit &quot;&quot;) - 1)</td></tr>
@@ -293,22 +308,25 @@ Macros</h2></td></tr>
 <tr class="memitem:afa4fc3dca79449550de16d75c030b09c"><td class="memItemLeft" align="right" valign="top"><a id="afa4fc3dca79449550de16d75c030b09c"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_int</b>(mrb,  val)&#160;&#160;&#160;mrb_fixnum(mrb_to_int(mrb, val))</td></tr>
 <tr class="separator:afa4fc3dca79449550de16d75c030b09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa4421aa41e79b6ccc1f0fd1e825ef35"><td class="memItemLeft" align="right" valign="top"><a id="aaa4421aa41e79b6ccc1f0fd1e825ef35"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>E_FIBER_ERROR</b>&#160;&#160;&#160;(<a class="el" href="mruby_8h.html#a41292964842293908547a4e970d72b5a">mrb_exc_get</a>(mrb, &quot;FiberError&quot;))</td></tr>
+<tr class="memitem:aaa4421aa41e79b6ccc1f0fd1e825ef35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aaa4421aa41e79b6ccc1f0fd1e825ef35">E_FIBER_ERROR</a>&#160;&#160;&#160;(<a class="el" href="mruby_8h.html#a41292964842293908547a4e970d72b5a">mrb_exc_get</a>(mrb, &quot;FiberError&quot;))</td></tr>
+<tr class="memdesc:aaa4421aa41e79b6ccc1f0fd1e825ef35"><td class="mdescLeft">&#160;</td><td class="mdescRight">FiberError reference.  <a href="#aaa4421aa41e79b6ccc1f0fd1e825ef35">More...</a><br /></td></tr>
 <tr class="separator:aaa4421aa41e79b6ccc1f0fd1e825ef35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4b44aedddab10fb6616569ee56d77a32"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a4b44aedddab10fb6616569ee56d77a32">mrb_code</a></td></tr>
+<tr class="memitem:a4b44aedddab10fb6616569ee56d77a32"><td class="memItemLeft" align="right" valign="top"><a id="a4b44aedddab10fb6616569ee56d77a32"></a>
+typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a4b44aedddab10fb6616569ee56d77a32">mrb_code</a></td></tr>
+<tr class="memdesc:a4b44aedddab10fb6616569ee56d77a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">MRuby C API entry point. <br /></td></tr>
 <tr class="separator:a4b44aedddab10fb6616569ee56d77a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b40c4409d0efc1d2d5c6db346f1143a"><td class="memItemLeft" align="right" valign="top"><a id="a6b40c4409d0efc1d2d5c6db346f1143a"></a>
 typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_aspec</b></td></tr>
 <tr class="separator:a6b40c4409d0efc1d2d5c6db346f1143a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9502945004410f3bc399d0995d34717"><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab9502945004410f3bc399d0995d34717">mrb_allocf</a>) (struct <a class="el" href="structmrb__state.html">mrb_state</a> *mrb, void *, size_t, void *ud)</td></tr>
+<tr class="memdesc:ab9502945004410f3bc399d0995d34717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer type of custom allocator used in.  <a href="#ab9502945004410f3bc399d0995d34717">More...</a><br /></td></tr>
 <tr class="separator:ab9502945004410f3bc399d0995d34717"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67d6b13050194957c9584d7640af8234"><td class="memItemLeft" align="right" valign="top"><a id="a67d6b13050194957c9584d7640af8234"></a>
-typedef <a class="el" href="structmrb__value.html">mrb_value</a>(*&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_func_t</b>) (struct <a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
-<tr class="separator:a67d6b13050194957c9584d7640af8234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd010f40f916ff0d4bf3efc5c2daf274"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structmrb__value.html">mrb_value</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>) (struct <a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> self)</td></tr>
+<tr class="memdesc:afd010f40f916ff0d4bf3efc5c2daf274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer type for a function callable by mruby.  <a href="#afd010f40f916ff0d4bf3efc5c2daf274">More...</a><br /></td></tr>
+<tr class="separator:afd010f40f916ff0d4bf3efc5c2daf274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1ab55b8c0c565a5664099057488b41d"><td class="memItemLeft" align="right" valign="top"><a id="ab1ab55b8c0c565a5664099057488b41d"></a>
 typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_atexit_func</b>) (struct <a class="el" href="structmrb__state.html">mrb_state</a> *)</td></tr>
 <tr class="separator:ab1ab55b8c0c565a5664099057488b41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -316,6 +334,7 @@ typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_atexit_
 typedef struct <a class="el" href="structmrb__state.html">mrb_state</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_state</b></td></tr>
 <tr class="separator:a6ea863559e16381c6f8ad3e158162e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad46e8c7921f4ad0181f527670eeb1e27"><td class="memItemLeft" align="right" valign="top">typedef const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ad46e8c7921f4ad0181f527670eeb1e27">mrb_args_format</a></td></tr>
+<tr class="memdesc:ad46e8c7921f4ad0181f527670eeb1e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format specifiers for {mrb_get_args} function.  <a href="#ad46e8c7921f4ad0181f527670eeb1e27">More...</a><br /></td></tr>
 <tr class="separator:ad46e8c7921f4ad0181f527670eeb1e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0a284fc237d86300006e9d45194937c"><td class="memItemLeft" align="right" valign="top"><a id="ab0a284fc237d86300006e9d45194937c"></a>
 typedef enum call_type&#160;</td><td class="memItemRight" valign="bottom"><b>call_type</b></td></tr>
@@ -347,55 +366,75 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4b9de3261cf06ff46c1f917632fd7254"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a4b9de3261cf06ff46c1f917632fd7254">mrb_define_class</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, const char *name, struct <a class="el" href="structRClass.html">RClass</a> *super)</td></tr>
+<tr class="memdesc:a4b9de3261cf06ff46c1f917632fd7254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a new class.  <a href="#a4b9de3261cf06ff46c1f917632fd7254">More...</a><br /></td></tr>
 <tr class="separator:a4b9de3261cf06ff46c1f917632fd7254"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5dd459b7f0ebe6a3b495a25a0825fefc"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a5dd459b7f0ebe6a3b495a25a0825fefc">mrb_define_module</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, const char *)</td></tr>
-<tr class="separator:a5dd459b7f0ebe6a3b495a25a0825fefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0061dca4c26d3811407dd315956cd2e"><td class="memItemLeft" align="right" valign="top"><a id="af0061dca4c26d3811407dd315956cd2e"></a>
-<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_singleton_class</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
-<tr class="separator:af0061dca4c26d3811407dd315956cd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae644477848a4f96e809393fb90b8bb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aae644477848a4f96e809393fb90b8bb9">mrb_include_module</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, struct <a class="el" href="structRClass.html">RClass</a> *)</td></tr>
-<tr class="separator:aae644477848a4f96e809393fb90b8bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee7e87afdc8bcc4e3ce679c3aef9d539"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aee7e87afdc8bcc4e3ce679c3aef9d539">mrb_prepend_module</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, struct <a class="el" href="structRClass.html">RClass</a> *)</td></tr>
-<tr class="separator:aee7e87afdc8bcc4e3ce679c3aef9d539"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e4a0255539c0d8baa8f7e48ac5fe7d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a9e4a0255539c0d8baa8f7e48ac5fe7d2">mrb_define_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cla, const char *name, mrb_func_t func, <a class="el" href="classmrb__aspec.html">mrb_aspec</a> aspec)</td></tr>
+<tr class="memitem:af61c4148a81b6f871327b36d7f039218"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#af61c4148a81b6f871327b36d7f039218">mrb_define_module</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, const char *name)</td></tr>
+<tr class="memdesc:af61c4148a81b6f871327b36d7f039218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a new module.  <a href="#af61c4148a81b6f871327b36d7f039218">More...</a><br /></td></tr>
+<tr class="separator:af61c4148a81b6f871327b36d7f039218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad10b1759a2752b2e57805dc081f0eea"><td class="memItemLeft" align="right" valign="top"><a id="aad10b1759a2752b2e57805dc081f0eea"></a>
+<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_singleton_class</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> val)</td></tr>
+<tr class="separator:aad10b1759a2752b2e57805dc081f0eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f00510234afe885e9d1ed482cb0aa21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a7f00510234afe885e9d1ed482cb0aa21">mrb_include_module</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cla, struct <a class="el" href="structRClass.html">RClass</a> *included)</td></tr>
+<tr class="memdesc:a7f00510234afe885e9d1ed482cb0aa21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Include a module in another class or module.  <a href="#a7f00510234afe885e9d1ed482cb0aa21">More...</a><br /></td></tr>
+<tr class="separator:a7f00510234afe885e9d1ed482cb0aa21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a057f53d0bf8c6e6fc697918996008980"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a057f53d0bf8c6e6fc697918996008980">mrb_prepend_module</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cla, struct <a class="el" href="structRClass.html">RClass</a> *prepended)</td></tr>
+<tr class="memdesc:a057f53d0bf8c6e6fc697918996008980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends a module in another class or module.  <a href="#a057f53d0bf8c6e6fc697918996008980">More...</a><br /></td></tr>
+<tr class="separator:a057f53d0bf8c6e6fc697918996008980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e4a0255539c0d8baa8f7e48ac5fe7d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a9e4a0255539c0d8baa8f7e48ac5fe7d2">mrb_define_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cla, const char *name, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> func, <a class="el" href="classmrb__aspec.html">mrb_aspec</a> aspec)</td></tr>
+<tr class="memdesc:a9e4a0255539c0d8baa8f7e48ac5fe7d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a global function in ruby.  <a href="#a9e4a0255539c0d8baa8f7e48ac5fe7d2">More...</a><br /></td></tr>
 <tr class="separator:a9e4a0255539c0d8baa8f7e48ac5fe7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40d27f9e433742e4b3ad6a97a25c0693"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a40d27f9e433742e4b3ad6a97a25c0693">mrb_define_class_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, const char *, mrb_func_t, <a class="el" href="classmrb__aspec.html">mrb_aspec</a>)</td></tr>
-<tr class="separator:a40d27f9e433742e4b3ad6a97a25c0693"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a734263b0d0bb689c19d4bb4358ac1cf2"><td class="memItemLeft" align="right" valign="top"><a id="a734263b0d0bb689c19d4bb4358ac1cf2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_define_singleton_method</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRObject.html">RObject</a> *, const char *, mrb_func_t, <a class="el" href="classmrb__aspec.html">mrb_aspec</a>)</td></tr>
-<tr class="separator:a734263b0d0bb689c19d4bb4358ac1cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed2399c14fda4c3e0cadc12e4aca3768"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aed2399c14fda4c3e0cadc12e4aca3768">mrb_define_module_function</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, const char *, mrb_func_t, <a class="el" href="classmrb__aspec.html">mrb_aspec</a>)</td></tr>
-<tr class="separator:aed2399c14fda4c3e0cadc12e4aca3768"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6552ee6e07f14c72e70b2c0b81291ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ae6552ee6e07f14c72e70b2c0b81291ac">mrb_define_const</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, const char *name, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
-<tr class="separator:ae6552ee6e07f14c72e70b2c0b81291ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37a160199109fc0d867f7217302413c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a37a160199109fc0d867f7217302413c4">mrb_undef_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, const char *)</td></tr>
-<tr class="separator:a37a160199109fc0d867f7217302413c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcef307bc24c2ee2403e554830949055"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#afcef307bc24c2ee2403e554830949055">mrb_define_class_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cla, const char *name, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> fun, <a class="el" href="classmrb__aspec.html">mrb_aspec</a> aspec)</td></tr>
+<tr class="memdesc:afcef307bc24c2ee2403e554830949055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a class method.  <a href="#afcef307bc24c2ee2403e554830949055">More...</a><br /></td></tr>
+<tr class="separator:afcef307bc24c2ee2403e554830949055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ecaa36c6452e2d735362803e4c3c753"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a8ecaa36c6452e2d735362803e4c3c753">mrb_define_singleton_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRObject.html">RObject</a> *cla, const char *name, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> fun, <a class="el" href="classmrb__aspec.html">mrb_aspec</a> aspec)</td></tr>
+<tr class="memdesc:a8ecaa36c6452e2d735362803e4c3c753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a singleton method.  <a href="#a8ecaa36c6452e2d735362803e4c3c753">More...</a><br /></td></tr>
+<tr class="separator:a8ecaa36c6452e2d735362803e4c3c753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a821bd3db1d86ba460b16aad5a782fc2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a821bd3db1d86ba460b16aad5a782fc2c">mrb_define_module_function</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cla, const char *name, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> fun, <a class="el" href="classmrb__aspec.html">mrb_aspec</a> aspec)</td></tr>
+<tr class="memdesc:a821bd3db1d86ba460b16aad5a782fc2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a module function.  <a href="#a821bd3db1d86ba460b16aad5a782fc2c">More...</a><br /></td></tr>
+<tr class="separator:a821bd3db1d86ba460b16aad5a782fc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4559c0379355b85c253881ed772c5bd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a4559c0379355b85c253881ed772c5bd6">mrb_define_const</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cla, const char *name, <a class="el" href="structmrb__value.html">mrb_value</a> val)</td></tr>
+<tr class="memdesc:a4559c0379355b85c253881ed772c5bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a constant.  <a href="#a4559c0379355b85c253881ed772c5bd6">More...</a><br /></td></tr>
+<tr class="separator:a4559c0379355b85c253881ed772c5bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473dbcb8a889afedaa3caacdc791e405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a473dbcb8a889afedaa3caacdc791e405">mrb_undef_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cla, const char *name)</td></tr>
+<tr class="memdesc:a473dbcb8a889afedaa3caacdc791e405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Undefines a method.  <a href="#a473dbcb8a889afedaa3caacdc791e405">More...</a><br /></td></tr>
+<tr class="separator:a473dbcb8a889afedaa3caacdc791e405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbac8297b3b48bf720500b835a99e057"><td class="memItemLeft" align="right" valign="top"><a id="adbac8297b3b48bf720500b835a99e057"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_undef_method_id</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, <a class="el" href="classmrb__sym.html">mrb_sym</a>)</td></tr>
 <tr class="separator:adbac8297b3b48bf720500b835a99e057"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6879000bbc85b6b47e4687eb05e54c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ae6879000bbc85b6b47e4687eb05e54c4">mrb_undef_class_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRClass.html">RClass</a> *, const char *)</td></tr>
-<tr class="separator:ae6879000bbc85b6b47e4687eb05e54c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6054e7da0f4c07fdd543eb9039cd85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ade6054e7da0f4c07fdd543eb9039cd85">mrb_undef_class_method</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *cls, const char *name)</td></tr>
+<tr class="memdesc:ade6054e7da0f4c07fdd543eb9039cd85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Undefine a class method.  <a href="#ade6054e7da0f4c07fdd543eb9039cd85">More...</a><br /></td></tr>
+<tr class="separator:ade6054e7da0f4c07fdd543eb9039cd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ccc687d45a5cf8abea2856fd7df51cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a3ccc687d45a5cf8abea2856fd7df51cb">mrb_obj_new</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *c, mrb_int argc, const <a class="el" href="structmrb__value.html">mrb_value</a> *argv)</td></tr>
+<tr class="memdesc:a3ccc687d45a5cf8abea2856fd7df51cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new object instance of c class.  <a href="#a3ccc687d45a5cf8abea2856fd7df51cb">More...</a><br /></td></tr>
 <tr class="separator:a3ccc687d45a5cf8abea2856fd7df51cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e3eef6f970e06c2a99d87a41683cb6d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a8e3eef6f970e06c2a99d87a41683cb6d">mrb_class_new_instance</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, mrb_int argc, const <a class="el" href="structmrb__value.html">mrb_value</a> *argv, struct <a class="el" href="structRClass.html">RClass</a> *c)</td></tr>
 <tr class="separator:a8e3eef6f970e06c2a99d87a41683cb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0b71f69bb51456ff4ca6c16bca9ea9f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ab0b71f69bb51456ff4ca6c16bca9ea9f">mrb_class_new</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *super)</td></tr>
+<tr class="memdesc:ab0b71f69bb51456ff4ca6c16bca9ea9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of Class, Class.  <a href="#ab0b71f69bb51456ff4ca6c16bca9ea9f">More...</a><br /></td></tr>
 <tr class="separator:ab0b71f69bb51456ff4ca6c16bca9ea9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2626190976d6d5a96788a0162068b63b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a2626190976d6d5a96788a0162068b63b">mrb_module_new</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb)</td></tr>
+<tr class="memdesc:a2626190976d6d5a96788a0162068b63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new module, Module.  <a href="#a2626190976d6d5a96788a0162068b63b">More...</a><br /></td></tr>
 <tr class="separator:a2626190976d6d5a96788a0162068b63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9306e9d4ae6cf4fb967c23e734346d0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmrb__bool.html">mrb_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a9306e9d4ae6cf4fb967c23e734346d0e">mrb_class_defined</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, const char *name)</td></tr>
+<tr class="memdesc:a9306e9d4ae6cf4fb967c23e734346d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an <a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a>.  <a href="#a9306e9d4ae6cf4fb967c23e734346d0e">More...</a><br /></td></tr>
 <tr class="separator:a9306e9d4ae6cf4fb967c23e734346d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d8721a04205e4e80bce2de89f0de7c6"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a6d8721a04205e4e80bce2de89f0de7c6">mrb_class_get</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, const char *name)</td></tr>
+<tr class="memdesc:a6d8721a04205e4e80bce2de89f0de7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a class.  <a href="#a6d8721a04205e4e80bce2de89f0de7c6">More...</a><br /></td></tr>
 <tr class="separator:a6d8721a04205e4e80bce2de89f0de7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41292964842293908547a4e970d72b5a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a41292964842293908547a4e970d72b5a">mrb_exc_get</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, const char *name)</td></tr>
+<tr class="memdesc:a41292964842293908547a4e970d72b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a exception class.  <a href="#a41292964842293908547a4e970d72b5a">More...</a><br /></td></tr>
 <tr class="separator:a41292964842293908547a4e970d72b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6abfac8dc012eaa28896f417f3c9f8d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmrb__bool.html">mrb_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a6abfac8dc012eaa28896f417f3c9f8d5">mrb_class_defined_under</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *outer, const char *name)</td></tr>
+<tr class="memdesc:a6abfac8dc012eaa28896f417f3c9f8d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an <a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a>.  <a href="#a6abfac8dc012eaa28896f417f3c9f8d5">More...</a><br /></td></tr>
 <tr class="separator:a6abfac8dc012eaa28896f417f3c9f8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9572313e61f74c2b61b42200b31822b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ad9572313e61f74c2b61b42200b31822b">mrb_class_get_under</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *outer, const char *name)</td></tr>
+<tr class="memdesc:ad9572313e61f74c2b61b42200b31822b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a child class.  <a href="#ad9572313e61f74c2b61b42200b31822b">More...</a><br /></td></tr>
 <tr class="separator:ad9572313e61f74c2b61b42200b31822b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9878d0d8bca165bbfe9b682191eadfe4"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a9878d0d8bca165bbfe9b682191eadfe4">mrb_module_get</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, const char *name)</td></tr>
+<tr class="memdesc:a9878d0d8bca165bbfe9b682191eadfe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a module.  <a href="#a9878d0d8bca165bbfe9b682191eadfe4">More...</a><br /></td></tr>
 <tr class="separator:a9878d0d8bca165bbfe9b682191eadfe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af568db60c1148c40586ea564e9af8a3e"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#af568db60c1148c40586ea564e9af8a3e">mrb_module_get_under</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *outer, const char *name)</td></tr>
+<tr class="memdesc:af568db60c1148c40586ea564e9af8a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a module defined under another module.  <a href="#af568db60c1148c40586ea564e9af8a3e">More...</a><br /></td></tr>
 <tr class="separator:af568db60c1148c40586ea564e9af8a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a9dff9bb01672fc5e27fc444582ebee"><td class="memItemLeft" align="right" valign="top"><a id="a4a9dff9bb01672fc5e27fc444582ebee"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_notimplement</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *)</td></tr>
@@ -404,32 +443,42 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_notimplement</b> 
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_notimplement_m</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
 <tr class="separator:a3f5f8abbba496fb3af314406f86a008c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36580a4044c8d7312dad3323cef3f0fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a36580a4044c8d7312dad3323cef3f0fa">mrb_obj_dup</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> obj)</td></tr>
+<tr class="memdesc:a36580a4044c8d7312dad3323cef3f0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicate an object.  <a href="#a36580a4044c8d7312dad3323cef3f0fa">More...</a><br /></td></tr>
 <tr class="separator:a36580a4044c8d7312dad3323cef3f0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc0ccfa2b373f74bbd69344bafda5457"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmrb__bool.html">mrb_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#adc0ccfa2b373f74bbd69344bafda5457">mrb_obj_respond_to</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *c, <a class="el" href="classmrb__sym.html">mrb_sym</a> mid)</td></tr>
+<tr class="memdesc:adc0ccfa2b373f74bbd69344bafda5457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if obj responds to the given method.  <a href="#adc0ccfa2b373f74bbd69344bafda5457">More...</a><br /></td></tr>
 <tr class="separator:adc0ccfa2b373f74bbd69344bafda5457"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93f991972bbdd1c9bf8157f05df85db7"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a93f991972bbdd1c9bf8157f05df85db7">mrb_define_class_under</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *outer, const char *name, struct <a class="el" href="structRClass.html">RClass</a> *super)</td></tr>
+<tr class="memdesc:a93f991972bbdd1c9bf8157f05df85db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a new class under a given module.  <a href="#a93f991972bbdd1c9bf8157f05df85db7">More...</a><br /></td></tr>
 <tr class="separator:a93f991972bbdd1c9bf8157f05df85db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae42c41c2cddec8e9bd2089572a54eb62"><td class="memItemLeft" align="right" valign="top"><a id="ae42c41c2cddec8e9bd2089572a54eb62"></a>
 struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_define_module_under</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, struct <a class="el" href="structRClass.html">RClass</a> *outer, const char *name)</td></tr>
 <tr class="separator:ae42c41c2cddec8e9bd2089572a54eb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75f83f0204a576c23f773d01c8d51690"><td class="memItemLeft" align="right" valign="top">mrb_int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a75f83f0204a576c23f773d01c8d51690">mrb_get_args</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="mruby_8h.html#ad46e8c7921f4ad0181f527670eeb1e27">mrb_args_format</a> format,...)</td></tr>
+<tr class="memdesc:a75f83f0204a576c23f773d01c8d51690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve arguments from <a class="el" href="structmrb__state.html">mrb_state</a>.  <a href="#a75f83f0204a576c23f773d01c8d51690">More...</a><br /></td></tr>
 <tr class="separator:a75f83f0204a576c23f773d01c8d51690"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d0b56c98bc9e520059090869c7f75f"><td class="memItemLeft" align="right" valign="top"><a id="a71d0b56c98bc9e520059090869c7f75f"></a>
 static <a class="el" href="classmrb__sym.html">mrb_sym</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_get_mid</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb)</td></tr>
 <tr class="separator:a71d0b56c98bc9e520059090869c7f75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f3be64a068b8baf260b0f95d820ebca"><td class="memItemLeft" align="right" valign="top">mrb_int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a0f3be64a068b8baf260b0f95d820ebca">mrb_get_argc</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb)</td></tr>
+<tr class="memdesc:a0f3be64a068b8baf260b0f95d820ebca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve number of arguments from <a class="el" href="structmrb__state.html">mrb_state</a>.  <a href="#a0f3be64a068b8baf260b0f95d820ebca">More...</a><br /></td></tr>
 <tr class="separator:a0f3be64a068b8baf260b0f95d820ebca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5675365850076e1b47e5409b8f8de86"><td class="memItemLeft" align="right" valign="top"><a id="ae5675365850076e1b47e5409b8f8de86"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_get_argv</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb)</td></tr>
 <tr class="separator:ae5675365850076e1b47e5409b8f8de86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba63e183020245a66e853bca1773df2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aba63e183020245a66e853bca1773df2a">mrb_funcall</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>, const char *, mrb_int,...)</td></tr>
-<tr class="separator:aba63e183020245a66e853bca1773df2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d688cd2901d2ad3d8bd409ec652cca2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a1d688cd2901d2ad3d8bd409ec652cca2">mrb_funcall_argv</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>, <a class="el" href="classmrb__sym.html">mrb_sym</a>, mrb_int, const <a class="el" href="structmrb__value.html">mrb_value</a> *)</td></tr>
-<tr class="separator:a1d688cd2901d2ad3d8bd409ec652cca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e0d6f62e8b93cbfe1001776525aef2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a9e0d6f62e8b93cbfe1001776525aef2f">mrb_funcall_with_block</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>, <a class="el" href="classmrb__sym.html">mrb_sym</a>, mrb_int, const <a class="el" href="structmrb__value.html">mrb_value</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
+<tr class="memitem:a140a57c584a8629a04ad419173dd9674"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a140a57c584a8629a04ad419173dd9674">mrb_funcall</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> val, const char *name, mrb_int argc,...)</td></tr>
+<tr class="memdesc:a140a57c584a8629a04ad419173dd9674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call existing ruby functions.  <a href="#a140a57c584a8629a04ad419173dd9674">More...</a><br /></td></tr>
+<tr class="separator:a140a57c584a8629a04ad419173dd9674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9b03fbcd87afb05c58c08945a392e70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#af9b03fbcd87afb05c58c08945a392e70">mrb_funcall_argv</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> val, <a class="el" href="classmrb__sym.html">mrb_sym</a> name_sym, mrb_int argc, const <a class="el" href="structmrb__value.html">mrb_value</a> *obj)</td></tr>
+<tr class="memdesc:af9b03fbcd87afb05c58c08945a392e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call existing ruby functions.  <a href="#af9b03fbcd87afb05c58c08945a392e70">More...</a><br /></td></tr>
+<tr class="separator:af9b03fbcd87afb05c58c08945a392e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e0d6f62e8b93cbfe1001776525aef2f"><td class="memItemLeft" align="right" valign="top"><a id="a9e0d6f62e8b93cbfe1001776525aef2f"></a>
+<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a9e0d6f62e8b93cbfe1001776525aef2f">mrb_funcall_with_block</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>, <a class="el" href="classmrb__sym.html">mrb_sym</a>, mrb_int, const <a class="el" href="structmrb__value.html">mrb_value</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
+<tr class="memdesc:a9e0d6f62e8b93cbfe1001776525aef2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call existing ruby functions with a block. <br /></td></tr>
 <tr class="separator:a9e0d6f62e8b93cbfe1001776525aef2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac84802f4d205ad5eb6f94654bf590ef5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmrb__sym.html">mrb_sym</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ac84802f4d205ad5eb6f94654bf590ef5">mrb_intern_cstr</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, const char *)</td></tr>
-<tr class="separator:ac84802f4d205ad5eb6f94654bf590ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8af124417bc3e2f46f8dae301ebeb69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmrb__sym.html">mrb_sym</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#ae8af124417bc3e2f46f8dae301ebeb69">mrb_intern_cstr</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, const char *str)</td></tr>
+<tr class="memdesc:ae8af124417bc3e2f46f8dae301ebeb69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a symbol.  <a href="#ae8af124417bc3e2f46f8dae301ebeb69">More...</a><br /></td></tr>
+<tr class="separator:ae8af124417bc3e2f46f8dae301ebeb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1fcecf10d0f3c34c336e1ff636bf83e"><td class="memItemLeft" align="right" valign="top"><a id="ae1fcecf10d0f3c34c336e1ff636bf83e"></a>
 <a class="el" href="classmrb__sym.html">mrb_sym</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_intern</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, const char *, size_t)</td></tr>
 <tr class="separator:ae1fcecf10d0f3c34c336e1ff636bf83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -481,20 +530,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_free</b> (<a clas
 <tr class="memitem:a97e9525a11a2433e622d1953f0ae5e65"><td class="memItemLeft" align="right" valign="top"><a id="a97e9525a11a2433e622d1953f0ae5e65"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_new</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, const char *p, size_t len)</td></tr>
 <tr class="separator:a97e9525a11a2433e622d1953f0ae5e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87bd8bbf5f2451393c01fd8bcecfd6e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a87bd8bbf5f2451393c01fd8bcecfd6e1">mrb_str_new_cstr</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, const char *)</td></tr>
+<tr class="memitem:a87bd8bbf5f2451393c01fd8bcecfd6e1"><td class="memItemLeft" align="right" valign="top"><a id="a87bd8bbf5f2451393c01fd8bcecfd6e1"></a>
+<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a87bd8bbf5f2451393c01fd8bcecfd6e1">mrb_str_new_cstr</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, const char *)</td></tr>
+<tr class="memdesc:a87bd8bbf5f2451393c01fd8bcecfd6e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns a C string into a Ruby string value. <br /></td></tr>
 <tr class="separator:a87bd8bbf5f2451393c01fd8bcecfd6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a021270752d19cab4182257c84b112d58"><td class="memItemLeft" align="right" valign="top"><a id="a021270752d19cab4182257c84b112d58"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_str_new_static</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, const char *p, size_t len)</td></tr>
 <tr class="separator:a021270752d19cab4182257c84b112d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a135d95ed0aded4fc1e131a23a7418f3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a135d95ed0aded4fc1e131a23a7418f3b">mrb_open</a> (void)</td></tr>
+<tr class="memdesc:a135d95ed0aded4fc1e131a23a7418f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new <a class="el" href="structmrb__state.html">mrb_state</a>.  <a href="#a135d95ed0aded4fc1e131a23a7418f3b">More...</a><br /></td></tr>
 <tr class="separator:a135d95ed0aded4fc1e131a23a7418f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f63a9ff8f3c79672404289323617ed5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a3f63a9ff8f3c79672404289323617ed5">mrb_open_allocf</a> (<a class="el" href="mruby_8h.html#ab9502945004410f3bc399d0995d34717">mrb_allocf</a> f, void *ud)</td></tr>
+<tr class="memdesc:a3f63a9ff8f3c79672404289323617ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new <a class="el" href="structmrb__state.html">mrb_state</a> with custom allocators.  <a href="#a3f63a9ff8f3c79672404289323617ed5">More...</a><br /></td></tr>
 <tr class="separator:a3f63a9ff8f3c79672404289323617ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed926b9a208bd773cb32e5fc564c6709"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#aed926b9a208bd773cb32e5fc564c6709">mrb_open_core</a> (<a class="el" href="mruby_8h.html#ab9502945004410f3bc399d0995d34717">mrb_allocf</a> f, void *ud)</td></tr>
+<tr class="memdesc:aed926b9a208bd773cb32e5fc564c6709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new <a class="el" href="structmrb__state.html">mrb_state</a> with just the MRuby core.  <a href="#aed926b9a208bd773cb32e5fc564c6709">More...</a><br /></td></tr>
 <tr class="separator:aed926b9a208bd773cb32e5fc564c6709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a836d4b4316f4cf67392e4c2ccb8069db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a836d4b4316f4cf67392e4c2ccb8069db">mrb_close</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb)</td></tr>
+<tr class="memdesc:a836d4b4316f4cf67392e4c2ccb8069db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes and frees a <a class="el" href="structmrb__state.html">mrb_state</a>.  <a href="#a836d4b4316f4cf67392e4c2ccb8069db">More...</a><br /></td></tr>
 <tr class="separator:a836d4b4316f4cf67392e4c2ccb8069db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00d8ac503aae15a1b8cc34a8a63ef601"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a00d8ac503aae15a1b8cc34a8a63ef601">mrb_default_allocf</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *, void *, size_t, void *)</td></tr>
+<tr class="memdesc:a00d8ac503aae15a1b8cc34a8a63ef601"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default allocation function.  <a href="#a00d8ac503aae15a1b8cc34a8a63ef601">More...</a><br /></td></tr>
 <tr class="separator:a00d8ac503aae15a1b8cc34a8a63ef601"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae89b93af7d44ddd2f1bad8c5dca45b42"><td class="memItemLeft" align="right" valign="top"><a id="ae89b93af7d44ddd2f1bad8c5dca45b42"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_top_self</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *)</td></tr>
@@ -508,9 +564,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_free</b> (<a clas
 <tr class="memitem:a1e6105671fe953ffc827eb22a30058b2"><td class="memItemLeft" align="right" valign="top"><a id="a1e6105671fe953ffc827eb22a30058b2"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_vm_run</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRProc.html">RProc</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>, unsigned int)</td></tr>
 <tr class="separator:a1e6105671fe953ffc827eb22a30058b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa83d87e5f944fd444bfecdebb05a67ac"><td class="memItemLeft" align="right" valign="top"><a id="aa83d87e5f944fd444bfecdebb05a67ac"></a>
-<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_vm_exec</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRProc.html">RProc</a> *, <a class="el" href="mruby_8h.html#a4b44aedddab10fb6616569ee56d77a32">mrb_code</a> *)</td></tr>
-<tr class="separator:aa83d87e5f944fd444bfecdebb05a67ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3475fda5b876d9aebc76b0e978a594f"><td class="memItemLeft" align="right" valign="top"><a id="ac3475fda5b876d9aebc76b0e978a594f"></a>
+<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_vm_exec</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, struct <a class="el" href="structRProc.html">RProc</a> *, const <a class="el" href="mruby_8h.html#a4b44aedddab10fb6616569ee56d77a32">mrb_code</a> *)</td></tr>
+<tr class="separator:ac3475fda5b876d9aebc76b0e978a594f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83173f82b06989968ca4520832564fbb"><td class="memItemLeft" align="right" valign="top"><a id="a83173f82b06989968ca4520832564fbb"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_p</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
 <tr class="separator:a83173f82b06989968ca4520832564fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -679,16 +735,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_define_global_con
 <a class="el" href="classmrb__bool.html">mrb_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_obj_is_instance_of</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> obj, struct <a class="el" href="structRClass.html">RClass</a> *c)</td></tr>
 <tr class="separator:a115a363ddd93bd3dcc1541aade691673"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b59041d7d2a5a58a922583c112eeed6"><td class="memItemLeft" align="right" valign="top"><a id="a6b59041d7d2a5a58a922583c112eeed6"></a>
-<a class="el" href="classmrb__bool.html">mrb_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_func_basic_p</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> obj, <a class="el" href="classmrb__sym.html">mrb_sym</a> mid, mrb_func_t func)</td></tr>
+<a class="el" href="classmrb__bool.html">mrb_bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_func_basic_p</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> obj, <a class="el" href="classmrb__sym.html">mrb_sym</a> mid, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> func)</td></tr>
 <tr class="separator:a6b59041d7d2a5a58a922583c112eeed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f701cb169d77986170377cbce5543b5"><td class="memItemLeft" align="right" valign="top"><a id="a6f701cb169d77986170377cbce5543b5"></a>
-<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_fiber_resume</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> fib, mrb_int argc, const <a class="el" href="structmrb__value.html">mrb_value</a> *argv)</td></tr>
+<tr class="memitem:a6f701cb169d77986170377cbce5543b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a6f701cb169d77986170377cbce5543b5">mrb_fiber_resume</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> fib, mrb_int argc, const <a class="el" href="structmrb__value.html">mrb_value</a> *argv)</td></tr>
+<tr class="memdesc:a6f701cb169d77986170377cbce5543b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume a Fiber.  <a href="#a6f701cb169d77986170377cbce5543b5">More...</a><br /></td></tr>
 <tr class="separator:a6f701cb169d77986170377cbce5543b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12cf2f620bc9bae9128de17ecc22448d"><td class="memItemLeft" align="right" valign="top"><a id="a12cf2f620bc9bae9128de17ecc22448d"></a>
-<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_fiber_yield</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, mrb_int argc, const <a class="el" href="structmrb__value.html">mrb_value</a> *argv)</td></tr>
+<tr class="memitem:a12cf2f620bc9bae9128de17ecc22448d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a12cf2f620bc9bae9128de17ecc22448d">mrb_fiber_yield</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, mrb_int argc, const <a class="el" href="structmrb__value.html">mrb_value</a> *argv)</td></tr>
+<tr class="memdesc:a12cf2f620bc9bae9128de17ecc22448d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yield a Fiber.  <a href="#a12cf2f620bc9bae9128de17ecc22448d">More...</a><br /></td></tr>
 <tr class="separator:a12cf2f620bc9bae9128de17ecc22448d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07df51dd1163825c6fe88df851ebdec2"><td class="memItemLeft" align="right" valign="top"><a id="a07df51dd1163825c6fe88df851ebdec2"></a>
-<a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_fiber_alive_p</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> fib)</td></tr>
+<tr class="memitem:a07df51dd1163825c6fe88df851ebdec2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mruby_8h.html#a07df51dd1163825c6fe88df851ebdec2">mrb_fiber_alive_p</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> fib)</td></tr>
+<tr class="memdesc:a07df51dd1163825c6fe88df851ebdec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a Fiber is alive.  <a href="#a07df51dd1163825c6fe88df851ebdec2">More...</a><br /></td></tr>
 <tr class="separator:a07df51dd1163825c6fe88df851ebdec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad513f872fa42516ff1e91b5ef771bd0f"><td class="memItemLeft" align="right" valign="top"><a id="ad513f872fa42516ff1e91b5ef771bd0f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_stack_extend</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, mrb_int)</td></tr>
@@ -725,21 +781,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
 <tr class="separator:a62489292c0e70443de088cedc2422a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a79cb00ecd1c4cb43d33da465ca090e39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79cb00ecd1c4cb43d33da465ca090e39">&#9670;&nbsp;</a></span>MRB_ARGS_ANY</h2>
+<a id="aaa4421aa41e79b6ccc1f0fd1e825ef35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4421aa41e79b6ccc1f0fd1e825ef35">&#9670;&nbsp;</a></span>E_FIBER_ERROR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MRB_ARGS_ANY</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="mruby_8h.html#aaf4ff9ef085adfa4bc261ac3eed2f436">MRB_ARGS_REST</a>()</td>
+          <td class="memname">#define E_FIBER_ERROR&#160;&#160;&#160;(<a class="el" href="mruby_8h.html#a41292964842293908547a4e970d72b5a">mrb_exc_get</a>(mrb, &quot;FiberError&quot;))</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function accepts any number of arguments </p>
+
+<p>FiberError reference. </p>
+<p>Implemented in mruby-fiber </p>
 
 </div>
 </div>
@@ -768,7 +823,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function takes n1 mandatory arguments and n2 optional arguments</p>
+
+<p>Function takes n1 mandatory arguments and n2 optional arguments. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n1</td><td>The number of required arguments. </td></tr>
@@ -776,71 +832,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="ab5f11e1dbfb15c5e196f7bf2dc34778b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5f11e1dbfb15c5e196f7bf2dc34778b">&#9670;&nbsp;</a></span>MRB_ARGS_BLOCK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MRB_ARGS_BLOCK</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function takes a block argument </p>
-
-</div>
-</div>
-<a id="ab7a02eef5a0eff46661f0f3057bfc854"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7a02eef5a0eff46661f0f3057bfc854">&#9670;&nbsp;</a></span>MRB_ARGS_KEY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MRB_ARGS_KEY</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n1, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n2&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)((((n1)&amp;0x1f) &lt;&lt; 2) | ((n2)?(1&lt;&lt;1):0)))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>keyword arguments (n of keys, kdict) </p>
-
-</div>
-</div>
-<a id="aa6e2ec577d218326a3546a7028b23c3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6e2ec577d218326a3546a7028b23c3c">&#9670;&nbsp;</a></span>MRB_ARGS_NONE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MRB_ARGS_NONE</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Function accepts no arguments </p>
 
 </div>
 </div>
@@ -859,32 +850,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function takes n optional arguments</p>
+
+<p>Function takes n optional arguments. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>The number of optional arguments. </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a2b3a9a1fbb54a095fbea70f6bd8cddde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b3a9a1fbb54a095fbea70f6bd8cddde">&#9670;&nbsp;</a></span>MRB_ARGS_POST</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MRB_ARGS_POST</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n</td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)((n)&amp;0x1f) &lt;&lt; 7)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>required arguments after rest </p>
 
 </div>
 </div>
@@ -903,31 +876,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function requires n arguments.</p>
+
+<p>Function requires n arguments. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>The number of required arguments. </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="aaf4ff9ef085adfa4bc261ac3eed2f436"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf4ff9ef085adfa4bc261ac3eed2f436">&#9670;&nbsp;</a></span>MRB_ARGS_REST</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MRB_ARGS_REST</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="classmrb__aspec.html">mrb_aspec</a>)(1 &lt;&lt; 12))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>rest argument </p>
 
 </div>
 </div>
@@ -1005,12 +961,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function pointer type of custom allocator used in </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a3f63a9ff8f3c79672404289323617ed5">mrb_open_allocf</a>.</dd></dl>
+
+<p>Function pointer type of custom allocator used in. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a3f63a9ff8f3c79672404289323617ed5" title="Create new mrb_state with custom allocators. ">mrb_open_allocf</a>.</dd></dl>
 <p>The function pointing it must behave similarly as realloc except:</p><ul>
 <li>If ptr is NULL it must allocate new space.</li>
 <li>If s is NULL, ptr must be freed.</li>
 </ul>
-<p>See </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a00d8ac503aae15a1b8cc34a8a63ef601">mrb_default_allocf</a> for the default implementation. </dd></dl>
+<p>See </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a00d8ac503aae15a1b8cc34a8a63ef601" title="The default allocation function. ">mrb_default_allocf</a> for the default implementation. </dd></dl>
 
 </div>
 </div>
@@ -1025,7 +983,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Format specifiers for {mrb_get_args} function</p>
+
+<p>Format specifiers for {mrb_get_args} function. </p>
 <p>Must be a C string composed of the following format specifiers:</p>
 <table class="doxtable">
 <tr>
@@ -1051,11 +1010,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
 <tr>
 <td align="center"><code>i</code> </td><td>{Fixnum}/{Float} </td><td>{mrb_int} </td><td></td></tr>
 <tr>
-<td align="center"><code>b</code> </td><td>boolean </td><td>{<a class="el" href="classmrb__bool.html" title="mruby Boolean ">mrb_bool</a>} </td><td></td></tr>
+<td align="center"><code>b</code> </td><td>boolean </td><td>{<a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a>} </td><td></td></tr>
 <tr>
-<td align="center"><code>n</code> </td><td>{String}/{Symbol} </td><td>{<a class="el" href="classmrb__sym.html" title="mruby Symbol ">mrb_sym</a>} </td><td></td></tr>
+<td align="center"><code>n</code> </td><td>{String}/{Symbol} </td><td>{<a class="el" href="classmrb__sym.html" title="mruby Symbol. ">mrb_sym</a>} </td><td></td></tr>
 <tr>
-<td align="center"><code>d</code> </td><td>data </td><td>void *, {<a class="el" href="structmrb__data__type.html">mrb_data_type</a>} const </td><td>2nd argument will be used to check data type so it won't be modified; when <code>!</code> follows, the value may be <code>nil</code> </td></tr>
+<td align="center"><code>d</code> </td><td>data </td><td>void *, {<a class="el" href="structmrb__data__type.html" title="Custom C wrapped data. ">mrb_data_type</a>} const </td><td>2nd argument will be used to check data type so it won't be modified; when <code>!</code> follows, the value may be <code>nil</code> </td></tr>
 <tr>
 <td align="center"><code>I</code> </td><td>inline struct </td><td>void * </td><td></td></tr>
 <tr>
@@ -1063,26 +1022,36 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
 <tr>
 <td align="center"><code>*</code> </td><td>rest arguments </td><td>{<a class="el" href="structmrb__value.html">mrb_value</a>} *, {mrb_int} </td><td>Receive the rest of arguments as an array; <code>*!</code> avoid copy of the stack. </td></tr>
 <tr>
-<td align="center"></td><td>optional </td><td></td><td>After this spec following specs would be optional. </td></tr>
+<td align="center"><code>|</code> </td><td>optional </td><td></td><td>After this spec following specs would be optional. </td></tr>
 <tr>
-<td align="center"><code>?</code> </td><td>optional given </td><td>{<a class="el" href="classmrb__bool.html" title="mruby Boolean ">mrb_bool</a>} </td><td><code>TRUE</code> if preceding argument is given. Used to check optional argument is given. </td></tr>
+<td align="center"><code>?</code> </td><td>optional given </td><td>{<a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a>} </td><td><code>TRUE</code> if preceding argument is given. Used to check optional argument is given. </td></tr>
 </table>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a75f83f0204a576c23f773d01c8d51690">mrb_get_args</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a75f83f0204a576c23f773d01c8d51690" title="Retrieve arguments from mrb_state. ">mrb_get_args</a> </dd></dl>
 
 </div>
 </div>
-<a id="a4b44aedddab10fb6616569ee56d77a32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b44aedddab10fb6616569ee56d77a32">&#9670;&nbsp;</a></span>mrb_code</h2>
+<a id="afd010f40f916ff0d4bf3efc5c2daf274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd010f40f916ff0d4bf3efc5c2daf274">&#9670;&nbsp;</a></span>mrb_func_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint8_t <a class="el" href="mruby_8h.html#a4b44aedddab10fb6616569ee56d77a32">mrb_code</a></td>
+          <td class="memname">typedef <a class="el" href="structmrb__value.html">mrb_value</a>(* mrb_func_t) (struct <a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="structmrb__value.html">mrb_value</a> self)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>MRuby C API entry point </p>
+
+<p>Function pointer type for a function callable by mruby. </p>
+<p>The arguments to the function are stored on the <a class="el" href="structmrb__state.html">mrb_state</a>. To get them see mrb_get_args</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mrb</td><td>The mruby state </td></tr>
+    <tr><td class="paramname">self</td><td>The self object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="structmrb__value.html">mrb_value</a>] The function's return value </dd></dl>
 
 </div>
 </div>
@@ -1112,18 +1081,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns an <a class="el" href="classmrb__bool.html" title="mruby Boolean ">mrb_bool</a>. True if class was defined, and false if the class was not defined.</p>
-<p>Example: void mrb_example_gem_init(mrb_state* mrb) { struct <a class="el" href="structRClass.html">RClass</a> *example_class; <a class="el" href="classmrb__bool.html" title="mruby Boolean ">mrb_bool</a> cd;</p>
+
+<p>Returns an <a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a>. </p>
+<p>True if class was defined, and false if the class was not defined.</p>
+<p>Example: void mrb_example_gem_init(mrb_state* mrb) { struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *example_class; <a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a> cd;</p>
 <p>example_class = mrb_define_class(mrb, "ExampleClass", mrb-&gt;object_class); cd = mrb_class_defined(mrb, "ExampleClass");</p>
 <p>// If mrb_class_defined returns 1 then puts "True" // If mrb_class_defined returns 0 then puts "False" if (cd == 1){ puts("True"); } else { puts("False"); } }</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name A string representing the name of the class. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">name</td><td>A string representing the name of the class. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="classmrb__bool.html" title="mruby Boolean ">mrb_bool</a>] A boolean value. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a>] A boolean value. </dd></dl>
 
 </div>
 </div>
@@ -1158,20 +1129,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns an <a class="el" href="classmrb__bool.html" title="mruby Boolean ">mrb_bool</a>. True if inner class was defined, and false if the inner class was not defined.</p>
-<p>Example: void mrb_example_gem_init(mrb_state* mrb) { struct <a class="el" href="structRClass.html">RClass</a> *example_outer, *example_inner; <a class="el" href="classmrb__bool.html" title="mruby Boolean ">mrb_bool</a> cd;</p>
+
+<p>Returns an <a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a>. </p>
+<p>True if inner class was defined, and false if the inner class was not defined.</p>
+<p>Example: void mrb_example_gem_init(mrb_state* mrb) { struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *example_outer, *example_inner; <a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a> cd;</p>
 <p>example_outer = mrb_define_module(mrb, "ExampleOuter");</p>
 <p>example_inner = mrb_define_class_under(mrb, example_outer, "ExampleInner", mrb-&gt;object_class); cd = mrb_class_defined_under(mrb, example_outer, "ExampleInner");</p>
 <p>// If mrb_class_defined_under returns 1 then puts "True" // If mrb_class_defined_under returns 0 then puts "False" if (cd == 1){ puts("True"); } else { puts("False"); } }</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] outer The name of the outer class. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name A string representing the name of the inner class. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">outer</td><td>The name of the outer class. </td></tr>
+    <tr><td class="paramname">name</td><td>A string representing the name of the inner class. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="classmrb__bool.html" title="mruby Boolean ">mrb_bool</a>] A boolean value. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a>] A boolean value. </dd></dl>
 
 </div>
 </div>
@@ -1200,14 +1173,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gets a class. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Gets a class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name The name of the class. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the class. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html">RClass</a> *] A reference to the class. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *] A reference to the class. </dd></dl>
 
 </div>
 </div>
@@ -1242,15 +1217,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gets a child class. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Gets a child class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] outer The name of the parent class. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name The name of the class. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">outer</td><td>The name of the parent class. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the class. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html">RClass</a> *] A reference to the class. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *] A reference to the class. </dd></dl>
 
 </div>
 </div>
@@ -1279,7 +1256,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates a new instance of Class, Class.</p>
+
+<p>Creates a new instance of Class, Class. </p>
 <p>Example: </p><pre class="fragment"> void
  mrb_example_gem_init(mrb_state* mrb) {
    struct RClass *example_class;
@@ -1291,12 +1269,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
   }
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] super The super class or parent. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">super</td><td>The super class or parent. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html">RClass</a> *] Reference to the new class.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *] Reference to the new class.</dd></dl>
 <p>Creates a new class. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">super</td><td>a class from which the new class derives. </td></tr>
@@ -1358,7 +1336,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a3ccc687d45a5cf8abea2856fd7df51cb">mrb_obj_new</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a3ccc687d45a5cf8abea2856fd7df51cb" title="Initialize a new object instance of c class. ">mrb_obj_new</a> </dd></dl>
 
 </div>
 </div>
@@ -1377,7 +1355,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Closes and frees a <a class="el" href="structmrb__state.html">mrb_state</a>.</p>
+
+<p>Closes and frees a <a class="el" href="structmrb__state.html">mrb_state</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mrb</td><td>Pointer to the <a class="el" href="structmrb__state.html">mrb_state</a> to be closed. </td></tr>
@@ -1424,8 +1403,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The default allocation function.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#ab9502945004410f3bc399d0995d34717">mrb_allocf</a> </dd></dl>
+
+<p>The default allocation function. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#ab9502945004410f3bc399d0995d34717" title="Function pointer type of custom allocator used in. ">mrb_allocf</a> </dd></dl>
 
 </div>
 </div>
@@ -1468,6 +1448,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
 </div><div class="memdoc">
 <p>Defines an alias of a method. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">mrb</td><td>the mruby state </td></tr>
     <tr><td class="paramname">klass</td><td>the class which the original method belongs to </td></tr>
     <tr><td class="paramname">name1</td><td>a new name for the method </td></tr>
     <tr><td class="paramname">name2</td><td>the original name of the method </td></tr>
@@ -1508,7 +1489,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines a new class.</p>
+
+<p>Defines a new class. </p>
 <p>If you're creating a gem it may look something like this: </p><pre class="fragment"> !!!c
  void mrb_example_gem_init(mrb_state* mrb) {
      struct RClass *example_class;
@@ -1520,19 +1502,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
  }
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state</td><td>*] mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name The name of the defined class. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] super The new class parent. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the defined class. </td></tr>
+    <tr><td class="paramname">super</td><td>The new class parent. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html">RClass</a> *] Reference to the newly defined class. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a93f991972bbdd1c9bf8157f05df85db7">mrb_define_class_under</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *] Reference to the newly defined class. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a93f991972bbdd1c9bf8157f05df85db7" title="Defines a new class under a given module. ">mrb_define_class_under</a> </dd></dl>
 
 </div>
 </div>
-<a id="a40d27f9e433742e4b3ad6a97a25c0693"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40d27f9e433742e4b3ad6a97a25c0693">&#9670;&nbsp;</a></span>mrb_define_class_method()</h2>
+<a id="afcef307bc24c2ee2403e554830949055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcef307bc24c2ee2403e554830949055">&#9670;&nbsp;</a></span>mrb_define_class_method()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1541,31 +1523,31 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
           <td class="memname">void mrb_define_class_method </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>cla</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mrb_func_t&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
+          <td class="paramname"><em>fun</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classmrb__aspec.html">mrb_aspec</a>&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>aspec</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1574,7 +1556,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_show_copyright</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines a class method.</p>
+
+<p>Defines a class method. </p>
 <p>Example: </p><pre class="fragment"># Ruby style
 class Foo
   def Foo.bar
@@ -1591,11 +1574,11 @@ void mrb_example_gem_init(mrb_state* mrb){
 }
 </pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state</td><td>*] mrb_state* The MRuby state reference. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] RClass* The class where the class method will be defined. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] char* The name of the class method being defined. </td></tr>
-    <tr><td class="paramname">[mrb_func_t]</td><td>mrb_func_t The function pointer to the class method definition. </td></tr>
-    <tr><td class="paramname">[mrb_aspec]</td><td><a class="el" href="classmrb__aspec.html">mrb_aspec</a> The method parameters declaration. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The MRuby state reference. </td></tr>
+    <tr><td class="paramname">cla</td><td>The class where the class method will be defined. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the class method being defined. </td></tr>
+    <tr><td class="paramname">fun</td><td>The function pointer to the class method definition. </td></tr>
+    <tr><td class="paramname">aspec</td><td>The method parameters declaration. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1639,22 +1622,23 @@ void mrb_example_gem_init(mrb_state* mrb){
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines a new class under a given module</p>
+
+<p>Defines a new class under a given module. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] outer Reference to the module under which the new class will be defined </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name The name of the defined class </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] super The new class parent </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">outer</td><td>Reference to the module under which the new class will be defined </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the defined class </td></tr>
+    <tr><td class="paramname">super</td><td>The new class parent </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html">RClass</a> *] Reference to the newly defined class </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a4b9de3261cf06ff46c1f917632fd7254">mrb_define_class</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *] Reference to the newly defined class </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a4b9de3261cf06ff46c1f917632fd7254" title="Defines a new class. ">mrb_define_class</a></dd></dl>
 <p>Defines a class under the namespace of <em>outer</em>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">outer</td><td>a class which contains the new class. </td></tr>
-    <tr><td class="paramname">id</td><td>name of the new class </td></tr>
+    <tr><td class="paramname">name</td><td>name of the new class </td></tr>
     <tr><td class="paramname">super</td><td>a class from which the new class will derive. NULL means <code>Object</code> class. </td></tr>
   </table>
   </dd>
@@ -1672,8 +1656,8 @@ void mrb_example_gem_init(mrb_state* mrb){
 
 </div>
 </div>
-<a id="ae6552ee6e07f14c72e70b2c0b81291ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6552ee6e07f14c72e70b2c0b81291ac">&#9670;&nbsp;</a></span>mrb_define_const()</h2>
+<a id="a4559c0379355b85c253881ed772c5bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4559c0379355b85c253881ed772c5bd6">&#9670;&nbsp;</a></span>mrb_define_const()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1682,13 +1666,13 @@ void mrb_example_gem_init(mrb_state* mrb){
           <td class="memname">void mrb_define_const </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>cla</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1700,7 +1684,7 @@ void mrb_example_gem_init(mrb_state* mrb){
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1709,7 +1693,8 @@ void mrb_example_gem_init(mrb_state* mrb){
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines a constant.</p>
+
+<p>Defines a constant. </p>
 <p>Example: </p><pre class="fragment">     # Ruby style
      class ExampleClass
        AGE = 22
@@ -1728,10 +1713,10 @@ void mrb_example_gem_init(mrb_state* mrb){
      }
 </pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state</td><td>*] mrb_state* The MRuby state reference. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] RClass* A class or module the constant is defined in. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name The name of the constant being defined. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td><a class="el" href="structmrb__value.html">mrb_value</a> The value for the constant. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The MRuby state reference. </td></tr>
+    <tr><td class="paramname">cla</td><td>A class or module the constant is defined in. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the constant being defined. </td></tr>
+    <tr><td class="paramname">val</td><td>The value for the constant. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1765,7 +1750,7 @@ void mrb_example_gem_init(mrb_state* mrb){
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mrb_func_t&#160;</td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
           <td class="paramname"><em>func</em>, </td>
         </tr>
         <tr>
@@ -1781,10 +1766,10 @@ void mrb_example_gem_init(mrb_state* mrb){
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines a global function in ruby.</p>
+
+<p>Defines a global function in ruby. </p>
 <p>If you're creating a gem it may look something like this</p>
-<p>Example: </p><pre class="fragment">!!!c
-mrb_value example_method(mrb_state* mrb, mrb_value self)
+<p>Example: </p><pre class="fragment">mrb_value example_method(mrb_state* mrb, mrb_value self)
 {
      puts("Executing example command!");
      return self;
@@ -1796,19 +1781,19 @@ void mrb_example_gem_init(mrb_state* mrb)
 }
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state</td><td>*] mrb The MRuby state reference. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] cla The class pointer where the method will be defined. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name The name of the method being defined. </td></tr>
-    <tr><td class="paramname">[mrb_func_t]</td><td>func The function pointer to the method definition. </td></tr>
-    <tr><td class="paramname">[mrb_aspec]</td><td>aspec The method parameters declaration. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The MRuby state reference. </td></tr>
+    <tr><td class="paramname">cla</td><td>The class pointer where the method will be defined. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the method being defined. </td></tr>
+    <tr><td class="paramname">func</td><td>The function pointer to the method definition. </td></tr>
+    <tr><td class="paramname">aspec</td><td>The method parameters declaration. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a5dd459b7f0ebe6a3b495a25a0825fefc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dd459b7f0ebe6a3b495a25a0825fefc">&#9670;&nbsp;</a></span>mrb_define_module()</h2>
+<a id="af61c4148a81b6f871327b36d7f039218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af61c4148a81b6f871327b36d7f039218">&#9670;&nbsp;</a></span>mrb_define_module()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1817,13 +1802,13 @@ void mrb_example_gem_init(mrb_state* mrb)
           <td class="memname">struct <a class="el" href="structRClass.html">RClass</a>* mrb_define_module </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1832,20 +1817,21 @@ void mrb_example_gem_init(mrb_state* mrb)
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines a new module.</p>
+
+<p>Defines a new module. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state</td><td>*] mrb_state* The current mruby state. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] char* The name of the module. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the module. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html">RClass</a> *] Reference to the newly defined module. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *] Reference to the newly defined module. </dd></dl>
 
 </div>
 </div>
-<a id="aed2399c14fda4c3e0cadc12e4aca3768"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed2399c14fda4c3e0cadc12e4aca3768">&#9670;&nbsp;</a></span>mrb_define_module_function()</h2>
+<a id="a821bd3db1d86ba460b16aad5a782fc2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a821bd3db1d86ba460b16aad5a782fc2c">&#9670;&nbsp;</a></span>mrb_define_module_function()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1854,31 +1840,31 @@ void mrb_example_gem_init(mrb_state* mrb)
           <td class="memname">void mrb_define_module_function </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>cla</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mrb_func_t&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
+          <td class="paramname"><em>fun</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classmrb__aspec.html">mrb_aspec</a>&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>aspec</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1887,7 +1873,8 @@ void mrb_example_gem_init(mrb_state* mrb)
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Defines a module function.</p>
+
+<p>Defines a module function. </p>
 <p>Example: </p><pre class="fragment">   # Ruby style
    module Foo
      def Foo.bar
@@ -1904,14 +1891,63 @@ void mrb_example_gem_init(mrb_state* mrb)
    }
 </pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state</td><td>*] mrb_state* The MRuby state reference. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] RClass* The module where the module function will be defined. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] char* The name of the module function being defined. </td></tr>
-    <tr><td class="paramname">[mrb_func_t]</td><td>mrb_func_t The function pointer to the module function definition. </td></tr>
-    <tr><td class="paramname">[mrb_aspec]</td><td><a class="el" href="classmrb__aspec.html">mrb_aspec</a> The method parameters declaration. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The MRuby state reference. </td></tr>
+    <tr><td class="paramname">cla</td><td>The module where the module function will be defined. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the module function being defined. </td></tr>
+    <tr><td class="paramname">fun</td><td>The function pointer to the module function definition. </td></tr>
+    <tr><td class="paramname">aspec</td><td>The method parameters declaration. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a8ecaa36c6452e2d735362803e4c3c753"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ecaa36c6452e2d735362803e4c3c753">&#9670;&nbsp;</a></span>mrb_define_singleton_method()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mrb_define_singleton_method </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
+          <td class="paramname"><em>mrb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structRObject.html">RObject</a> *&#160;</td>
+          <td class="paramname"><em>cla</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
+          <td class="paramname"><em>fun</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classmrb__aspec.html">mrb_aspec</a>&#160;</td>
+          <td class="paramname"><em>aspec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Defines a singleton method. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#afcef307bc24c2ee2403e554830949055" title="Defines a class method. ">mrb_define_class_method</a> </dd></dl>
 
 </div>
 </div>
@@ -1940,19 +1976,132 @@ void mrb_example_gem_init(mrb_state* mrb)
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gets a exception class. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Gets a exception class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name The name of the class. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the class. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html">RClass</a> *] A reference to the class. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *] A reference to the class. </dd></dl>
 
 </div>
 </div>
-<a id="aba63e183020245a66e853bca1773df2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba63e183020245a66e853bca1773df2a">&#9670;&nbsp;</a></span>mrb_funcall()</h2>
+<a id="a07df51dd1163825c6fe88df851ebdec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07df51dd1163825c6fe88df851ebdec2">&#9670;&nbsp;</a></span>mrb_fiber_alive_p()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_fiber_alive_p </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
+          <td class="paramname"><em>mrb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
+          <td class="paramname"><em>fib</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a Fiber is alive. </p>
+<p>Implemented in mruby-fiber </p>
+
+</div>
+</div>
+<a id="a6f701cb169d77986170377cbce5543b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f701cb169d77986170377cbce5543b5">&#9670;&nbsp;</a></span>mrb_fiber_resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_fiber_resume </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
+          <td class="paramname"><em>mrb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
+          <td class="paramname"><em>fib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mrb_int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmrb__value.html">mrb_value</a> *&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resume a Fiber. </p>
+<p>Implemented in mruby-fiber </p>
+
+</div>
+</div>
+<a id="a12cf2f620bc9bae9128de17ecc22448d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12cf2f620bc9bae9128de17ecc22448d">&#9670;&nbsp;</a></span>mrb_fiber_yield()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_fiber_yield </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
+          <td class="paramname"><em>mrb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mrb_int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmrb__value.html">mrb_value</a> *&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Yield a Fiber. </p>
+<p>Implemented in mruby-fiber </p>
+
+</div>
+</div>
+<a id="a140a57c584a8629a04ad419173dd9674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140a57c584a8629a04ad419173dd9674">&#9670;&nbsp;</a></span>mrb_funcall()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1961,25 +2110,25 @@ void mrb_example_gem_init(mrb_state* mrb)
           <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_funcall </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>val</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">mrb_int&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1994,7 +2143,9 @@ void mrb_example_gem_init(mrb_state* mrb)
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Call existing ruby functions. </p><pre class="fragment"> #include &lt;stdio.h&gt;
+
+<p>Call existing ruby functions. </p>
+<p>Example: </p><pre class="fragment"> #include &lt;stdio.h&gt;
  #include &lt;mruby.h&gt;
  #include "mruby/compile.h"
 
@@ -2010,23 +2161,23 @@ void mrb_example_gem_init(mrb_state* mrb)
    mrb_funcall(mrb, obj, "method_name", 1, mrb_fixnum_value(i));
    fclose(fp);
    mrb_close(mrb);
-  }
-</pre> <dl class="params"><dt>Parameters</dt><dd>
+ }
+</pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb_state* The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td><a class="el" href="structmrb__value.html">mrb_value</a> A reference to an mruby value. </td></tr>
-    <tr><td class="paramname">[const</td><td>char*] const char* The name of the method. </td></tr>
-    <tr><td class="paramname">[mrb_int]</td><td>mrb_int The number of arguments the method has. </td></tr>
-    <tr><td class="paramname">[...]</td><td>... Variadic values(not type safe!). </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">val</td><td>A reference to an mruby value. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the method. </td></tr>
+    <tr><td class="paramname">argc</td><td>The number of arguments the method has. </td></tr>
+    <tr><td class="paramname">...</td><td>Variadic values(not type safe!). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="structmrb__value.html">mrb_value</a>] <a class="el" href="structmrb__value.html">mrb_value</a> mruby function value. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="structmrb__value.html">mrb_value</a>] mruby function value. </dd></dl>
 
 </div>
 </div>
-<a id="a1d688cd2901d2ad3d8bd409ec652cca2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d688cd2901d2ad3d8bd409ec652cca2">&#9670;&nbsp;</a></span>mrb_funcall_argv()</h2>
+<a id="af9b03fbcd87afb05c58c08945a392e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b03fbcd87afb05c58c08945a392e70">&#9670;&nbsp;</a></span>mrb_funcall_argv()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2035,31 +2186,31 @@ void mrb_example_gem_init(mrb_state* mrb)
           <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_funcall_argv </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>val</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classmrb__sym.html">mrb_sym</a>&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>name_sym</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">mrb_int&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structmrb__value.html">mrb_value</a> *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2068,89 +2219,38 @@ void mrb_example_gem_init(mrb_state* mrb)
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Call existing ruby functions. This is basically the type safe version of mrb_funcall. </p><pre class="fragment"> #include &lt;stdio.h&gt;
- #include &lt;mruby.h&gt;
- #include "mruby/compile.h"
- int
- main()
- {
-   mrb_int i = 99;
-   mrb_state *mrb = mrb_open();
 
-   if (!mrb) { }
-   mrb_sym m_sym = mrb_intern_lit(mrb, "method_name"); // Symbol for method.
+<p>Call existing ruby functions. </p>
+<p>This is basically the type safe version of mrb_funcall. </p><pre class="fragment">#include &lt;stdio.h&gt;
+#include &lt;mruby.h&gt;
+#include "mruby/compile.h"
+int
+main()
+{
+  mrb_int i = 99;
+  mrb_state *mrb = mrb_open();
 
-   FILE *fp = fopen("test.rb","r");
-   mrb_value obj = mrb_load_file(mrb,fp);
-   mrb_funcall_argv(mrb, obj, m_sym, 1, &amp;obj); // Calling ruby function from test.rb.
-   fclose(fp);
-   mrb_close(mrb);
-  }
+  if (!mrb) { }
+  mrb_sym m_sym = mrb_intern_lit(mrb, "method_name"); // Symbol for method.
+
+  FILE *fp = fopen("test.rb","r");
+  mrb_value obj = mrb_load_file(mrb,fp);
+  mrb_funcall_argv(mrb, obj, m_sym, 1, &amp;obj); // Calling ruby function from test.rb.
+  fclose(fp);
+  mrb_close(mrb);
+ }
 </pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb_state* The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td><a class="el" href="structmrb__value.html">mrb_value</a> A reference to an mruby value. </td></tr>
-    <tr><td class="paramname">[mrb_sym]</td><td><a class="el" href="classmrb__sym.html" title="mruby Symbol ">mrb_sym</a> The symbol representing the method. </td></tr>
-    <tr><td class="paramname">[mrb_int]</td><td>mrb_int The number of arguments the method has. </td></tr>
-    <tr><td class="paramname">[const</td><td>mrb_value*] mrb_value* Pointer to the object. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">val</td><td>A reference to an mruby value. </td></tr>
+    <tr><td class="paramname">name_sym</td><td>The symbol representing the method. </td></tr>
+    <tr><td class="paramname">argc</td><td>The number of arguments the method has. </td></tr>
+    <tr><td class="paramname">obj</td><td>Pointer to the object. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="structmrb__value.html">mrb_value</a>] <a class="el" href="structmrb__value.html">mrb_value</a> mruby function value. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#aba63e183020245a66e853bca1773df2a">mrb_funcall</a> </dd></dl>
-
-</div>
-</div>
-<a id="a9e0d6f62e8b93cbfe1001776525aef2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e0d6f62e8b93cbfe1001776525aef2f">&#9670;&nbsp;</a></span>mrb_funcall_with_block()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_funcall_with_block </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classmrb__sym.html">mrb_sym</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mrb_int&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structmrb__value.html">mrb_value</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Call existing ruby functions with a block. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#a140a57c584a8629a04ad419173dd9674" title="Call existing ruby functions. ">mrb_funcall</a> </dd></dl>
 
 </div>
 </div>
@@ -2169,7 +2269,8 @@ void mrb_example_gem_init(mrb_state* mrb)
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Retrieve number of arguments from <a class="el" href="structmrb__state.html">mrb_state</a>.</p>
+
+<p>Retrieve number of arguments from <a class="el" href="structmrb__state.html">mrb_state</a>. </p>
 <p>Correctly handles *splat arguments. </p>
 
 </div>
@@ -2205,22 +2306,23 @@ void mrb_example_gem_init(mrb_state* mrb)
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Retrieve arguments from <a class="el" href="structmrb__state.html">mrb_state</a>.</p>
+
+<p>Retrieve arguments from <a class="el" href="structmrb__state.html">mrb_state</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mrb</td><td>The current MRuby state. </td></tr>
-    <tr><td class="paramname">format</td><td>[mrb_args_format] is a list of format specifiers </td></tr>
+    <tr><td class="paramname">format</td><td>is a list of format specifiers </td></tr>
     <tr><td class="paramname">...</td><td>The passing variadic arguments must be a pointer of retrieving type. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the number of arguments retrieved. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#ad46e8c7921f4ad0181f527670eeb1e27">mrb_args_format</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="mruby_8h.html#ad46e8c7921f4ad0181f527670eeb1e27" title="Format specifiers for {mrb_get_args} function. ">mrb_args_format</a> </dd></dl>
 
 </div>
 </div>
-<a id="aae644477848a4f96e809393fb90b8bb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae644477848a4f96e809393fb90b8bb9">&#9670;&nbsp;</a></span>mrb_include_module()</h2>
+<a id="a7f00510234afe885e9d1ed482cb0aa21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f00510234afe885e9d1ed482cb0aa21">&#9670;&nbsp;</a></span>mrb_include_module()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2229,19 +2331,19 @@ void mrb_example_gem_init(mrb_state* mrb)
           <td class="memname">void mrb_include_module </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>cla</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>included</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2250,20 +2352,22 @@ void mrb_example_gem_init(mrb_state* mrb)
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Include a module in another class or module. Equivalent to:</p>
+
+<p>Include a module in another class or module. </p>
+<p>Equivalent to:</p>
 <p>module B include A end </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state</td><td>*] mrb_state* The current mruby state. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] RClass* A reference to module or a class. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] RClass* A reference to the module to be included. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">cla</td><td>A reference to module or a class. </td></tr>
+    <tr><td class="paramname">included</td><td>A reference to the module to be included. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ac84802f4d205ad5eb6f94654bf590ef5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac84802f4d205ad5eb6f94654bf590ef5">&#9670;&nbsp;</a></span>mrb_intern_cstr()</h2>
+<a id="ae8af124417bc3e2f46f8dae301ebeb69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8af124417bc3e2f46f8dae301ebeb69">&#9670;&nbsp;</a></span>mrb_intern_cstr()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2272,13 +2376,13 @@ void mrb_example_gem_init(mrb_state* mrb)
           <td class="memname"><a class="el" href="classmrb__sym.html">mrb_sym</a> mrb_intern_cstr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>str</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2287,19 +2391,21 @@ void mrb_example_gem_init(mrb_state* mrb)
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create a symbol </p><pre class="fragment"># Ruby style:
+
+<p>Create a symbol. </p>
+<p>Example: </p><pre class="fragment"># Ruby style:
 :pizza # =&gt; :pizza
 
 // C style:
 mrb_sym m_sym = mrb_intern_lit(mrb, "pizza"); //  =&gt; :pizza
-</pre> <dl class="params"><dt>Parameters</dt><dd>
+</pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb_state* The current mruby state. </td></tr>
-    <tr><td class="paramname">[const</td><td>char*] const char* The name of the method. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">str</td><td>The string to be symbolized </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="classmrb__sym.html" title="mruby Symbol ">mrb_sym</a>] <a class="el" href="classmrb__sym.html" title="mruby Symbol ">mrb_sym</a> A symbol. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="classmrb__sym.html" title="mruby Symbol. ">mrb_sym</a>] <a class="el" href="classmrb__sym.html" title="mruby Symbol. ">mrb_sym</a> A symbol. </dd></dl>
 
 </div>
 </div>
@@ -2328,14 +2434,16 @@ mrb_sym m_sym = mrb_intern_lit(mrb, "pizza"); //  =&gt; :pizza
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gets a module. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Gets a module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name The name of the module. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the module. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html">RClass</a> *] A reference to the module. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *] A reference to the module. </dd></dl>
 
 </div>
 </div>
@@ -2370,15 +2478,17 @@ mrb_sym m_sym = mrb_intern_lit(mrb, "pizza"); //  =&gt; :pizza
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Gets a module defined under another module. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Gets a module defined under another module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] outer The name of the outer module. </td></tr>
-    <tr><td class="paramname">[const</td><td>char *] name The name of the module. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">outer</td><td>The name of the outer module. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the module. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html">RClass</a> *] A reference to the module. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *] A reference to the module. </dd></dl>
 
 </div>
 </div>
@@ -2397,16 +2507,17 @@ mrb_sym m_sym = mrb_intern_lit(mrb, "pizza"); //  =&gt; :pizza
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates a new module, Module.</p>
-<p>Example: void mrb_example_gem_init(mrb_state* mrb) { struct <a class="el" href="structRClass.html">RClass</a> *example_module;</p>
+
+<p>Creates a new module, Module. </p>
+<p>Example: void mrb_example_gem_init(mrb_state* mrb) { struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *example_module;</p>
 <p>example_module = mrb_module_new(mrb); }</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html">RClass</a> *] Reference to the new module.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[struct <a class="el" href="structRClass.html" title="Class class. ">RClass</a> *] Reference to the new module.</dd></dl>
 <p>Creates a new module. </p>
 
 </div>
@@ -2436,11 +2547,12 @@ mrb_sym m_sym = mrb_intern_lit(mrb, "pizza"); //  =&gt; :pizza
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Duplicate an object.</p>
+
+<p>Duplicate an object. </p>
 <p>Equivalent to: Object::dup </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[mrb_value]</td><td>obj Object to be duplicate. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">obj</td><td>Object to be duplicate. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2485,7 +2597,8 @@ mrb_sym m_sym = mrb_intern_lit(mrb, "pizza"); //  =&gt; :pizza
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initialize a new object instance of c class.</p>
+
+<p>Initialize a new object instance of c class. </p>
 <p>Example: </p><pre class="fragment"># Ruby style
 class ExampleClass
 end
@@ -2505,10 +2618,10 @@ mrb_example_gem_init(mrb_state* mrb) {
  }
 </pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[RClass*]</td><td>c Reference to the class of the new object. </td></tr>
-    <tr><td class="paramname">[mrb_int]</td><td>argc Number of arguments in argv </td></tr>
-    <tr><td class="paramname">[const</td><td><a class="el" href="structmrb__value.html">mrb_value</a> *] argv Array of <a class="el" href="structmrb__value.html">mrb_value</a> to initialize the object </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">c</td><td>Reference to the class of the new object. </td></tr>
+    <tr><td class="paramname">argc</td><td>Number of arguments in argv </td></tr>
+    <tr><td class="paramname">argv</td><td>Array of <a class="el" href="structmrb__value.html">mrb_value</a> to initialize the object </td></tr>
   </table>
   </dd>
 </dl>
@@ -2547,7 +2660,9 @@ mrb_example_gem_init(mrb_state* mrb) {
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns true if obj responds to the given method. If the method was defined for that class it returns true, it returns false otherwise. </p><pre class="fragment"> Example:
+
+<p>Returns true if obj responds to the given method. </p>
+<p>If the method was defined for that class it returns true, it returns false otherwise. </p><pre class="fragment"> Example:
  # Ruby style
  class ExampleClass
    def example_method
@@ -2579,13 +2694,13 @@ mrb_example_gem_init(mrb_state* mrb) {
  }
 </pre><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb The current mruby state. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] c A reference to a class. </td></tr>
-    <tr><td class="paramname">[mrb_sym]</td><td>mid A symbol referencing a method id. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">c</td><td>A reference to a class. </td></tr>
+    <tr><td class="paramname">mid</td><td>A symbol referencing a method id. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="classmrb__bool.html" title="mruby Boolean ">mrb_bool</a>] A boolean value. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[<a class="el" href="classmrb__bool.html" title="mruby Boolean. ">mrb_bool</a>] A boolean value. </dd></dl>
 
 </div>
 </div>
@@ -2604,7 +2719,8 @@ mrb_example_gem_init(mrb_state* mrb) {
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates new <a class="el" href="structmrb__state.html">mrb_state</a>.</p>
+
+<p>Creates new <a class="el" href="structmrb__state.html">mrb_state</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the newly created <a class="el" href="structmrb__state.html">mrb_state</a>. </dd></dl>
 
 </div>
@@ -2634,7 +2750,8 @@ mrb_example_gem_init(mrb_state* mrb) {
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create new <a class="el" href="structmrb__state.html">mrb_state</a> with custom allocators.</p>
+
+<p>Create new <a class="el" href="structmrb__state.html">mrb_state</a> with custom allocators. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>Reference to the allocation function. </td></tr>
@@ -2671,7 +2788,8 @@ mrb_example_gem_init(mrb_state* mrb) {
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create new <a class="el" href="structmrb__state.html">mrb_state</a> with just the MRuby core</p>
+
+<p>Create new <a class="el" href="structmrb__state.html">mrb_state</a> with just the MRuby core. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">f</td><td>Reference to the allocation function. Use mrb_default_allocf for the default </td></tr>
@@ -2683,8 +2801,8 @@ mrb_example_gem_init(mrb_state* mrb) {
 
 </div>
 </div>
-<a id="aee7e87afdc8bcc4e3ce679c3aef9d539"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee7e87afdc8bcc4e3ce679c3aef9d539">&#9670;&nbsp;</a></span>mrb_prepend_module()</h2>
+<a id="a057f53d0bf8c6e6fc697918996008980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a057f53d0bf8c6e6fc697918996008980">&#9670;&nbsp;</a></span>mrb_prepend_module()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2693,19 +2811,19 @@ mrb_example_gem_init(mrb_state* mrb) {
           <td class="memname">void mrb_prepend_module </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>cla</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>prepended</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2714,49 +2832,21 @@ mrb_example_gem_init(mrb_state* mrb) {
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Prepends a module in another class or module.</p>
+
+<p>Prepends a module in another class or module. </p>
 <p>Equivalent to: module B prepend A end </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state</td><td>*] mrb_state* The current mruby state. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] RClass* A reference to module or a class. </td></tr>
-    <tr><td class="paramname">[struct</td><td><a class="el" href="structRClass.html">RClass</a> *] RClass* A reference to the module to be prepended. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The current mruby state. </td></tr>
+    <tr><td class="paramname">cla</td><td>A reference to module or a class. </td></tr>
+    <tr><td class="paramname">prepended</td><td>A reference to the module to be prepended. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a87bd8bbf5f2451393c01fd8bcecfd6e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87bd8bbf5f2451393c01fd8bcecfd6e1">&#9670;&nbsp;</a></span>mrb_str_new_cstr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmrb__value.html">mrb_value</a> mrb_str_new_cstr </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Turns a C string into a Ruby string value. </p>
-
-</div>
-</div>
-<a id="ae6879000bbc85b6b47e4687eb05e54c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6879000bbc85b6b47e4687eb05e54c4">&#9670;&nbsp;</a></span>mrb_undef_class_method()</h2>
+<a id="ade6054e7da0f4c07fdd543eb9039cd85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade6054e7da0f4c07fdd543eb9039cd85">&#9670;&nbsp;</a></span>mrb_undef_class_method()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2765,19 +2855,19 @@ mrb_example_gem_init(mrb_state* mrb) {
           <td class="memname">void mrb_undef_class_method </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>cls</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2786,7 +2876,9 @@ mrb_example_gem_init(mrb_state* mrb) {
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Undefine a class method. Example: </p><pre class="fragment"> # Ruby style
+
+<p>Undefine a class method. </p>
+<p>Example: </p><pre class="fragment"> # Ruby style
  class ExampleClass
    def self.example_method
      "example"
@@ -2817,17 +2909,17 @@ mrb_example_gem_init(mrb_state* mrb){
  }
 </pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb_state* The mruby state reference. </td></tr>
-    <tr><td class="paramname">[RClass*]</td><td>RClass* A class the class method will be undefined from. </td></tr>
-    <tr><td class="paramname">[const</td><td>char*] const char* The name of the class method to be undefined. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The mruby state reference. </td></tr>
+    <tr><td class="paramname">cls</td><td>A class the class method will be undefined from. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the class method to be undefined. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a37a160199109fc0d867f7217302413c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37a160199109fc0d867f7217302413c4">&#9670;&nbsp;</a></span>mrb_undef_method()</h2>
+<a id="a473dbcb8a889afedaa3caacdc791e405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473dbcb8a889afedaa3caacdc791e405">&#9670;&nbsp;</a></span>mrb_undef_method()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2836,19 +2928,19 @@ mrb_example_gem_init(mrb_state* mrb){
           <td class="memname">void mrb_undef_method </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structmrb__state.html">mrb_state</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>mrb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">struct <a class="el" href="structRClass.html">RClass</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>cla</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2857,7 +2949,8 @@ mrb_example_gem_init(mrb_state* mrb){
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Undefines a method.</p>
+
+<p>Undefines a method. </p>
 <p>Example: </p><pre class="fragment"># Ruby style
 
 class ExampleClassA
@@ -2899,9 +2992,9 @@ mrb_example_gem_final(mrb_state* mrb){
 }
 </pre> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">[mrb_state*]</td><td>mrb_state* The mruby state reference. </td></tr>
-    <tr><td class="paramname">[struct</td><td>RClass*] RClass* A class the method will be undefined from. </td></tr>
-    <tr><td class="paramname">[const</td><td>char*] const char* The name of the method to be undefined. </td></tr>
+    <tr><td class="paramname">mrb</td><td>The mruby state reference. </td></tr>
+    <tr><td class="paramname">cla</td><td>The class the method will be undefined from. </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the method to be undefined. </td></tr>
   </table>
   </dd>
 </dl>

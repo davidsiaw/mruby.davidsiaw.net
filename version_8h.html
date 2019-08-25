@@ -71,13 +71,19 @@ $(function() {
 <div class="title">version.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li>mruby version definition </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for version.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="version_8h__incl.png" border="0" usemap="#include_2mruby_2version_8h" alt=""/></div>
 <map name="include_2mruby_2version_8h" id="include_2mruby_2version_8h">
-<area shape="rect" id="node2" href="common_8h.html" title="common.h" alt="" coords="44,80,127,107"/>
+<area shape="rect" id="node2" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="44,80,127,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -85,13 +91,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="version_8h__dep__incl.png" border="0" usemap="#include_2mruby_2version_8hdep" alt=""/></div>
 <map name="include_2mruby_2version_8hdep" id="include_2mruby_2version_8hdep">
-<area shape="rect" id="node2" href="mruby_8h.html" title="include/mruby.h" alt="" coords="167,80,281,107"/>
-<area shape="rect" id="node3" href="value__array_8h_source.html" title="src/value_array.h" alt="" coords="5,155,128,181"/>
-<area shape="rect" id="node4" href="compile_8h.html" title="include/mruby/compile.h" alt="" coords="203,155,365,181"/>
-<area shape="rect" id="node7" href="dump_8h.html" title="include/mruby/dump.h" alt="" coords="143,304,294,331"/>
-<area shape="rect" id="node8" href="khash_8h.html" title="include/mruby/khash.h" alt="" coords="366,229,519,256"/>
-<area shape="rect" id="node5" href="irep_8h.html" title="include/mruby/irep.h" alt="" coords="203,229,341,256"/>
-<area shape="rect" id="node6" href="proc_8h.html" title="include/mruby/proc.h" alt="" coords="345,304,487,331"/>
+<area shape="rect" id="node2" href="mruby_8h.html" title="include/mruby.h" alt="" coords="147,80,262,107"/>
+<area shape="rect" id="node3" href="compile_8h.html" title="mruby parser " alt="" coords="65,155,227,181"/>
+<area shape="rect" id="node6" href="dump_8h.html" title="mruby binary dumper (mrbc binary format) " alt="" coords="5,304,156,331"/>
+<area shape="rect" id="node7" href="khash_8h.html" title="Hash for mruby " alt="" coords="228,229,381,256"/>
+<area shape="rect" id="node8" href="value__array_8h_source.html" title="src/value_array.h" alt="" coords="302,155,425,181"/>
+<area shape="rect" id="node4" href="irep_8h.html" title="mrb_irep structure " alt="" coords="65,229,203,256"/>
+<area shape="rect" id="node5" href="proc_8h.html" title="Proc class " alt="" coords="207,304,349,331"/>
 </map>
 </div>
 </div>
@@ -99,7 +105,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a70b3d4ce53ce8b080b2e894117c0ad72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="version_8h.html#a70b3d4ce53ce8b080b2e894117c0ad72">MRB_STRINGIZE0</a>(expr)&#160;&#160;&#160;#expr</td></tr>
+<tr class="memitem:a70b3d4ce53ce8b080b2e894117c0ad72"><td class="memItemLeft" align="right" valign="top"><a id="a70b3d4ce53ce8b080b2e894117c0ad72"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="version_8h.html#a70b3d4ce53ce8b080b2e894117c0ad72">MRB_STRINGIZE0</a>(expr)&#160;&#160;&#160;#expr</td></tr>
+<tr class="memdesc:a70b3d4ce53ce8b080b2e894117c0ad72"><td class="mdescLeft">&#160;</td><td class="mdescRight">mruby version definition macros <br /></td></tr>
 <tr class="separator:a70b3d4ce53ce8b080b2e894117c0ad72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa75afee2a03087a53882570bb7375aae"><td class="memItemLeft" align="right" valign="top"><a id="aa75afee2a03087a53882570bb7375aae"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MRB_STRINGIZE</b>(expr)&#160;&#160;&#160;<a class="el" href="version_8h.html#a70b3d4ce53ce8b080b2e894117c0ad72">MRB_STRINGIZE0</a>(expr)</td></tr>
@@ -158,29 +166,10 @@ Macros</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li>mruby version definition</li>
+<li>mruby version definition </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a70b3d4ce53ce8b080b2e894117c0ad72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70b3d4ce53ce8b080b2e894117c0ad72">&#9670;&nbsp;</a></span>MRB_STRINGIZE0</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MRB_STRINGIZE0</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">expr</td><td>)</td>
-          <td>&#160;&#160;&#160;#expr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>mruby version definition macros </p>
-
-</div>
-</div>
 <a id="a4506d4cc6db32432175c17ccb61c6f6a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4506d4cc6db32432175c17ccb61c6f6a">&#9670;&nbsp;</a></span>MRUBY_COPYRIGHT</h2>
 

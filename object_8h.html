@@ -72,19 +72,25 @@ $(function() {
 <div class="title">object.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li>mruby object definition </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="object_8h__dep__incl.png" border="0" usemap="#include_2mruby_2object_8hdep" alt=""/></div>
 <map name="include_2mruby_2object_8hdep" id="include_2mruby_2object_8hdep">
-<area shape="rect" id="node2" href="value_8h.html" title="include/mruby/value.h" alt="" coords="149,80,299,107"/>
-<area shape="rect" id="node3" href="mruby_8h.html" title="include/mruby.h" alt="" coords="167,155,281,181"/>
-<area shape="rect" id="node4" href="value__array_8h_source.html" title="src/value_array.h" alt="" coords="5,229,128,256"/>
-<area shape="rect" id="node5" href="compile_8h.html" title="include/mruby/compile.h" alt="" coords="203,229,365,256"/>
-<area shape="rect" id="node8" href="dump_8h.html" title="include/mruby/dump.h" alt="" coords="143,379,294,405"/>
-<area shape="rect" id="node9" href="khash_8h.html" title="include/mruby/khash.h" alt="" coords="366,304,519,331"/>
-<area shape="rect" id="node6" href="irep_8h.html" title="include/mruby/irep.h" alt="" coords="203,304,341,331"/>
-<area shape="rect" id="node7" href="proc_8h.html" title="include/mruby/proc.h" alt="" coords="345,379,487,405"/>
+<area shape="rect" id="node2" href="value_8h.html" title="mruby value definitions " alt="" coords="130,80,279,107"/>
+<area shape="rect" id="node3" href="mruby_8h.html" title="include/mruby.h" alt="" coords="147,155,262,181"/>
+<area shape="rect" id="node4" href="compile_8h.html" title="mruby parser " alt="" coords="65,229,227,256"/>
+<area shape="rect" id="node7" href="dump_8h.html" title="mruby binary dumper (mrbc binary format) " alt="" coords="5,379,156,405"/>
+<area shape="rect" id="node8" href="khash_8h.html" title="Hash for mruby " alt="" coords="228,304,381,331"/>
+<area shape="rect" id="node9" href="value__array_8h_source.html" title="src/value_array.h" alt="" coords="302,229,425,256"/>
+<area shape="rect" id="node5" href="irep_8h.html" title="mrb_irep structure " alt="" coords="65,304,203,331"/>
+<area shape="rect" id="node6" href="proc_8h.html" title="Proc class " alt="" coords="207,379,349,405"/>
 </map>
 </div>
 </div>
@@ -133,7 +139,7 @@ Macros</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li>mruby object definition</li>
+<li>mruby object definition </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
@@ -148,8 +154,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">enum</span> mrb_vtype tt:8;    \</div><div class="line">  uint32_t color:3;       \</div><div class="line">  uint32_t flags:21;      \</div><div class="line">  struct <a class="code" href="structRClass.html">RClass</a> *c;       \</div><div class="line">  struct <a class="code" href="structRBasic.html">RBasic</a> *gcnext</div><div class="ttc" id="structRBasic_html"><div class="ttname"><a href="structRBasic.html">RBasic</a></div><div class="ttdef"><b>Definition:</b> object.h:19</div></div>
-<div class="ttc" id="structRClass_html"><div class="ttname"><a href="structRClass.html">RClass</a></div><div class="ttdef"><b>Definition:</b> class.h:17</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structRClass.html">RClass</a> *c;       \</div><div class="line">  struct <a class="code" href="structRBasic.html">RBasic</a> *gcnext;  \</div><div class="line">  enum mrb_vtype tt:8;    \</div><div class="line">  uint32_t color:3;       \</div><div class="line">  uint32_t flags:21</div><div class="ttc" id="structRBasic_html"><div class="ttname"><a href="structRBasic.html">RBasic</a></div><div class="ttdef"><b>Definition:</b> object.h:19</div></div>
+<div class="ttc" id="structRClass_html"><div class="ttname"><a href="structRClass.html">RClass</a></div><div class="ttdoc">Class class. </div><div class="ttdef"><b>Definition:</b> class.h:17</div></div>
 </div><!-- fragment -->
 </div>
 </div>

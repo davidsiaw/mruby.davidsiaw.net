@@ -73,13 +73,19 @@ $(function() {
 <div class="title">error.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><ul>
+<li>Exception class </li>
+</ul>
+ 
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for error.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="include_2mruby_2error_8h__incl.png" border="0" usemap="#include_2mruby_2error_8h" alt=""/></div>
 <map name="include_2mruby_2error_8h" id="include_2mruby_2error_8h">
-<area shape="rect" id="node2" href="common_8h.html" title="common.h" alt="" coords="36,80,119,107"/>
+<area shape="rect" id="node2" href="common_8h.html" title="mruby common platform definition&quot; " alt="" coords="36,80,119,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -96,6 +102,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRException.html">RException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MRuby error handling.  <a href="structRException.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRBreak.html">RBreak</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,6 +115,15 @@ Macros</h2></td></tr>
 <tr class="memitem:a1208b5d2ebfaa60d5507eb54d9e3d790"><td class="memItemLeft" align="right" valign="top"><a id="a1208b5d2ebfaa60d5507eb54d9e3d790"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_exc_new_str_lit</b>(mrb,  c,  lit)&#160;&#160;&#160;mrb_exc_new_str(mrb, c, mrb_str_new_lit(mrb, lit))</td></tr>
 <tr class="separator:a1208b5d2ebfaa60d5507eb54d9e3d790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526ba4f1db8b3f0f94bf57241c2c62d7"><td class="memItemLeft" align="right" valign="top"><a id="a526ba4f1db8b3f0f94bf57241c2c62d7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RBREAK_VALUE_TT_MASK</b>&#160;&#160;&#160;((1 &lt;&lt; 8) - 1)</td></tr>
+<tr class="separator:a526ba4f1db8b3f0f94bf57241c2c62d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e14cf0104d2a6082c77c4cd03c43c74"><td class="memItemLeft" align="right" valign="top"><a id="a7e14cf0104d2a6082c77c4cd03c43c74"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_break_proc_get</b>(brk)&#160;&#160;&#160;((brk)-&gt;proc)</td></tr>
+<tr class="separator:a7e14cf0104d2a6082c77c4cd03c43c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6355b185433edf781a7c9ab821a765d8"><td class="memItemLeft" align="right" valign="top"><a id="a6355b185433edf781a7c9ab821a765d8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_break_proc_set</b>(brk,  p)&#160;&#160;&#160;((brk)-&gt;proc = p)</td></tr>
+<tr class="separator:a6355b185433edf781a7c9ab821a765d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -132,18 +148,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
 <tr class="memitem:a807853c952294afb45be0958f937d000"><td class="memItemLeft" align="right" valign="top"><a id="a807853c952294afb45be0958f937d000"></a>
 <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_f_raise</b> (<a class="el" href="structmrb__state.html">mrb_state</a> *, <a class="el" href="structmrb__value.html">mrb_value</a>)</td></tr>
 <tr class="separator:a807853c952294afb45be0958f937d000"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a54412392d14e701ae716d6b5dc7ae9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2mruby_2error_8h.html#a4a54412392d14e701ae716d6b5dc7ae9">mrb_protect</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, mrb_func_t body, <a class="el" href="structmrb__value.html">mrb_value</a> data, <a class="el" href="classmrb__bool.html">mrb_bool</a> *state)</td></tr>
+<tr class="memitem:a9da9265a90401614904df78e8359c0f3"><td class="memItemLeft" align="right" valign="top"><a id="a9da9265a90401614904df78e8359c0f3"></a>
+static <a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_break_value_get</b> (struct <a class="el" href="structRBreak.html">RBreak</a> *brk)</td></tr>
+<tr class="separator:a9da9265a90401614904df78e8359c0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c9ab40333d950d25a1033b7078bcd8"><td class="memItemLeft" align="right" valign="top"><a id="ab8c9ab40333d950d25a1033b7078bcd8"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_break_value_set</b> (struct <a class="el" href="structRBreak.html">RBreak</a> *brk, <a class="el" href="structmrb__value.html">mrb_value</a> val)</td></tr>
+<tr class="separator:ab8c9ab40333d950d25a1033b7078bcd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a54412392d14e701ae716d6b5dc7ae9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2mruby_2error_8h.html#a4a54412392d14e701ae716d6b5dc7ae9">mrb_protect</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> body, <a class="el" href="structmrb__value.html">mrb_value</a> data, <a class="el" href="classmrb__bool.html">mrb_bool</a> *state)</td></tr>
+<tr class="memdesc:a4a54412392d14e701ae716d6b5dc7ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Protect.  <a href="#a4a54412392d14e701ae716d6b5dc7ae9">More...</a><br /></td></tr>
 <tr class="separator:a4a54412392d14e701ae716d6b5dc7ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af811be3dadc788b0f6e854d63493e457"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2mruby_2error_8h.html#af811be3dadc788b0f6e854d63493e457">mrb_ensure</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, mrb_func_t body, <a class="el" href="structmrb__value.html">mrb_value</a> b_data, mrb_func_t ensure, <a class="el" href="structmrb__value.html">mrb_value</a> e_data)</td></tr>
+<tr class="memitem:af811be3dadc788b0f6e854d63493e457"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2mruby_2error_8h.html#af811be3dadc788b0f6e854d63493e457">mrb_ensure</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> body, <a class="el" href="structmrb__value.html">mrb_value</a> b_data, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> ensure, <a class="el" href="structmrb__value.html">mrb_value</a> e_data)</td></tr>
+<tr class="memdesc:af811be3dadc788b0f6e854d63493e457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure.  <a href="#af811be3dadc788b0f6e854d63493e457">More...</a><br /></td></tr>
 <tr class="separator:af811be3dadc788b0f6e854d63493e457"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3df7415ae2a5662df07e6f72596cf01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2mruby_2error_8h.html#aa3df7415ae2a5662df07e6f72596cf01">mrb_rescue</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, mrb_func_t body, <a class="el" href="structmrb__value.html">mrb_value</a> b_data, mrb_func_t rescue, <a class="el" href="structmrb__value.html">mrb_value</a> r_data)</td></tr>
+<tr class="memitem:aa3df7415ae2a5662df07e6f72596cf01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2mruby_2error_8h.html#aa3df7415ae2a5662df07e6f72596cf01">mrb_rescue</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> body, <a class="el" href="structmrb__value.html">mrb_value</a> b_data, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> rescue, <a class="el" href="structmrb__value.html">mrb_value</a> r_data)</td></tr>
+<tr class="memdesc:aa3df7415ae2a5662df07e6f72596cf01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rescue.  <a href="#aa3df7415ae2a5662df07e6f72596cf01">More...</a><br /></td></tr>
 <tr class="separator:aa3df7415ae2a5662df07e6f72596cf01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2bb3e4cf95bb9c101c16615336a0297"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2mruby_2error_8h.html#aa2bb3e4cf95bb9c101c16615336a0297">mrb_rescue_exceptions</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, mrb_func_t body, <a class="el" href="structmrb__value.html">mrb_value</a> b_data, mrb_func_t rescue, <a class="el" href="structmrb__value.html">mrb_value</a> r_data, mrb_int len, struct <a class="el" href="structRClass.html">RClass</a> **classes)</td></tr>
+<tr class="memitem:aa2bb3e4cf95bb9c101c16615336a0297"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmrb__value.html">mrb_value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2mruby_2error_8h.html#aa2bb3e4cf95bb9c101c16615336a0297">mrb_rescue_exceptions</a> (<a class="el" href="structmrb__state.html">mrb_state</a> *mrb, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> body, <a class="el" href="structmrb__value.html">mrb_value</a> b_data, <a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a> rescue, <a class="el" href="structmrb__value.html">mrb_value</a> r_data, mrb_int len, struct <a class="el" href="structRClass.html">RClass</a> **classes)</td></tr>
+<tr class="memdesc:aa2bb3e4cf95bb9c101c16615336a0297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rescue exception.  <a href="#aa2bb3e4cf95bb9c101c16615336a0297">More...</a><br /></td></tr>
 <tr class="separator:aa2bb3e4cf95bb9c101c16615336a0297"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><ul>
-<li>Exception class</li>
+<li>Exception class </li>
 </ul>
 <p>See Copyright Notice in <a class="el" href="mruby_8h.html">mruby.h</a> </p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -162,7 +188,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mrb_func_t&#160;</td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
           <td class="paramname"><em>body</em>, </td>
         </tr>
         <tr>
@@ -174,7 +200,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mrb_func_t&#160;</td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
           <td class="paramname"><em>ensure</em>, </td>
         </tr>
         <tr>
@@ -190,8 +216,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Ensure</p>
-<p>mruby-error </p>
+
+<p>Ensure. </p>
+<p>Implemented in the mruby-error mrbgem </p>
 
 </div>
 </div>
@@ -210,7 +237,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mrb_func_t&#160;</td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
           <td class="paramname"><em>body</em>, </td>
         </tr>
         <tr>
@@ -232,8 +259,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Protect</p>
-<p>mruby-error </p>
+
+<p>Protect. </p>
+<p>Implemented in the mruby-error mrbgem </p>
 
 </div>
 </div>
@@ -252,7 +280,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mrb_func_t&#160;</td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
           <td class="paramname"><em>body</em>, </td>
         </tr>
         <tr>
@@ -264,7 +292,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mrb_func_t&#160;</td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
           <td class="paramname"><em>rescue</em>, </td>
         </tr>
         <tr>
@@ -280,8 +308,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Rescue</p>
-<p>mruby-error </p>
+
+<p>Rescue. </p>
+<p>Implemented in the mruby-error mrbgem </p>
 
 </div>
 </div>
@@ -300,7 +329,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mrb_func_t&#160;</td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
           <td class="paramname"><em>body</em>, </td>
         </tr>
         <tr>
@@ -312,7 +341,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mrb_func_t&#160;</td>
+          <td class="paramtype"><a class="el" href="mruby_8h.html#afd010f40f916ff0d4bf3efc5c2daf274">mrb_func_t</a>&#160;</td>
           <td class="paramname"><em>rescue</em>, </td>
         </tr>
         <tr>
@@ -340,8 +369,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mrb_no_method_error</
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Rescue exception</p>
-<p>mruby-error </p>
+
+<p>Rescue exception. </p>
+<p>Implemented in the mruby-error mrbgem </p>
 
 </div>
 </div>
